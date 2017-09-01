@@ -1,0 +1,765 @@
+\documentclass[avery5371,grid]{flashcards}
+
+%% Packages
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{ccicons}
+\usepackage[mathscr]{euscript}
+\usepackage{url}
+
+
+%% Math macros
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\B}{\mathscr{B}}
+\newcommand{\st}{\textrm{ such that }}
+\renewcommand{\le}{\leqslant}
+\renewcommand{\theta}{\vartheta}
+\newcommand{\iso}{\cong}
+\newcommand{\abs}[1]{\ensuremath{\left| #1 \right|}}
+\newcommand{\set}[2]{\ensuremath{\left\{ #1 \, : \, #2 \right\}}}
+\newcommand{\presentation}[2]{\ensuremath{\left< #1 \, : \, #2 \right>}}
+\newcommand{\GLnF}[2]{\ensuremath{\textrm{GL} \left( #1 \, , \, #2 \right)}}
+\newcommand{\normal}{\ensuremath{\lhd}}
+\DeclareMathOperator{\Ker}{\ensuremath{\textrm{Ker}}}
+\DeclareMathOperator{\Img}{\ensuremath{\textrm{Im}}}
+\DeclareMathOperator{\End}{\ensuremath{\textrm{End}}}
+
+%% Text macros
+\newcommand{\defn}[1]{\textbf{#1}}
+
+%% Layout of flash cards
+\cardfrontstyle[\large\slshape]{headings}
+\cardbackstyle{empty}
+\cardfrontfoot{Representation Theory}
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{flashcard}[Copying]
+  { Flash Cards for the Book:
+
+    \begin{center}
+      ``Representations and Characters of Groups'' \\
+      by Gordon James and Martin Liebeck
+    \end{center}
+  }
+  \vspace*{\stretch{1}}
+  \copyright\ 2017 Jason Underdown \\
+
+  These flash cards are licensed under the:
+  \begin{center}
+    Creative Commons Attribution 4.0 \\
+    International License \\
+    \ccby
+  \end{center}
+  \url{https://creativecommons.org/licenses/by/4.0/}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{group}
+  \vspace*{\stretch{1}}
+
+  A \defn{group} consists of a set $G$, together with a rule for
+  combining any two elements $g, h \in G$ to form another element of
+  $G$ satisfying:
+  \begin{enumerate}
+  \item $\forall g,h,k \in G, (gh)k = g(hk)$
+  \item $\exists e \in G \st \forall g \in G, eg=ge=g$
+  \item $\forall g \in G, \exists g^{-1} \in G \st gg^{-1} = g^{-1}g = e$
+  \end{enumerate}
+
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{subgroup}
+\vspace*{\stretch{1}}
+
+Let $G$ be a group. A subset $H$ of $G$ is a \defn{subgroup} if $H$ is
+itself a group under the operation inherited from $G$.
+\[
+  H \le G
+\]
+
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{dihedral group $D_{2n}$}
+  \vspace*{\stretch{1}}
+  \[
+    D_{2n} = \presentation{a,b}{a^n=1, b^2=1, b^{-1}ab=a^{-1}}
+  \]
+
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{cyclic group $C_n$}
+  \vspace*{\stretch{1}}
+
+  \[
+    C_n = \left\{ 1, a, a^2, \ldots, a^{n-1} \right\}
+  \]
+  \[
+    C_n = \presentation{a}{a^n=1}
+  \]
+
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{quaternion group $Q_8$}
+  \vspace*{\stretch{1}}
+
+  \[
+    Q_8 = \presentation{a,b}{a^4 = 1, a^2 = b^2, b^{-1}ab = a^{-1}}
+  \]
+
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{alternating group $A_n$}
+  \vspace*{\stretch{1}}
+  \[
+    A_n = \left\{ g \in S_n : g \text{ is an even permutation} \right\}
+  \]
+  Recall that every permutation $g \in S_n$ can be expressed as a
+  product of transpositions. An \defn{even} permutation has an even
+  number of transpositions, and an \defn{odd} permutation has an odd
+  number of transpositions.
+
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{direct product}
+  \vspace*{\stretch{1}}
+
+  Let $G$ and $H$ be groups, consider
+  \[
+    G \times H = \set{(g,h)}{g \in G \text{ and } h \in H}.
+  \]
+  Define a product operation on $G \times H$ by
+  \[
+    (g,h)(g',h') = (gg', hh').
+  \]
+  The group $G \times H$ is called the \defn{direct product} of $G$ and
+  $H$.
+
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{homomorphism / isomorphism}
+  \vspace*{\stretch{1}}
+
+  If $G$ and $H$ are groups, then a \defn{homomorphism} from $G$ to
+  $H$ is a map $\vartheta : G \to H$, which for all $g_1, g_2 \in G$
+  satisfies:
+  \[
+    (g_1 g_2) \vartheta = (g_1 \vartheta)(g_2 \vartheta).
+  \]
+  If $\vartheta$ is also invertible, then $\vartheta$ is called an
+  \defn{isomorphism}. \vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{coset}
+  \vspace*{\stretch{1}}
+  Let $G$ be a group and $H$ a subgroup of $G$. For $x \in G$, the subset
+  \[
+    Hx = \set{hx}{h \in H}
+  \]
+  of $G$ is called a \defn{right coset} of $H$ in $G$. The distinct
+  right cosets of $G$ partition $G$.
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{flashcard}[Theorem]{Lagrange's theorem}
+  \vspace*{\stretch{1}}
+  If $G$ is a finite group and $H$ is a subgroup of $G$, then
+  $\abs{H}$ divides $\abs{G}$.
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{index}
+  \vspace*{\stretch{1}}
+
+  Suppose $H$ is a subgroup of $G$. The number of distinct right
+  cosets of $H$ in $G$ is written as $\abs{G : H}$. If $G$ is finite,
+  then
+  \[
+    \abs{G : H} =\abs{G}/\abs{H}
+  \]
+  by Lagrange's theorem.
+
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{normal subgroup}
+  \vspace*{\stretch{1}}
+  A subgroup $N$ of a group $G$ is said to be a \defn{normal} subgroup
+  of $G$ if $g^{-1}Ng = N$ for all $g \in G$, where
+  \[
+    g^{-1}Ng = \set{g^{-1}ng}{n \in N}.
+  \]
+  We indicate that $N$ is a normal subgroup of $G$ by writing:
+  \[
+    N \normal G.
+  \]
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{factor group}
+  \vspace*{\stretch{1}}
+
+  If $N \normal G$, then define $G/N$ to be the set of right cosets of
+  $N$ in $G$. This set is made into a group via the multiplication
+  operation:
+  \[
+    (Ng)(Nh) = Ngh \qquad \forall g, h \in G.
+  \]
+  This operation makes $G/N$ into a group called the \defn{factor
+    group} of $G$ by $N$.
+
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{simple group}
+  \vspace*{\stretch{1}}
+
+  A group $G$ is said to be \defn{simple} if $G \ne \{ 1 \}$ and the
+  only normal subgroups of $G$ are $\{ 1 \}$ and $G$.
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{kernel / image}
+  \vspace*{\stretch{1}}
+
+  Let $G$ and $H$ be groups. Suppose that \[\theta : G \to H\] is a
+  homomorphism then the \defn{kernel} of $\theta$ and \defn{image}
+  of $\theta$ are defined to be:
+  \begin{alignat*}{4}
+    &\Ker \theta
+    &&= \set{g \in G}{g\theta = 1} \quad
+    && \Ker \theta &&\normal G \\
+    &\Img \theta
+    &&= \set{g\theta}{g \in G} \quad
+    && \Img \theta &&\le H
+  \end{alignat*}
+
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{first isomorphism theorem}
+  \vspace*{\stretch{1}}
+
+  Suppose that $G$ and $H$ are groups and let $\theta: G \to H$ be a
+  homomorphism. Then
+  \[
+    G / \Ker \theta \iso \Img \theta.
+  \]
+  An isomorphism is given by the function
+  \[
+    Kg \to g\theta \quad (g \in G)
+  \]
+  where $K = \Ker \theta$.
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{vector space}
+  \vspace*{\stretch{1}}
+
+  A \defn{vector space} over a field $F$ is a set $V$, equipped with
+  addition and scalar multiplication satisfying:
+  \begin{enumerate}
+  \item $V$ is an abelian group under addition;
+  \item $\forall \, u,v \in V$ and $\forall \, \lambda, \mu \in F$,
+    \begin{enumerate}
+    \item $\lambda(u + v) = \lambda u + \lambda v$
+    \item $(\lambda + \mu)v = \lambda v + \mu v$
+    \item $(\lambda \mu) v = \lambda (\mu v)$
+    \item $1 v = v$
+    \end{enumerate}
+  \end{enumerate}
+
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{linear dependence / linear independence}
+  \vspace*{\stretch{1}}
+
+  We say that $v_1, \ldots, v_n$ are \defn{linearly dependent} if
+  \[
+    \lambda_1 v_1 + \cdots + \lambda_n v_n = 0
+  \]
+  for some $\lambda_1, \ldots, \lambda_n \in F$ not all zero,
+  otherwise the vectors $v_1, \ldots, v_n$ are \defn{linearly
+    independent}. \vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{linear combination / span}
+  \vspace*{\stretch{1}}
+
+  Let $v_1, \ldots, v_n$ be vectors in a vector space $V$ over $F$. A
+  vector $v$ in $V$ is a \defn{linear combination} of
+  $v_1, \ldots, v_n$ if
+  \[
+    v = \lambda_1 v_1 + \cdots + \lambda_n v_n
+  \]
+  for some $\lambda_1, \ldots, \lambda_n \in F$.
+  \vfill
+
+  The vectors $v_1, \ldots, v_n$ \defn{span} $V$ if every vector in
+  $V$ is a linear combination of $v_1, \ldots, v_n$.
+
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{flashcard}[Definition]{basis}
+  \vspace*{\stretch{1}}
+
+  The vectors $v_1, \ldots , v_n \in V$ form a \defn{basis} of V if
+  they
+  \begin{enumerate}
+  \item \emph{span} V, and are
+  \item \emph{linearly independent}.
+  \end{enumerate}
+
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition/Theorem]{subspace / conditions for a subspace}
+  \vspace*{\stretch{1}}
+
+  A \defn{subspace} of a vector space $V$ over $F$ is a subset of $V$
+  which is itself a vector space under the operations inherited from
+  $V$.
+  \vfill
+
+  A subset $U$ of a vector space $V$ is a subspace iff
+  \begin{enumerate}
+  \item $0\in U$;
+  \item if $u,v \in U$ then $u+v \in U$;
+  \item if $\lambda \in F$ and $u \in U$ then $\lambda u \in U$.
+  \end{enumerate}
+
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{sum / direct sum}
+  \vspace*{\stretch{1}}
+
+  If $U_1, \ldots, U_r$ are subspaces of a vector space $V$, then
+  define the \defn{sum of subspaces} to be
+  \[
+    U_1 + \cdots + U_r = \set{u_1 + \cdots + u_r}{u_i \in U_i \text{
+        for } 1 \le i \le r}.
+  \]
+  \vfill
+
+  If every element in $U_1 + \cdots + U_r$ can be written in a unique
+  way as $u_1 + \cdots + u_r$ with $u_i \in U_i$ for $1 \le i \le r$,
+  then the sum is called a \defn{direct sum} and is denoted:
+  \[
+    U_1 \oplus \cdots \oplus U_r
+  \]
+
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{conditions for a direct sum}
+  \vspace*{\stretch{1}}
+
+  Suppose that $V = U + W$, with $u_1, \ldots, u_r$ a basis of $U$ and
+  $w_1, \ldots, w_s$ a basis of $W$, then the following three
+  conditions are equivalent:
+  \begin{enumerate}
+  \item $V = U \oplus W$,
+  \item $u_1, \ldots, u_r, w_1, \ldots, w_s$ is a basis of $V$,
+  \item $U \cap W = \{ 0 \}$.
+  \end{enumerate}
+
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{direct sum of direct sums}
+  \vspace*{\stretch{1}}
+
+  Suppose $U, W, U_1, \ldots, U_a, W_1, \ldots, W_b$ are subspaces of
+  the vector space $V$. If $V = U \oplus W$ and also
+  \begin{align*}
+    U &= U_1 \oplus \cdots \oplus U_a \\
+    W &= W_1 \oplus \cdots \oplus W_b
+  \end{align*}
+  then
+  \[
+    V = U_1 \oplus \cdots \oplus U_a\oplus W_1 \oplus \cdots \oplus W_b.
+  \]
+
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{external direct sum}
+  \vspace*{\stretch{1}}
+
+  Let $U_1, \ldots, U_r$ be vector spaces over $F$, and let
+  \begin{align*}
+    V &= \set{(u_1, \ldots, u_r)}{u_i \in U_i \text{ for } 1 \le i \le r},\\
+    U'_i &= \set{(0, \ldots, u_i, \ldots, 0)}{u_i \in U_i}.
+  \end{align*}
+  Then $V = U'_1 \oplus \cdots \oplus U'_r$ is a vector space. Abusing
+  notation slightly, we write
+  \[
+    V = U_1 \oplus \cdots \oplus U_r
+  \]
+  and call it the \defn{external direct sum} of $U_1, \ldots, U_r$.
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{linear transformation}
+  \vspace*{\stretch{1}}
+
+  Let $V$ and $W$ be vector spaces over $F$. A \defn{linear
+    transformation} from $V$ to $W$ is a function
+  \[
+    \theta : V \to W
+  \]
+  which satisfies
+  \begin{enumerate}
+  \item $(u + v)\theta = u\theta + v\theta$ for all $u,v \in V$, and
+  \item $(\lambda u)\theta = \lambda (v\theta)$ for all
+    $\lambda \in F$ and $v \in V$.
+  \end{enumerate}
+
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{rank--nullity theorem}
+  \vspace*{\stretch{1}}
+
+  Suppose $V$ and $W$ are vector spaces and
+  \[
+    \theta : V \to W
+  \]
+  is a linear transformation, then
+  \[
+    \dim V = \dim(\Ker \theta) + \dim(\Img \theta)
+  \]
+
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{invertibility of linear transformations}
+  \vspace*{\stretch{1}}
+
+  Let $\theta$ be a linear transformation from $V$ to itself, then the
+  following conditions are equivalent:
+  \begin{enumerate}
+  \item $\theta$ is invertible,
+  \item $\Ker \theta = \{ 0 \}$,
+  \item $\Img \theta  = V$.
+  \end{enumerate}
+
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{endomorphism}
+  \vspace*{\stretch{1}}
+
+  A linear transformation from a vector space $V$ to itself is called
+  an \defn{endomorphism} of $V$.
+
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{flashcard}[Definition]{matrix of an endomorphism \\ $[\theta ]_{\B}$}
+  \vspace*{\stretch{1}}
+
+  Let $V$ be a vector space over $F$, and let $\theta$ be an
+  endomorphism of $V$. Once a basis $\B = \{ v_1, \ldots, v_n \}$ for
+  $V$ is chosen, then there are $n^2$ scalars
+  $a_{ij} \in F \; (1 \le i,j \le n)$ such that for all $i$:
+  \[
+    v_i \theta = a_{i1}v_1 + \cdots + a_{in}v_n.
+  \]
+  The $n\times n$ matrix $(a_{ij})$ is called the \defn{matrix of
+    $\theta$ relative to the basis $\B$}, and is denoted by
+  $[\theta ]_{\B}$.
+
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{endomorphism algebra \\$\End(V)$}
+  \vspace*{\stretch{1}}
+
+  If $V$ is a vector space over $F$, then the set of endomorphisms of
+  $V$ denoted $\End(V)$ form an algebra. Suppose
+  $\theta, \phi \in \End(V)$ and $\lambda \in F$, then we
+  define the functions $\theta + \phi$, $\theta \phi$ and
+  $\lambda \theta$ from $V$ to $V$ by
+  \begin{align*}
+    v(\theta + \phi) &= v\theta + v\phi, \\
+    v(\theta \phi) &= (v \theta) \phi, \\
+    v(\lambda \theta) &= \lambda (v \theta),
+  \end{align*}
+  for all $v \in V$. Then $\theta + \phi$, $\theta \phi$ and
+  $\lambda \theta$ are endomorphisms of $V$.
+
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{$\theta \to [\theta]_{\B}$\\ is an algebra homomorphism}
+  \vspace*{\stretch{1}}
+
+  Suppose that $\B$ is a basis of the vector space $V$, and $\theta$
+  and $\phi$ are endomorphisms of $V$, then
+  \begin{align*}
+    [\theta + \phi]_{\B} &= [\theta]_{\B} + [\phi]_{\B} \\
+    [\theta \phi]_{\B} &= [\theta]_{\B} [\phi]_{\B} \\
+    [\lambda \theta]_{\B} &= \lambda[\theta]_{\B}
+  \end{align*}
+
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{change of basis matrix}
+  \vspace*{\stretch{1}}
+
+  Let $\B = \{v_1, \ldots, v_n \}$ be a basis of the vector space V,
+  and let $\B' = \{v'_1, \ldots, v'_n \}$ be another basis of $V$.
+  Then for $1 \le i \le n$,
+  \[
+    v'_i = t_{i1} v_1 + \cdots + t_{in} v_n
+  \]
+  for certain scalars $t_{ij}$. The $n\times n$ matrix $T=(t_{ij})$ is
+  invertible and is called the \defn{change of basis matrix} from $\B$
+  to $\B'$.
+
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{change of basis}
+  \vspace*{\stretch{1}}
+
+  If $\B$ and $\B'$ are bases of $V$ and $\theta$ is an endomorphism
+  of $V$, then
+  \[
+    [\theta]_{\B} = T^{-1}[\theta]_{\B'}T,
+  \]
+  where $T$ is the change of basis matrix from $\B$ to $\B'$.
+
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+%%%%%%% Eigenvalue material should go here
+
+\begin{flashcard}[Proposition]{direct sums induce projections}
+  \vspace*{\stretch{1}}
+
+  Suppose that $V = U \oplus W$. Define $\pi : V \to V$ by
+  \[
+    (u+w)\pi = u \qquad \text{ for all } u\in U, w \in W.
+  \]
+  Then $\pi$ is an endomorphism of $V$. Further
+  \[
+    \Img \pi = U, \quad \Ker \pi = W, \, \text{ and } \, \pi^2 = \pi.
+  \]
+
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{projection}
+  \vspace*{\stretch{1}}
+
+  An endomorphism $\pi$ of a vector space $V$ satisfying $\pi^2 = \pi$
+  is called a \defn{projection} of $V$.
+
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Proposition]{projections induce direct sum decomposition}
+  \vspace*{\stretch{1}}
+
+  Suppose that $\pi$ is a projection of a vector space $V$. Then
+  \[
+    V = \Img \pi \oplus \Ker \pi
+  \]
+
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{representation of a group / degree}
+  \vspace*{\stretch{1}}
+
+  A \defn{representation} of $G$ over $F$ is a homomorphism
+  \[
+    \rho : G \to GL(n, F) \quad \text{ for some } n.
+  \]
+  The \defn{degree} of $\rho$ is the integer $n$.
+
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{equivalent representations}
+  \vspace*{\stretch{1}}
+
+  Let $\rho : G \to GL(m, F)$ and $\sigma : G \to GL(n, F)$ be
+  representations of $G$ over $F$. We say that $\rho$ is
+  \defn{equivalent} to $\sigma$ if $n=m$ and there exists an
+  invertible $n\times n$ matrix $T$ such that for all $g \in G$,
+  \[
+    g\sigma = T^{-1}(g\rho)T.
+  \]
+  Equivalence of representations is an equivalence relation.
+
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{trivial representation}
+  \vspace*{\stretch{1}}
+
+  The representation $\rho: G \to \GLnF{1}{F}$ defined by
+  \[
+    g \rho = (1)\qquad \text{ for all } g \in G,
+  \]
+  is called the \defn{trivial representation} of $G$.
+
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{faithful representation}
+  \vspace*{\stretch{1}}
+
+  A representation $\rho : G \to \GLnF{n}{F}$ is said to be
+  \defn{faithful} if $\Ker{\rho} = \{ 1 \}$; that is, if the identity
+  element of $G$ is the only element $g$ for which $g\rho = I_n$.
+
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Proposition]{$\rho$ faithful $\Leftrightarrow$
+    $\Img \rho \iso G$ }
+  \vspace*{\stretch{1}}
+
+  A representation $\rho$ of a finite group is faithful if and only if
+  $\Img \rho$ is isomorphic to $G$.
+
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{$FG$-module}
+  \vspace*{\stretch{1}}
+
+  Let $V$ be a vector space over $F$ and $G$ a group. Then $V$ is an
+  \defn{$FG$-module} if a multiplication $vg$ is defined and satisfies,
+  for all $u,v \in V, \lambda \in F$ and $g, h \in G$:
+  \begin{enumerate}
+  \item $vg \in V$
+  \item $v(gh) = (vg)h$
+  \item $v1 = v$
+  \item $(\lambda v)g = \lambda(vg)$
+  \item $(u+v)g = ug + vg$
+  \end{enumerate}
+
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{matrix of an endomorphism}
+  \vspace*{\stretch{1}}
+
+  Let $V$ be an $FG$-module, and let $\B$ be a basis of $V$. For each
+  $g\in G$, let
+  \[
+    [g]_{\B}
+  \]
+  denote the matrix of the endomorphism $v \mapsto vg$ of $V$,
+  relative to the basis $\B$.
+
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem 4.4]{representations induce $FG$-modules \\
+    and vice versa}
+  \vspace*{\stretch{1}}
+
+  \begin{enumerate}
+  \item If $\rho: G \to \GLnF{n}{F}$ is a representation of $G$ over
+    $F$, $V=F^n$, then $V$ becomes an $FG$-module by defining the
+    multiplication to be $vg = v(g\rho)$. Moreover there exists a
+    basis $\B$ of $V$ such that $g\rho = [g]_{\B}$.
+
+  \item If $V$ is an $FG$-module and $\B$ a basis of $V$, then
+    $\rho: g \mapsto [g]_{\B}$ is  a representation of $G$ over $F$.
+  \end{enumerate}
+
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Proposition 4.6]{defining the action of $G$ on a basis of $V$\\
+  induces an $FG$-module}
+  \vspace*{\stretch{1}}
+
+  Let $\B=\{v_1, \ldots , v_n\}$ be a basis for a vector space $V$
+  over $F$. If $v_i g$ is defined for all $v_i \in \B$ and for all
+  $g\in G$ and satisfies $\forall \, g, h\in G$, and
+  $\forall \, \lambda_1, \ldots, \lambda_n \in F$:
+  \begin{enumerate}
+  \item $v_i g \in V$
+  \item $v_i(gh) = (v_i g)h$
+  \item $v_i 1 = v_i$
+  \item $(\lambda_1 v_1 + \cdots + \lambda_n v_n)g =
+    \lambda_1(v_1 g) + \cdots + \lambda_n (v_n g)$
+  \end{enumerate}
+  Then $V$ is an $FG$-module.
+
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{the trivial $FG$-module}
+  \vspace*{\stretch{1}}
+
+  The \defn{trivial} $FG$-module is the 1-dimensional vector space $V$
+  over $F$ with
+  \[
+    vg = v \quad \text{ for all } \quad v\in V, \: g\in G.
+  \]
+
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{faithful $FG$-module}
+  \vspace*{\stretch{1}}
+
+  An $FG$-module $V$ is \defn{faithful} if the identity element of $G$
+  is the only element of $G$ for which
+  \[
+    vg = v \quad \text{for all} \quad v\in V.
+  \]
+
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{permutation module}
+  \vspace*{\stretch{1}}
+
+  Let $G$ be a subgroup of $S_n$. The $FG$-module $V$ with basis
+  $v_1, \ldots, v_n$ such that
+  \[
+    v_i g = v_{ig} \quad \text{for all } i, \text{ and all } g\in G,
+  \]
+  is called the \defn{permutation module} for $G$ over $F$. We call
+  $v_1, \ldots, v_n$ the \defn{natural basis} of $V$.
+
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}

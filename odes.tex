@@ -1,0 +1,505 @@
+\documentclass[avery5371,grid]{flashcards}
+
+%% Packages
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{ccicons}
+\usepackage[mathscr]{euscript}
+\usepackage{hyperref}
+\usepackage{url}
+
+\hypersetup{
+  pdftitle={Differential Equations and Linear Algebra Flash Cards},
+  pdfsubject={Math},
+  pdfauthor={Jason Underdown},
+  pdfkeywords={differential equations, linear algebra}
+}
+
+%% Math macros
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\B}{\mathscr{B}}
+\newcommand{\st}{\textrm{ such that }}
+%\renewcommand{\le}{\leqslant}
+%\renewcommand{\theta}{\vartheta}
+%\newcommand{\iso}{\cong}
+\newcommand{\abs}[1]{\ensuremath{\left| #1 \right|}}
+\newcommand{\set}[2]{\ensuremath{\left\{ #1 \, : \, #2 \right\}}}
+%\newcommand{\presentation}[2]{\ensuremath{\left< #1 \, : \, #2 \right>}}
+\newcommand{\normal}{\ensuremath{\lhd}}
+\DeclareMathOperator{\Ker}{\ensuremath{\textrm{Ker}}}
+\DeclareMathOperator{\Img}{\ensuremath{\textrm{Im}}}
+%\DeclareMathOperator{\End}{\ensuremath{\textrm{End}}}
+
+%% Text macros
+\newcommand{\defn}[1]{\textbf{#1}}
+
+%% Layout of flash cards
+\cardfrontstyle[\large\slshape]{headings}
+\cardbackstyle{empty}
+\cardfrontfoot{ODEs and Linear Algebra}
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{flashcard}[Copying]
+  { Flash Cards for Math 2250
+
+    \begin{center}
+      ``Differential Equations and Linear Algebra''
+    \end{center}
+  }
+  \vspace*{\stretch{1}}
+
+  \copyright\  2017 Jason Underdown \\ \\
+  This work is licensed under a \\
+  Creative Commons Attribution 4.0 \\
+  International License \\
+  \ccby \\ \\
+  \url{https://creativecommons.org/licenses/by/4.0/}
+
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{order}
+  \vspace*{\stretch{1}}
+
+  The \defn{order} of a differential equation (DE) is the order of the
+  highest derivative which occurs in the equation.
+
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{ODE and PDE}
+  \vspace*{\stretch{1}}
+
+  An \defn{ODE} (ordinary differential equation) is a DE that only
+  contains total derivatives.
+  \bigskip
+
+  A \defn{PDE} (partial differential equation) is a DE which contains
+  at least one partial derivative.
+
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{directly integrable}
+  \vspace*{\stretch{1}}
+
+  The DE, $y' = F(x,y)$, is \defn{directly integrable} if
+  \[
+    F(x,y)=f(x).
+  \]
+  Such an equation may be solved by computing:
+  \[
+    y(x) = \int f(x) \, dx.
+  \]
+
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{general solution}
+  \vspace*{\stretch{1}}
+
+  A \defn{general solution} to a DE is any continuous function which
+  satisfies the DE and contains at least one constant of integration.
+
+  \bigskip
+
+  A general solution is actually a collection or \emph{family} of
+  functions parametrized by the integration constant(s).
+
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{initial value problem \\(IVP)}
+  \vspace*{\stretch{1}}
+
+  An \defn{initial value problem} or \defn{IVP} is a differential
+  equation coupled with at least one initial condition, for example,
+  \[
+    y' = F(x,y) \qquad y(0) = y_0.
+  \]
+
+  A second order IVP will require two initial conditions, $y(0)=y_0$
+  and $y'(0)=v_0$. In general, an $n$th order IVP will require $n$
+  initial conditions.
+
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{particular solution}
+  \vspace*{\stretch{1}}
+
+  A \defn{particular solution} is a solution to an IVP. In other words
+  it is a single function which satisfies both the DE and any initial
+  condition(s).
+
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Algorithm]{slope field plot}
+  \vspace*{\stretch{1}}
+
+  Given a first--order DE, $y' = F(x,y)$, one can graphically
+  approximate solutions to the DE by generating a \defn{slope field
+    plot}:
+  \begin{enumerate}
+  \item Divide a region of the $xy$--plane into a grid.
+  \item For each cell in the grid compute $m = F(\bar{x}, \bar{y})$,
+    where $(\bar{x}, \bar{y})$ is the midpoint of the cell, and plot a
+    small bar with slope $m$ centered on the point
+    $(\bar{x}, \bar{y})$.
+  \end{enumerate}
+
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{existence}
+  \vspace*{\stretch{1}}
+
+  \begin{equation}
+    \label{eq:first-order-ivp}
+    y' = F(x,y) \qquad y(a) = b
+  \end{equation}
+
+  \textbf{If} $F(x,y)$ is continuous on some rectangle $R$ containing
+  the point $(a,b)$ in its interior, \textbf{then} there exists an
+  open interval $I$ which contains $a$ such that
+  \eqref{eq:first-order-ivp} has a solution on $I$. Note that the
+  width of $I$ may be shorter than the width of $R$.
+
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{uniqueness}
+  \vspace*{\stretch{1}}
+
+  \begin{equation}
+    \tag{\ref{eq:first-order-ivp}}
+    y' = F(x,y) \qquad y(a) = b
+  \end{equation}
+
+  \textbf{If} $F(x,y)$ and $F_y(x,y)$ are both continuous on some
+  rectangle $R$ containing the point $(a,b)$ in its interior,
+  \textbf{then} there exists an open interval $I$ which contains $a$
+  such that \eqref{eq:first-order-ivp} has a \emph{unique} solution on
+  $I$. Note that the width of $I$ may be shorter than the width of
+  $R$.
+
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{separable}
+  \vspace*{\stretch{1}}
+
+  The DE $y' = F(x,y)$ is called \defn{separable} if the right hand
+  side function can be expressed as a product of two single variable
+  functions, for example,
+  \[
+    F(x,y) = f(x)g(y).
+  \]
+  Such equations may be solved by ``separating the variables'', that
+  is, computing:
+  \[
+    \int \frac{1}{g(y)} \, dy = \int f(x) \, dx.
+  \]
+
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{population model}
+  \vspace*{\stretch{1}}
+
+  The \defn{population model} describes exponential growth and decay. It
+  is an IVP:
+  \[
+    P' = kP \qquad P(0) = P_0.
+  \]
+  This model has particular solution:
+  \[
+    P(t) = P_0 e^{kt}.
+  \]
+  Using the particular solution to extrapolate values may not be
+  reasonable because exponential growth is often unphysical
+  (impossible) over a long time scale.
+
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{diffusion model \\ (Newton cooling and heating)}
+  \vspace*{\stretch{1}}
+
+  The \defn{diffusion model} describes how something diffuses or
+  spreads into its \emph{ambient} environment.
+  \[
+    y' = k(A-y) \qquad y(0) = y_0
+  \]
+  This model has solution,
+  \[
+    y(t) = A - Ce^{-kt} \qquad C = A-y_0.
+  \]
+  Do not try to memorize the solution! Solve the model via separation
+  of variables.
+
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{linear DE}
+  \vspace*{\stretch{1}}
+
+  An ODE is \defn{linear} if it can be written in the form:
+  \[
+    a_n(x)y^{(n)} + a_{n-1}(x)y^{(n-1)} + \cdots + a_1(x)y' + a_0(x)y
+    = f(x).
+  \]
+  Example of first and second order, \emph{linear}  ODEs:
+  \begin{align*}
+    a_1(x)y' + a_0(x)y &= f(x) \\
+    a_2(x)y'' + a_1(x)y' + a_0(x)y &= f(x)
+  \end{align*}
+
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{integrating factor}
+  \vspace*{\stretch{1}}
+
+  Given a linear, first order ODE:
+  \[
+    a_1(x)y' + a_0(x)y = f(x),
+  \]
+  first divide by $a_1(x)$ to yield:
+  \[
+    y' + p(x)y = q(x).
+  \]
+  The \defn{integrating factor} is: \( I(x) = e^{\int \! p(x) dx}. \)
+
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Algorithm]{integrating factor method}
+  \vspace*{\stretch{1}}
+
+  \begin{enumerate}
+  \item Put in standard form:
+    \(
+      y' + p(x)y = q(x).
+    \)
+  \item Multiply both sides by $I(x) = e^{\int\! p(x)dx}$, \\
+    and integrate:
+
+    \(
+    y I(x) = \displaystyle \int q(x)I(x) \, dx
+    \)
+  \item
+    \(
+    y = \displaystyle e^{-\int\! p(x) dx}
+    \left[ \int \left( q(x)e^{\int \!p(x) dx} \right)\, dx \right]
+    \)
+
+    Don't forget the $+C$ when integrating!
+
+  \end{enumerate}
+
+
+
+
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{autonomous}
+  \vspace*{\stretch{1}}
+
+  The DE $y' = F(x,y)$ is called \defn{autonomous} if $F(x,y)$ is just
+  a function of the dependent variable $y$, that is if:
+  \[
+    F(x,y) = g(y).
+  \]
+  Such equations can be analyzed by finding the roots of the equation
+  $g(y)=0$ and then creating a phase diagram.
+
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+
+% \begin{flashcard}[Definition]{vector space}
+%   \vspace*{\stretch{1}}
+
+%   A \defn{vector space} over a field $F$ is a set $V$, equipped with
+%   addition and scalar multiplication satisfying:
+%   \begin{enumerate}
+%   \item $V$ is an abelian group under addition;
+%   \item $\forall \, u,v \in V$ and $\forall \, \lambda, \mu \in F$,
+%     \begin{enumerate}
+%     \item $\lambda(u + v) = \lambda u + \lambda v$
+%     \item $(\lambda + \mu)v = \lambda v + \mu v$
+%     \item $(\lambda \mu) v = \lambda (\mu v)$
+%     \item $1 v = v$
+%     \end{enumerate}
+%   \end{enumerate}
+
+%   \vspace*{\stretch{1}}
+% \end{flashcard}
+
+% \begin{flashcard}[Definition]{linear dependence / linear independence}
+%   \vspace*{\stretch{1}}
+
+%   We say that $v_1, \ldots, v_n$ are \defn{linearly dependent} if
+%   \[
+%     \lambda_1 v_1 + \cdots + \lambda_n v_n = 0
+%   \]
+%   for some $\lambda_1, \ldots, \lambda_n \in F$ not all zero,
+%   otherwise the vectors $v_1, \ldots, v_n$ are \defn{linearly
+%     independent}. \vspace*{\stretch{1}}
+% \end{flashcard}
+
+% \begin{flashcard}[Definition]{linear combination / span}
+%   \vspace*{\stretch{1}}
+
+%   Let $v_1, \ldots, v_n$ be vectors in a vector space $V$ over $F$. A
+%   vector $v$ in $V$ is a \defn{linear combination} of
+%   $v_1, \ldots, v_n$ if
+%   \[
+%     v = \lambda_1 v_1 + \cdots + \lambda_n v_n
+%   \]
+%   for some $\lambda_1, \ldots, \lambda_n \in F$.
+%   \vfill
+
+%   The vectors $v_1, \ldots, v_n$ \defn{span} $V$ if every vector in
+%   $V$ is a linear combination of $v_1, \ldots, v_n$.
+
+%   \vspace*{\stretch{1}}
+% \end{flashcard}
+
+% \begin{flashcard}[Definition]{basis}
+%   \vspace*{\stretch{1}}
+
+%   The vectors $v_1, \ldots , v_n \in V$ form a \defn{basis} of V if
+%   they
+%   \begin{enumerate}
+%   \item \emph{span} V, and are
+%   \item \emph{linearly independent}.
+%   \end{enumerate}
+
+%   \vspace*{\stretch{1}}
+% \end{flashcard}
+
+% \begin{flashcard}[Definition/Theorem]{subspace / conditions for a subspace}
+%   \vspace*{\stretch{1}}
+
+%   A \defn{subspace} of a vector space $V$ over $F$ is a subset of $V$
+%   which is itself a vector space under the operations inherited from
+%   $V$.
+%   \vfill
+
+%   A subset $U$ of a vector space $V$ is a subspace iff
+%   \begin{enumerate}
+%   \item $0\in U$;
+%   \item if $u,v \in U$ then $u+v \in U$;
+%   \item if $\lambda \in F$ and $u \in U$ then $\lambda u \in U$.
+%   \end{enumerate}
+
+%   \vspace*{\stretch{1}}
+% \end{flashcard}
+
+% \begin{flashcard}[Definition]{linear transformation}
+%   \vspace*{\stretch{1}}
+
+%   Let $V$ and $W$ be vector spaces over $F$. A \defn{linear
+%     transformation} from $V$ to $W$ is a function
+%   \[
+%     \theta : V \to W
+%   \]
+%   which satisfies
+%   \begin{enumerate}
+%   \item $(u + v)\theta = u\theta + v\theta$ for all $u,v \in V$, and
+%   \item $(\lambda u)\theta = \lambda (v\theta)$ for all
+%     $\lambda \in F$ and $v \in V$.
+%   \end{enumerate}
+
+%   \vspace*{\stretch{1}}
+% \end{flashcard}
+
+% \begin{flashcard}[Theorem]{rank--nullity theorem}
+%   \vspace*{\stretch{1}}
+
+%   Suppose $V$ and $W$ are vector spaces and
+%   \[
+%     \theta : V \to W
+%   \]
+%   is a linear transformation, then
+%   \[
+%     \dim V = \dim(\Ker \theta) + \dim(\Img \theta)
+%   \]
+
+%   \vspace*{\stretch{1}}
+% \end{flashcard}
+
+% \begin{flashcard}[Theorem]{invertibility of linear transformations}
+%   \vspace*{\stretch{1}}
+
+%   Let $\theta$ be a linear transformation from $V$ to itself, then the
+%   following conditions are equivalent:
+%   \begin{enumerate}
+%   \item $\theta$ is invertible,
+%   \item $\Ker \theta = \{ 0 \}$,
+%   \item $\Img \theta  = V$.
+%   \end{enumerate}
+
+%   \vspace*{\stretch{1}}
+% \end{flashcard}
+
+
+% \begin{flashcard}[Definition]{matrix of an endomorphism \\ $[\theta ]_{\B}$}
+%   \vspace*{\stretch{1}}
+
+%   Let $V$ be a vector space over $F$, and let $\theta$ be an
+%   endomorphism of $V$. Once a basis $\B = \{ v_1, \ldots, v_n \}$ for
+%   $V$ is chosen, then there are $n^2$ scalars
+%   $a_{ij} \in F \; (1 \le i,j \le n)$ such that for all $i$:
+%   \[
+%     v_i \theta = a_{i1}v_1 + \cdots + a_{in}v_n.
+%   \]
+%   The $n\times n$ matrix $(a_{ij})$ is called the \defn{matrix of
+%     $\theta$ relative to the basis $\B$}, and is denoted by
+%   $[\theta ]_{\B}$.
+
+%   \vspace*{\stretch{1}}
+% \end{flashcard}
+
+
+% \begin{flashcard}[Definition]{change of basis matrix}
+%   \vspace*{\stretch{1}}
+
+%   Let $\B = \{v_1, \ldots, v_n \}$ be a basis of the vector space V,
+%   and let $\B' = \{v'_1, \ldots, v'_n \}$ be another basis of $V$.
+%   Then for $1 \le i \le n$,
+%   \[
+%     v'_i = t_{i1} v_1 + \cdots + t_{in} v_n
+%   \]
+%   for certain scalars $t_{ij}$. The $n\times n$ matrix $T=(t_{ij})$ is
+%   invertible and is called the \defn{change of basis matrix} from $\B$
+%   to $\B'$.
+
+%   \vspace*{\stretch{1}}
+% \end{flashcard}
+
+% \begin{flashcard}[Theorem]{change of basis}
+%   \vspace*{\stretch{1}}
+
+%   If $\B$ and $\B'$ are bases of $V$ and $\theta$ is an endomorphism
+%   of $V$, then
+%   \[
+%     [\theta]_{\B} = T^{-1}[\theta]_{\B'}T,
+%   \]
+%   where $T$ is the change of basis matrix from $\B$ to $\B'$.
+
+%   \vspace*{\stretch{1}}
+% \end{flashcard}
+
+\end{document}

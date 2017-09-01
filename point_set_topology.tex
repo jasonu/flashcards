@@ -1,0 +1,268 @@
+\documentclass[avery5371,grid]{flashcards}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{ccicons}
+\usepackage{mathrsfs}
+\usepackage{url}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\st}{\textrm{ such that }}
+\renewcommand{\le}{\leqslant}
+\newcommand{\set}[2]{\ensuremath{\left\{ #1 \, : \, #2 \right\}}}
+\newcommand{\presentation}[2]{\ensuremath{\left< #1 \, : \, #2 \right>}}
+
+\newcommand{\defn}[1]{\textbf{#1}}
+
+\cardfrontstyle[\large\slshape]{headings}
+\cardbackstyle{empty}
+\cardfrontfoot{Representation Theory}
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{flashcard}[Copying]
+  { Flash Cards for the Book:
+
+    \begin{center}
+      ``Representations and Characters of Groups'' \\
+      by Gordon James and Martin Liebeck
+    \end{center}
+  }
+  \vspace*{\stretch{1}}
+  \copyright\ 2017 Jason Underdown \\
+
+  These flash cards and the accompanying \LaTeX \, source code are
+  licensed under a
+  \begin{center}
+    Creative Commons \\
+    Attribution--NonCommercial--ShareAlike 4.0 International License \\
+    \ccbyncsa
+  \end{center}
+  For more information: \url{creativecommons.org}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{group}
+  \vspace*{\stretch{1}}
+
+  A \defn{group} consists of a set $G$, together with a rule for
+  combining any two elements $g, h \in G$ to form another element of
+  $G$ satisfying:
+  \begin{enumerate}
+  \item $\forall g,h,k \in G, (gh)k = g(hk)$
+  \item $\exists e \in G \st \forall g \in G, eg=ge=g$
+  \item $\forall g \in G, \exists g^{-1} \in G \st gg^{-1} = g^{-1}g = e$
+  \end{enumerate}
+
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{subgroup}
+\vspace*{\stretch{1}}
+
+Let $G$ be a group. A subset $H$ of $G$ is a \defn{subgroup} if $H$ is
+itself a group under the operation inherited from $G$.
+\[
+  H \le G
+\]
+
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{dihedral group $D_{2n}$}
+  \vspace*{\stretch{1}}
+  \[
+    D_{2n} = \presentation{a,b}{a^n=1, b^2=1, b^{-1}ab=a^{-1}}
+  \]
+
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{cyclic group $C_n$}
+  \vspace*{\stretch{1}}
+
+  \[
+    C_n = \left\{ 1, a, a^2, \ldots, a^{n-1} \right\}
+  \]
+  \[
+    C_n = \presentation{a}{a^n=1}
+  \]
+
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{quaternion group $Q_8$}
+  \vspace*{\stretch{1}}
+
+  \[
+    Q_8 = \presentation{a,b}{a^4 = 1, a^2 = b^2, b^{-1}ab = a^{-1}}
+  \]
+
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{alternating group $A_n$}
+  \vspace*{\stretch{1}}
+  \[
+    A_n = \left\{ g \in S_n : g \text{ is an even permutation} \right\}
+  \]
+  Recall that every permutation $g \in S_n$ can be expressed as a
+  product of transpositions. An \defn{even} permutation has an even
+  number of transpositions, and an \defn{odd} permutation has an odd
+  number of transpositions.
+
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{direct product}
+  \vspace*{\stretch{1}}
+
+  Let $G$ and $H$ be groups, consider
+  \[
+    G \times H = \set{(g,h)}{g \in G \text{ and } h \in H}.
+  \]
+  Define a product operation on $G \times H$ by
+  \[
+    (g,h)(g',h') = (gg', hh').
+  \]
+  The group $G \times H$ is called the \defn{direct product} of $G$ and
+  $H$.
+
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[]{}
+  \vspace*{\stretch{1}}
+
+
+
+
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[]{}
+  \vspace*{\stretch{1}}
+
+
+
+
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{flashcard}[]{}
+  \vspace*{\stretch{1}}
+
+
+
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[]{}
+\vspace*{\stretch{1}}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[]{}
+\vspace*{\stretch{1}}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[]{}
+\vspace*{\stretch{1}}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[]{}
+\vspace*{\stretch{1}}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[]{}
+\vspace*{\stretch{1}}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[]{}
+\vspace*{\stretch{1}}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[]{}
+\vspace*{\stretch{1}}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[]{}
+\vspace*{\stretch{1}}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[]{}
+\vspace*{\stretch{1}}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{flashcard}[]{}
+\vspace*{\stretch{1}}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[]{}
+\vspace*{\stretch{1}}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[]{}
+\vspace*{\stretch{1}}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[]{}
+\vspace*{\stretch{1}}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[]{}
+\vspace*{\stretch{1}}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[]{}
+\vspace*{\stretch{1}}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[]{}
+\vspace*{\stretch{1}}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[]{}
+\vspace*{\stretch{1}}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[]{}
+\vspace*{\stretch{1}}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[]{}
+\vspace*{\stretch{1}}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\end{document}
