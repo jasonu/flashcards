@@ -760,6 +760,103 @@ itself a group under the operation inherited from $G$.
 \end{flashcard}
 
 
+\begin{flashcard}[Definition]{permutation matrix}
+  \vspace*{\stretch{1}}
+
+  A \defn{permutation matrix} is any square matrix which has precisely
+  one nonzero entry in each row and each column and that entry is 1.
+
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem 4.12]{$FG$-modules and equivalent representations}
+  \vspace*{\stretch{1}}
+
+  Suppose that $V$ is an $FG$-module with basis $\B$ and
+  $\rho : g \mapsto [g]_{\B}$ is a representation of $G$ over $F$.
+  \begin{enumerate}
+  \item If $\B'$ is a basis of $V$, then the representation
+    $\phi : g \mapsto [g]_{\B'}$ is equivalent to $\rho$.
+  \item If $\sigma$ is a representation of $G$, equivalent to $\rho$,
+    then there is a basis, $\B''$ of $V$ such that:
+    $\sigma : g \mapsto [g]_{\B''}$.
+  \end{enumerate}
+
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{$FG$-submodule}
+  \vspace*{\stretch{1}}
+
+  Let $V$ be an $FG$-module. A subset $W$ of $V$ is said to be an
+  \defn{$FG$-submodule} of $V$ if $W$ is a subspace and $wg \in W$ for
+  all $w\in W$ and for all $g\in G$.
+
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[irreducible $FG$-module]{}
+  \vspace*{\stretch{1}}
+
+  An $FG$-module $V$ is said to be \defn{irreducible} if it is
+  non--zero and it has no $FG$-submodules apart from $\{0\}$ and $V$.
+
+  \bigskip
+
+  If $V$ has an $FG$-submodule $W$ with $W$ not equal to $\{0\}$ or
+  $V$, then $V$ is \defn{reducible}.
+
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{the vector space $FG$}
+  \vspace*{\stretch{1}}
+
+  Let $G$ be a finite group whose elements are $g_1, \ldots, g_n$ and
+  let $F$ be $\R$ or $\C$. We can define a \defn{vector space $FG$} over
+  $F$ with basis, $\{g_1, \ldots, g_n \}$. The elements of $FG$ are
+  all expressions of the form:
+  \[
+    \lambda_1 g_1 + \cdots + \lambda_n g_n \qquad (\lambda_i \in F)
+  \]
+  where for $u,v \in FG$ and $\alpha \in F$
+  \[
+    u+v = \sum_{i=1}^n (\lambda_i (lambda_i + \mu_i)g_i \qquad
+    \alpha u = \sum_{i=1}^n (\lambda_i (lambda_i + \mu_i)g_i
+  \]
+
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{group algebra multiplication}
+  \vspace*{\stretch{1}}
+
+  $FG$ carries more structure than just that of a vector space---we
+  can use the product of $G$ to define multiplication in $FG$:
+  \begin{align*}
+    \left( \sum_{g\in G} \lambda_g g \right) \left( \sum_{h\in G} \mu_h h \right)
+    &= \sum_{g,h \in G} \lambda_g \mu_h (gh) \\
+    &= \sum_{g \in G} \sum_{h \in G} (\lambda_g \mu_{h^{-1}g}) g
+  \end{align*}
+
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{group algebra}
+  \vspace*{\stretch{1}}
+
+  The vector space $FG$, with multiplication defined by
+  \[
+    \left( \sum_{g\in G} \lambda_g g \right) \left( \sum_{h\in G}
+      \mu_h h \right) = \sum_{g,h \in G} \lambda_g \mu_h (gh)
+  \]
+  ($\lambda_g, \mu_h \in F$), is called the \defn{group algebra} of
+  $G$ over $F$.
+
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{document}
