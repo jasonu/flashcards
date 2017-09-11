@@ -8,6 +8,8 @@
 \usepackage[mathscr]{euscript}
 \usepackage{url}
 
+% for saving the enumerate counter over minipages
+\newcounter{mytemp}
 
 %% Math macros
 \newcommand{\N}{\mathbb{N}}
@@ -176,7 +178,7 @@ itself a group under the operation inherited from $G$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{flashcard}[Theorem]{Lagrange's theorem}
+\begin{flashcard}[Theorem 1.6]{Lagrange's theorem}
   \vspace*{\stretch{1}}
   If $G$ is a finite group and $H$ is a subgroup of $G$, then
   $\abs{H}$ divides $\abs{G}$.
@@ -252,7 +254,7 @@ itself a group under the operation inherited from $G$.
   \vspace*{\stretch{1}}
 \end{flashcard}
 
-\begin{flashcard}[Theorem]{first isomorphism theorem}
+\begin{flashcard}[Theorem 1.10]{first isomorphism theorem}
   \vspace*{\stretch{1}}
 
   Suppose that $G$ and $H$ are groups and let $\theta: G \to H$ be a
@@ -332,7 +334,18 @@ itself a group under the operation inherited from $G$.
   \vspace*{\stretch{1}}
 \end{flashcard}
 
-\begin{flashcard}[Definition/Theorem]{subspace / conditions for a subspace}
+\begin{flashcard}[Theorem 2.4]{a set of linearly independent vectors
+    can be extended to a basis}
+  \vspace*{\stretch{1}}
+
+  If $v_1, \ldots, v_k$ are linearly independent vectors in $V$, then
+  there exist $v_{k+1}, \ldots, v_n$ in $V$ such that
+  $v_1, \ldots, v_n$ form a basis of $V$.
+
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition / Theorem 2.5]{subspace / conditions for a subspace}
   \vspace*{\stretch{1}}
 
   A \defn{subspace} of a vector space $V$ over $F$ is a subset of $V$
@@ -371,7 +384,7 @@ itself a group under the operation inherited from $G$.
   \vspace*{\stretch{1}}
 \end{flashcard}
 
-\begin{flashcard}[Theorem]{conditions for a direct sum}
+\begin{flashcard}[Theorem 2.9]{conditions for a direct sum}
   \vspace*{\stretch{1}}
 
   Suppose that $V = U + W$, with $u_1, \ldots, u_r$ a basis of $U$ and
@@ -386,7 +399,7 @@ itself a group under the operation inherited from $G$.
   \vspace*{\stretch{1}}
 \end{flashcard}
 
-\begin{flashcard}[Theorem]{direct sum of direct sums}
+\begin{flashcard}[Theorem 2.10]{direct sum of direct sums}
   \vspace*{\stretch{1}}
 
   Suppose $U, W, U_1, \ldots, U_a, W_1, \ldots, W_b$ are subspaces of
@@ -453,7 +466,8 @@ itself a group under the operation inherited from $G$.
   \vspace*{\stretch{1}}
 \end{flashcard}
 
-\begin{flashcard}[Theorem]{invertibility of linear transformations}
+\begin{flashcard}[Theorem 2.14]{invertibility of linear
+    transformations}
   \vspace*{\stretch{1}}
 
   Let $\theta$ be a linear transformation from $V$ to itself, then the
@@ -478,7 +492,7 @@ itself a group under the operation inherited from $G$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{flashcard}[Definition]{matrix of an endomorphism \\ $[\theta ]_{\B}$}
+\begin{flashcard}[Definition 2.17]{matrix of an endomorphism \\ $[\theta ]_{\B}$}
   \vspace*{\stretch{1}}
 
   Let $V$ be a vector space over $F$, and let $\theta$ be an
@@ -528,7 +542,7 @@ itself a group under the operation inherited from $G$.
   \vspace*{\stretch{1}}
 \end{flashcard}
 
-\begin{flashcard}[Definition]{change of basis matrix}
+\begin{flashcard}[Definition 2.23]{change of basis matrix}
   \vspace*{\stretch{1}}
 
   Let $\B = \{v_1, \ldots, v_n \}$ be a basis of the vector space V,
@@ -544,7 +558,7 @@ itself a group under the operation inherited from $G$.
   \vspace*{\stretch{1}}
 \end{flashcard}
 
-\begin{flashcard}[Theorem]{change of basis}
+\begin{flashcard}[Theorem 2.24]{change of basis}
   \vspace*{\stretch{1}}
 
   If $\B$ and $\B'$ are bases of $V$ and $\theta$ is an endomorphism
@@ -559,7 +573,17 @@ itself a group under the operation inherited from $G$.
 
 %%%%%%% Eigenvalue material should go here
 
-\begin{flashcard}[Proposition]{direct sums induce projections}
+\begin{flashcard}[Theorem 2.26]{endomorphism of a vector space and
+    eigenvalues}
+  \vspace*{\stretch{1}}
+
+  Let $V$ be a non--zero vector space over $\C$, and let $\theta$ be
+  an endomorphism of $V$, then $\theta$ has an eigenvalue.
+
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Proposition 2.29]{direct sums induce projections}
   \vspace*{\stretch{1}}
 
   Suppose that $V = U \oplus W$. Define $\pi : V \to V$ by
@@ -574,7 +598,7 @@ itself a group under the operation inherited from $G$.
   \vspace*{\stretch{1}}
 \end{flashcard}
 
-\begin{flashcard}[Definition]{projection}
+\begin{flashcard}[Definition 2.30]{projection}
   \vspace*{\stretch{1}}
 
   An endomorphism $\pi$ of a vector space $V$ satisfying $\pi^2 = \pi$
@@ -583,7 +607,8 @@ itself a group under the operation inherited from $G$.
   \vspace*{\stretch{1}}
 \end{flashcard}
 
-\begin{flashcard}[Proposition]{projections induce direct sum decomposition}
+\begin{flashcard}[Proposition2.32]{projections induce direct sum
+    decomposition}
   \vspace*{\stretch{1}}
 
   Suppose that $\pi$ is a projection of a vector space $V$. Then
@@ -594,7 +619,7 @@ itself a group under the operation inherited from $G$.
   \vspace*{\stretch{1}}
 \end{flashcard}
 
-\begin{flashcard}[Definition]{representation of a group / degree}
+\begin{flashcard}[Definition 3.1]{representation of a group / degree}
   \vspace*{\stretch{1}}
 
   A \defn{representation} of $G$ over $F$ is a homomorphism
@@ -606,7 +631,7 @@ itself a group under the operation inherited from $G$.
   \vspace*{\stretch{1}}
 \end{flashcard}
 
-\begin{flashcard}[Definition]{equivalent representations}
+\begin{flashcard}[Definition 3.3]{equivalent representations}
   \vspace*{\stretch{1}}
 
   Let $\rho : G \to GL(m, F)$ and $\sigma : G \to GL(n, F)$ be
@@ -621,7 +646,7 @@ itself a group under the operation inherited from $G$.
   \vspace*{\stretch{1}}
 \end{flashcard}
 
-\begin{flashcard}[Definition]{trivial representation}
+\begin{flashcard}[Definition 3.5]{trivial representation}
   \vspace*{\stretch{1}}
 
   The representation $\rho: G \to \GLnF{1}{F}$ defined by
@@ -633,7 +658,7 @@ itself a group under the operation inherited from $G$.
   \vspace*{\stretch{1}}
 \end{flashcard}
 
-\begin{flashcard}[Definition]{faithful representation}
+\begin{flashcard}[Definition3.6]{faithful representation}
   \vspace*{\stretch{1}}
 
   A representation $\rho : G \to \GLnF{n}{F}$ is said to be
@@ -643,7 +668,7 @@ itself a group under the operation inherited from $G$.
   \vspace*{\stretch{1}}
 \end{flashcard}
 
-\begin{flashcard}[Proposition]{$\rho$ faithful $\Leftrightarrow$
+\begin{flashcard}[Proposition 3.7]{$\rho$ faithful $\Leftrightarrow$
     $\Img \rho \iso G$ }
   \vspace*{\stretch{1}}
 
@@ -653,7 +678,7 @@ itself a group under the operation inherited from $G$.
   \vspace*{\stretch{1}}
 \end{flashcard}
 
-\begin{flashcard}[Definition]{$FG$-module}
+\begin{flashcard}[Definition 4.2]{$FG$-module}
   \vspace*{\stretch{1}}
 
   Let $V$ be a vector space over $F$ and $G$ a group. Then $V$ is an
@@ -670,7 +695,7 @@ itself a group under the operation inherited from $G$.
   \vspace*{\stretch{1}}
 \end{flashcard}
 
-\begin{flashcard}[Definition]{matrix of an endomorphism}
+\begin{flashcard}[Definition 4.3]{matrix of an endomorphism}
   \vspace*{\stretch{1}}
 
   Let $V$ be an $FG$-module, and let $\B$ be a basis of $V$. For each
@@ -721,7 +746,7 @@ itself a group under the operation inherited from $G$.
   \vspace*{\stretch{1}}
 \end{flashcard}
 
-\begin{flashcard}[Definition]{the trivial $FG$-module}
+\begin{flashcard}[Definition 4.8 (1)]{the trivial $FG$-module}
   \vspace*{\stretch{1}}
 
   The \defn{trivial} $FG$-module is the 1-dimensional vector space $V$
@@ -733,7 +758,7 @@ itself a group under the operation inherited from $G$.
   \vspace*{\stretch{1}}
 \end{flashcard}
 
-\begin{flashcard}[Definition]{faithful $FG$-module}
+\begin{flashcard}[Definition 4.8 (2)]{faithful $FG$-module}
   \vspace*{\stretch{1}}
 
   An $FG$-module $V$ is \defn{faithful} if the identity element of $G$
@@ -745,7 +770,7 @@ itself a group under the operation inherited from $G$.
   \vspace*{\stretch{1}}
 \end{flashcard}
 
-\begin{flashcard}[Definition]{permutation module}
+\begin{flashcard}[Definition 4.10]{permutation module}
   \vspace*{\stretch{1}}
 
   Let $G$ be a subgroup of $S_n$. The $FG$-module $V$ with basis
@@ -785,7 +810,7 @@ itself a group under the operation inherited from $G$.
   \vspace*{\stretch{1}}
 \end{flashcard}
 
-\begin{flashcard}[Definition]{$FG$-submodule}
+\begin{flashcard}[Definition 5.1]{$FG$-submodule}
   \vspace*{\stretch{1}}
 
   Let $V$ be an $FG$-module. A subset $W$ of $V$ is said to be an
@@ -795,7 +820,7 @@ itself a group under the operation inherited from $G$.
   \vspace*{\stretch{1}}
 \end{flashcard}
 
-\begin{flashcard}[irreducible $FG$-module]{}
+\begin{flashcard}[Definition 5.3]{irreducible / reducible $FG$-module}
   \vspace*{\stretch{1}}
 
   An $FG$-module $V$ is said to be \defn{irreducible} if it is
@@ -819,10 +844,11 @@ itself a group under the operation inherited from $G$.
   \[
     \lambda_1 g_1 + \cdots + \lambda_n g_n \qquad (\lambda_i \in F)
   \]
-  where for $u,v \in FG$ and $\alpha \in F$
+  where for $u=\sum \lambda_i g_i, v = \sum \mu_i g_i \in FG$ and
+  $\alpha \in F$
   \[
-    u+v = \sum_{i=1}^n (\lambda_i (lambda_i + \mu_i)g_i \qquad
-    \alpha u = \sum_{i=1}^n (\lambda_i (lambda_i + \mu_i)g_i
+    u+v = \sum_{i=1}^n (\lambda_i + \mu_i)g_i \qquad
+    \alpha u = \sum_{i=1}^n (\alpha \lambda_i) g_i
   \]
 
   \vspace*{\stretch{1}}
@@ -842,7 +868,7 @@ itself a group under the operation inherited from $G$.
   \vspace*{\stretch{1}}
 \end{flashcard}
 
-\begin{flashcard}[Definition]{group algebra}
+\begin{flashcard}[Definition 6.3]{group algebra}
   \vspace*{\stretch{1}}
 
   The vector space $FG$, with multiplication defined by
@@ -856,7 +882,185 @@ itself a group under the operation inherited from $G$.
   \vspace*{\stretch{1}}
 \end{flashcard}
 
+\begin{flashcard}[Definition 6.5]{regular $FG$-module}
+  \vspace*{\stretch{1}}
 
+  Let $G$ be a finite group and $F$ be $\R$ or $\C$. The vector space
+  $FG$ with the natural multiplication $vg$ ($v \in FG, g \in G$), is
+  called the \defn{regular} $FG$-module.
+
+  \bigskip
+
+  Note that the regular $FG$-module has dimension equal to $\abs{G}$.
+
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition 6.5]{regular representation of $G$ over
+    $F$}
+  \vspace*{\stretch{1}}
+
+  The representation $g \mapsto [g]_{\B}$ obtained by taking $\B$ to
+  be the natural basis of $FG$ is called the \defn{regular
+    representation} of $G$ over $F$.
+
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Proposition 6.6]{faithfulness of regular
+    $FG$-modules}
+  \vspace*{\stretch{1}}
+
+  The regular $FG$-module is faithful.
+
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition 6.8]{how an $FG$ module acts on itself
+    via multiplication}
+  \vspace*{\stretch{1}}
+
+  Let $V$ be an $FG$-module, $v \in V$ and $r \in FG$, suppose
+  $r = \sum_{g\in G} \mu_g g$, then we define $vr$ to mean
+  \[
+    vr = \sum_{g \in G} \mu_g(vg).
+  \]
+
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Proposition 6.10]{multiplication and distributivity
+    in an $FG$-module}
+  \vspace*{\stretch{1}}
+
+  Suppose that $V$ is an $FG$-module. The following properties hold
+  for all $u, v \in V$, for all $\lambda \in F$, and for all
+  $r, s \in FG$:
+
+  \begin{minipage}{0.4\linewidth}
+    \begin{enumerate}
+    \item $vr \in V$,
+    \item $v(rs) = (vr)s$,
+    \item $v1 = v$,
+      \setcounter{mytemp}{\value{enumi}}
+    \end{enumerate}
+  \end{minipage}%
+  \begin{minipage}{0.6\linewidth}
+    \begin{enumerate}
+      \setcounter{enumi}{\value{mytemp}}
+    \item $(\lambda v)r = \lambda (vr) = v(\lambda r)$,
+    \item $(u + v)r = ur + vr$,
+    \item $v(r + s) = vr + vs$,
+    \item $v0 = 0r = 0$.
+    \end{enumerate}
+  \end{minipage}
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition 7.1]{$FG$-homomorphism}
+  \vspace*{\stretch{1}}
+
+  Let $V$ and $W$ be $FG$-modules. A function $\theta: V \to W$ is
+  said to be an \defn{$FG$-homomorphism} if $\theta$ is a linear
+  transformation and
+  \[
+    (vg)\theta = (v \theta)g \qquad \text{for all } v \in V, g \in G.
+  \]
+  In other words, if $\theta$ sends $v$ to $w$ when it sends $vg$ to
+  $wg$.
+
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Propostion 7.2]{kernel and image of $FG$-homomorphism}
+  \vspace*{\stretch{1}}
+
+  Let $V$ and $W$ be $FG$-modules and let $\theta : V \to W$ b an
+  $FG$-homomorphism. Then $\Ker \theta$ is an $FG$-submodule of $V$
+  and $\Img \theta$ is an $FG$-submodule of $W$.
+
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition 7.4]{isomorphic $FG$-modules}
+  \vspace*{\stretch{1}}
+
+  Let $V$ and $W$ be $FG$-modules. We call $\theta : V \to W$ an
+  $FG$-isomorphism if $\theta$ is an $FG$-homomorphism and $\theta$ is
+  invertible. In this case we say $V$ and $W$ are \defn{isomorphic}
+  $FG$-modules and write $V \iso W$.
+
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem 7.6]{isomorphic $FG$-modules correspond to
+    equivalent representations}
+  \vspace*{\stretch{1}}
+
+  Suppose that $V$ is an $FG$-module with basis $\B$ and $W$ is an
+  $FG$-module with basis $\B'$. Then $V$ and $W$ are isomorphic iff
+  the representations
+  \[
+    \rho : g \mapsto [g]_{\B} \quad \text{ and } \quad
+    \sigma : g \mapsto [g]_{\B'}
+  \]
+  are equivalent.
+
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition 7.10]{a direct sum of $FG$-submodules
+    corresponds with a representation}
+  \vspace*{\stretch{1}}
+
+  If $V = U_1 \oplus \cdots \oplus U_r$ is a direct sum of
+  $FG$-submodules, $U_i$ each with basis $\B_i$ then we can amalgamate
+  $\B_1, \ldots, \B_r$ to obtain a basis $\B$ of $V$ and
+  representations
+  \[
+    [g]_{\B} =
+    \begin{pmatrix}
+      [g]_{\B_1} & & \mbox{\Large{0}} \\
+      & \ddots & \\
+      \mbox{\Large{0}} & & [g]_{\B_r}
+    \end{pmatrix}
+  \]
+
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Proposition 7.11]{projections onto $FG$-submodules
+    are $FG$ homomorphisms}
+  \vspace*{\stretch{1}}
+
+  Let $V$ be an $FG$-module and suppose that
+  \[
+    V = U_1 \oplus \cdots \oplus U_r
+  \]
+  where each $U_i$ is an $FG$-submodule of $V$. For $v \in V$, we have
+  $v = u_i + \cdots + u_r$ for unique vectors $u_i \in U_i$, for
+  $1 \le i \le r$, define $\pi_i : V \to V$ by
+  \[
+    v \pi_i = u_i.
+  \]
+  Then each projection $\pi_i$ is an $FG$-homomorphism.
+
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Propostion 7.12]{sum of irreducible submodules is a
+    direct sum of some of the submodules}
+  \vspace*{\stretch{1}}
+
+  Let $V$ be an $FG$-module and suppose that
+  \[
+    V = U_1 + \cdots + U_r
+  \]
+  where each $U_i$ is an irreducible $FG$-submodule of $V$. Then $V$
+  is a direct sum of some of the $FG$-submodules $U_i$.
+
+  \vspace*{\stretch{1}}
+\end{flashcard}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{document}
