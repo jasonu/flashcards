@@ -303,11 +303,7 @@
     \)
 
     Don't forget the $+C$ when integrating!
-
   \end{enumerate}
-
-
-
 
   \vspace*{\stretch{1}}
 \end{flashcard}
@@ -322,6 +318,75 @@
   \]
   Such equations can be analyzed by finding the roots of the equation
   $g(y)=0$ and then creating a phase diagram.
+
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Algorith]{Euler's method}
+  \vspace*{\stretch{1}}
+
+  Given the IVP: \( \: \frac{dy}{dt} = f(t,y) \quad y(t_0) = y_0 \)
+  \smallskip
+
+  Choose a step size, $h$ and the number of steps, $n$ and repeat the
+  following loop $n$ times.
+  \begin{align*}
+    t_{i+1} &= t_i + \underbrace{h}_{\Delta t} \\
+    y_{i+1} &= y_i + \underbrace{h \cdot f(t_i, y_i)}_{\Delta y}
+  \end{align*}
+
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{elementary row operations}
+  \vspace*{\stretch{1}}
+
+  The three \defn{elementary row operations} that can be performed on
+  any matrix $A$ are:
+  \begin{enumerate}
+  \item Multiply any row of $A$ by a nonzero scalar.
+  \item Interchange (swap) any two rows of $A$.
+  \item Add a scalar multiple of one row of $A$ to another row.
+  \end{enumerate}
+
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{row equivalent matrices}
+  \vspace*{\stretch{1}}
+
+  Two matrices are called \defn{row equivalent} if one can be obtained
+  from the other by a finite sequence of elementary row operations.
+
+  \medskip
+
+  If the two matrices $A$ and $B$ are row equivalent we write,
+  $A \sim B$.
+
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[\S 3.2 Theorem 1]{equivalent systems and equivalent
+    matrices}
+  \vspace*{\stretch{1}}
+
+  If the augmented coefficient matrices of two linear systems are row
+  equivalent, then the two systems have the same solution set.
+
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{row echelon form (REF)}
+  \vspace*{\stretch{1}}
+
+  The matrix $A$ is in \defn{row echelon form} if:
+  \begin{enumerate}
+  \item Every row of $A$ that consists of all zeros lies beneath ever
+    other row that contains a nonzero element.
+  \item In each row of $A$ that contains a nonzero element, the first
+    nonzero element lies strictly to the right of the first nonzero
+    element in the preceding row (if any).
+  \end{enumerate}
 
   \vspace*{\stretch{1}}
 \end{flashcard}
