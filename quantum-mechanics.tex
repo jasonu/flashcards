@@ -1,0 +1,75 @@
+% Quantum Mechanics Flashcards
+% Copyright 2007 Jason Underdown
+
+\documentclass[avery5371,grid]{flashcards}
+
+\usepackage[latin1]{inputenc}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+
+\cardfrontstyle[\large\slshape]{headings}
+\cardbackstyle{empty}
+
+\begin{document}
+\cardfrontfoot{Quantum Mechanics}
+
+\begin{flashcard}[Copyright \& License]{Copyright \copyright \, 2007 Jason Underdown \\
+Some rights reserved.}
+\vspace*{\stretch{1}}
+These flashcards and the accompanying \LaTeX \, source code are licensed
+under a Creative Commons Attribution--NonCommercial--ShareAlike 2.5 License.  
+For more information, see creativecommons.org.  You can contact the author at:
+\begin{center}
+\begin{small}\tt jasonu [remove-this] at physics dot utah dot edu\end{small}
+\end{center}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Equation]{Schr\"odinger equation\\non-operator form}
+\vspace*{\stretch{1}}
+\begin{displaymath}
+i\hbar \frac{\partial \Psi}{\partial t} = -\frac{\hbar^2}{2m}
+\frac{\partial^2 \Psi}{\partial x^2} + V \Psi
+\end{displaymath}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{statistical interpretation of the wave function}
+\vspace*{\stretch{1}}
+\begin{displaymath}
+\int_a^b |\Psi(x,t)|^2 dx =
+\framebox[4.5cm]{\parbox[c]{4cm}{probability of finding the particle
+between $a$ and $b$, at time $t$}}
+\end{displaymath}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Formula]{Euler's formula}
+\vspace*{\stretch{1}}
+\begin{displaymath}
+e^{i\theta} = \cos \theta + i\sin \theta
+\end{displaymath}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Equation]{time--independent Schr\"odinger equation}
+\vspace*{\stretch{1}}
+The simplest way to write the time--independent Schr\"odinger equation is
+$H\psi = E\psi$, however, with the Hamiltonian operator expanded it becomes:
+
+\medskip
+\begin{displaymath}
+-\frac{\hbar^2}{2m} \frac{d^2 \psi}{dx^2} + V\psi = E\psi\\
+\end{displaymath}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{Hamiltonian operator}
+\vspace*{\stretch{1}}
+\begin{displaymath}
+\textrm{\^H} = -\frac{\hbar^2}{2m}\nabla^2 + V
+\end{displaymath}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\end{document}

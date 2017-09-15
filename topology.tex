@@ -1,0 +1,408 @@
+\documentclass[avery5371,grid]{flashcards}
+
+\cardfrontstyle[\large\slshape]{headings}
+\cardbackstyle{empty}
+\cardfrontfoot{Topology}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{mathrsfs}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\st}{\textrm{ such that }}
+\newcommand{\setst}{\; | \;}
+
+\begin{document}
+
+\begin{flashcard}[Copyright \& License]{Copyright \copyright \,
+2007 Jason Underdown \\ Some rights reserved.}
+\vspace*{\stretch{1}}
+These flashcards and the accompanying \LaTeX \, source code are licensed
+under a Creative Commons Attribution--NonCommercial--ShareAlike 2.5 License.  
+For more information, see creativecommons.org.  You can contact the author at:
+\begin{center}
+\begin{small}\tt jasonu at physics utah edu\end{small}
+\end{center}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{metric space}
+\vspace*{\stretch{1}}
+A \textbf{metric space} $(X,d)$ is a set $X$ and a function
+\mbox{$d: X \times X \rightarrow \R$} satisfying $\forall \; x,y,z \in X$
+\begin{enumerate}
+ \item $d(x,y) \geq 0$
+ \item $d(x,y) = 0 \Leftrightarrow x=y$
+ \item $d(x,y) = d(y,x)$
+ \item $d(x,z) \leq d(x,y) + d(y,z)$
+\end{enumerate}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{subspace}
+\vspace*{\stretch{1}}
+If $(X,d)$ is a metric space, and $A \subset X$ then
+$(A,d|_{A \times A})$ is a metric space and is called
+a \mbox{\textbf{subspace}} of $(X,d)$.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{isometry}
+\vspace*{\stretch{1}}
+Suppose $(X_1,d_1)$ and $(X_2,d_2)$ are metric spaces.  A function
+$f: X_1 \rightarrow X_2$ is called an \mbox{\textbf{isometry}} if 
+$f$ is one--to--one, onto and
+\begin{equation*}
+d_2(f(x),f(y)) = d_1(x,y) \quad \forall \; x,y \in X_1
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{open set}
+\vspace*{\stretch{1}}
+Supposing $(X,d)$ is a metric space, then a subset $U \subset X$
+is \textbf{open} iff
+\begin{equation*}
+\forall \; x \in U, \exists \; r>0 \st B(x,r) \subset U
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Proposition]{open balls are open}
+\vspace*{\stretch{1}}
+If $(X,d)$ is a metric space, then for each $x \in X$ and for each
+$r>0$, $B(x,r)$ is open in X.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{unions and intersections of open sets}
+\vspace*{\stretch{1}}
+Let $(X,d)$ be a metric space and let $\left\{U_{\alpha}\right\}_{\alpha \in A}$ be any
+collection of open sets in $(X,d)$, then
+\begin{enumerate}
+ \item $X,\varnothing$ are open.
+ \item $\bigcup_{\alpha \in A} U_{\alpha}$ is open.
+ \item Let $\left\{U_1, \ldots , U_n\right\}$ be a finite
+ collection of open sets, then $\bigcap^{n}_{i=1}U_i$ is open.
+\end{enumerate}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{closed set}
+\vspace*{\stretch{1}}
+Let $(X,d)$ be a metric space, $F \subset X$ is \mbox{\textbf{closed}} iff
+$X - F$ is open.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{closed ball}
+\vspace*{\stretch{1}}
+A \mbox{\textbf{closed ball}} centered at $x$ of radius $r$ is denoted
+$\overline{B}(x,r)$, and defined to be:
+\begin{equation*}
+\overline{B}(x,r) = \left\{ y \in X \setst d(x,y) \leq r \right\}
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Proposition]{closed balls are closed sets}
+\vspace*{\stretch{1}}
+A closed ball $\overline{B}(x,r)$, is a closed set.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{unions and intersections of closed sets}
+\vspace*{\stretch{1}}
+Let $(X,d)$ be a metric space and let $\left\{F_{\alpha}\right\}_{\alpha \in A}$ be any
+collection of closed sets in $(X,d)$, then
+\begin{enumerate}
+ \item $X,\varnothing$ are closed.
+ \item $\bigcap_{\alpha \in A} F_{\alpha}$ is closed.
+ \item Let $\left\{F_1, \ldots , F_n\right\}$ be a finite collection of
+ closed sets, then $\bigcup^{n}_{i=1}F_i$ is closed.
+\end{enumerate}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{interior}
+\vspace*{\stretch{1}}
+Let $(X,d)$ be a metric space with $A \subset X$.  The \mbox{\textbf{interior}}
+of $A$ denoted $A^{\circ}$  is defined to be:
+\begin{equation*}
+A^{\circ} = \left\{ x \in A \setst \exists \; r>0 \st B(x,r) \subset A \right\}
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{closure}
+\vspace*{\stretch{1}}
+Let $(X,d)$ be a metric space with $A \subset X$.  The \mbox{\textbf{closure}}
+of $A$ denoted $\overline{A}$  is defined to be:
+\begin{equation*}
+\overline{A} = \left\{ x \in X \setst \forall \; r>0, B(x,r) \cap A
+\neq \varnothing\right\}
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{exterior \& frontier}
+\vspace*{\stretch{1}}
+Let $(X,d)$ be a metric space with $A \subset X$.
+
+\bigskip
+The \mbox{\textbf{exterior}} of a set $A$ is defined to be $(X-A)^{\circ}$.
+
+\bigskip
+The \mbox{\textbf{frontier}} of a set $A$ is defined to be $\overline{A}-A^{\circ}$.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{distance from a point to a set}
+\vspace*{\stretch{1}}
+Suppose $(X,d)$ is a metric space with $A \subset X$ and $x \in X$.  We
+define \textbf{the distance from $x$ to $A$} by
+\begin{equation*}
+d(x,A) = \textrm{inf} \left\{ d(x,y) \setst y \in A \right\}
+\end{equation*} 
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{limit of a sequence}
+\vspace*{\stretch{1}}
+Suppose $(X,d)$ is a metric space.  A sequence $\left\{ x_n \right\} \subset X$
+has \mbox{\textbf{limit}} $x$, denoted 
+$\lim_{n \rightarrow \infty}   \left\{ x_n \right\} = x$ iff
+\begin{equation*}
+\forall \; \varepsilon >0, \; \exists \; N \in \N \st
+\end{equation*}
+\begin{equation*}
+n \geq N \Rightarrow x_n \in B(x,\varepsilon)
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{Cauchy Sequence}
+\vspace*{\stretch{1}}
+Suppose $(X,d)$ is a metric space.
+A sequence $\left\{ x_n \right\} \subset X$ is called a
+\mbox{\textbf{Cauchy sequence}} iff
+\begin{equation*}
+\forall \; \varepsilon >0, \; \exists \; N \in \N \st
+\end{equation*}
+\begin{equation*}
+m,n \geq N \Rightarrow d(x_m,x_n) < \varepsilon
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{convergent sequence}
+\vspace*{\stretch{1}}
+A sequence $\left\{ x_n \right\}$ \mbox{\textbf{converges}} iff
+$\lim \left\{ x_n \right\}$ exits.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{convergence implies Cauchy}
+\vspace*{\stretch{1}}
+If a sequence $\left\{ x_n \right\}$ is convergent then it is Cauchy.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{complete metric space}
+\vspace*{\stretch{1}}
+A metric space $(X,d)$ is \mbox{\textbf{complete}} iff every Cauchy sequence
+in $X$ is convergent.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{limits are unique}
+\vspace*{\stretch{1}}
+If the limit of $\left\{ x_n \right\}$ exists, then that limit is unique.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{distinct points have a radius of separation}
+\vspace*{\stretch{1}}
+Suppose $(X,d)$ is a metric space, and $x,y \in X$ with $x \neq y$, then
+$\exists \; r > 0 \st B(x,r) \cap B(y,r) = \varnothing$
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{continuous function}
+\vspace*{\stretch{1}}
+Suppose $(X_1,d_1), (X_2, d_2)$ are metric spaces.  A function
+$f:X_1 \rightarrow X_2$ is \mbox{\textbf{continuous}} at $x \in X_1$ iff
+\begin{equation*}
+\forall \; \varepsilon >0, \; \exists \; \delta (x,\varepsilon) >0 \st 
+\end{equation*}
+\begin{equation*}
+d_1(x,y) < \delta \Rightarrow d_2(f(x), f(y)) < \varepsilon
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{continuous function (alternate definition)}
+\vspace*{\stretch{1}}
+Suppose $(X_1,d_1), (X_2, d_2)$ are metric spaces.  A function
+$f:X_1 \rightarrow X_2$ is \mbox{\textbf{continuous}} on $X_1$ iff
+\begin{equation*}
+\forall \; x \in X_1, \; \forall \; \varepsilon >0, \; \exists \; \delta >0 \st 
+\end{equation*}
+\begin{equation*}
+f(B(x,\delta)) \subset B(f(x), \varepsilon)
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{Lipschitz function}
+\vspace*{\stretch{1}}
+Suppose $(X_1,d_1), (X_2, d_2)$ are metric spaces.  A function
+$f:X_1 \rightarrow X_2$ is called \mbox{\textbf{Lipschitz}} iff
+\begin{equation*}
+\forall \; x,y \in X_1 \; \exists \; c>0 \st
+\end{equation*}
+\begin{equation*}
+d_2(f(x),f(y)) \leq c d_1(x,y)
+\end{equation*}
+A Lipschitz function can be thought of as a ``bounded distortion.''
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Lipschitz functions are uniformly continuous}
+\vspace*{\stretch{1}}
+If $f:X_1 \rightarrow X_2$ is Lipschitz on $X_1$, then $f$ is uniformly
+continuous on $X_1$.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{bi-Lipschitz}
+\vspace*{\stretch{1}}
+Suppose $(X_1,d_1), (X_2, d_2)$ are metric spaces.  A function
+$f:X_1 \rightarrow X_2$ is called \mbox{\textbf{bi-Lipschitz}} iff
+\begin{equation*}
+\forall \; x,y \in X_1 \; \exists \; c_1,c_2>0 \st
+\end{equation*}
+\begin{equation*}
+c_1 d_1(x,y) \leq d_2(f(x),f(y)) \leq c_2 d_1(x,y)
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{$f$ continuous iff \\
+the preimage of every open set is open}
+\vspace*{\stretch{1}}
+A function $f:X_1 \rightarrow X_2$ is continuous iff 
+\begin{equation*}
+\forall \; U \mbox{ open }\subset X_2 \Rightarrow
+f^{-1}(U) \mbox{ open }\subset X_1
+\end{equation*}
+Or equivalently:
+\begin{equation*}
+\forall \; U \mbox{ closed }\subset X_2 \Rightarrow
+f^{-1}(U) \mbox{ closed }\subset X_1
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{continuous functions and sequences}
+\vspace*{\stretch{1}}
+A function $f:(X_1,d_1) \rightarrow (X_2,d_2)$ is continuous iff
+\begin{equation*}
+\forall \; \mbox{ convergent sequences } \left\{ x_n \right\} \subset X_1,
+\end{equation*}
+\begin{equation*}
+\lim_{n\rightarrow \infty} f(x_n) = f(\lim_{n\rightarrow \infty}
+\left\{ x_n \right\})
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{homeomorphism}
+\vspace*{\stretch{1}}
+A function $f:(X_1,d_1) \rightarrow (X_2,d_2)$ is called a
+\mbox{\textbf{homeomorphism}} iff
+\begin{enumerate}
+ \item $f$ is continuous
+ \item $f$ is 1-1 and onto
+ \item $f^{-1}$ is continous
+\end{enumerate}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{equivalent metrics}
+\vspace*{\stretch{1}}
+Two metrics $d_1$, $d_2$ are called \mbox{\textbf{equivalent}} iff
+they have the same open sets.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Remark]{two metrics are equivalent iff \\
+the identity map is a homeomorphism}
+\vspace*{\stretch{1}}
+Two metrics, $d_1$, $d_2$ are equivalent iff $id: (X,d_1) \rightarrow (X,d_2)$
+is a homeomorphism.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{composition of continuous functions \\
+preserves continuity}
+\vspace*{\stretch{1}}
+Suppose $f:X_1 \rightarrow X_2$ and $g:X_2 \rightarrow X_3$.  If $f$
+and $g$ are continuous then $g\circ f$ is continuous.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{homeomorphic spaces}
+\vspace*{\stretch{1}}
+Two metric spaces are \mbox{\textbf{homeomorphic}} iff there exists a
+homeomorphism between them.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{topology}
+\vspace*{\stretch{1}}
+Suppose $X$ is a set.  A collection $\tau$ of subsets of $X$ is called
+a \mbox{\textbf{topology}} on $X$ iff
+\begin{enumerate}
+ \item $X \in \tau$ and $\varnothing \in \tau$
+ \item $U_{\alpha} \in \tau \;
+ \mbox{ for } \alpha \in A \Rightarrow
+ \displaystyle \bigcup_{\alpha \in A} U_{\alpha} \in \tau$
+ \item $U_1, U_2, \ldots , U_n \in \tau \Rightarrow
+ \displaystyle \bigcap_{i=1}^{\infty} U_i \in \tau$
+\end{enumerate}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{topological space}
+\vspace*{\stretch{1}}
+A \mbox{\textbf{topological space}} $(X,\tau)$ is a set $X$ and a 
+topology $\tau$ on $X$.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[]{}
+\vspace*{\stretch{1}}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[]{}
+\vspace*{\stretch{1}}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[]{}
+\vspace*{\stretch{1}}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[]{}
+\vspace*{\stretch{1}}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\end{document}

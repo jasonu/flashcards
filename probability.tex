@@ -1,0 +1,373 @@
+
+
+% Probability Flashcards
+% Copyright 2006 Jason Underdown
+
+\documentclass[avery5371,grid]{flashcards}
+
+\cardfrontstyle[\large\slshape]{headings}
+\cardbackstyle{empty}
+
+\usepackage{amsfonts}
+\usepackage{amsmath}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Rn}{\mathbb{R}^{n}}
+\DeclareMathOperator{\var}{var}
+\DeclareMathOperator{\stddev}{stddev}
+\def\lim{\mathop{\rm lim}}
+
+
+\begin{document}
+
+\cardfrontfoot{Probability}
+
+\begin{flashcard}[Copyright \& License]{Copyright \copyright \, 2006 Jason Underdown \\
+Some rights reserved.}
+\vspace*{\stretch{1}}
+These flashcards and the accompanying \LaTeX \, source code are licensed
+under a Creative Commons Attribution--NonCommercial--ShareAlike 2.5 License.  
+For more information, see creativecommons.org.  You can contact the author at:
+\begin{center}
+\begin{small}\tt jasonu [remove-this] at physics dot utah dot edu\end{small}
+\end{center}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{choose notation}
+\vspace*{\stretch{1}}
+\textit{n choose k} is a brief way of saying how many ways can you choose $k$
+objects from a set of $n$ objects, when the order of selection is not relevant.
+\begin{displaymath}
+{n \choose k} = \frac{n!}{(n-k)! \; k!}
+\end{displaymath}
+Obviously, this implies $0 \leq k \leq n$.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{binomial theorem}
+\vspace*{\stretch{1}}
+\begin{displaymath}
+(x + y)^n = \sum_{k=0}^{n} {n \choose k} x^k y^{n-k}
+\end{displaymath}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{$n$ distinct items divided into \\
+$r$ distinct groups}
+\vspace*{\stretch{1}}
+Suppose you want to divide $n$ distinct items in to $r$ distinct groups
+each with size $n_1, n_2, \ldots, n_r$, how do you count the possible outcomes?
+
+\smallskip
+If $n_1 + n_2 + \ldots + n_r = n$, then the number of possible divisions can be
+counted by the following formula:
+\begin{displaymath}
+{n \choose n_1, n_2, \ldots, n_r} = \frac{n!}{n_1! \; n_2! \ldots n_r!}
+\end{displaymath}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Axioms]{axioms of probability}
+\vspace*{\stretch{1}}
+\begin{enumerate}
+\item $0 \leq P(E) \leq 1$
+\item $P(S) = 1$
+\item For any sequence of mutually exclusive events $E_1,E_2,\ldots$ \\
+(i.e. events where $E_i E_j = \emptyset$ when $i\neq j$)
+\begin{displaymath}
+P \left( \bigcup_{i=1}^{\infty} E_i \right) = \sum_{i=1}^{\infty} P(E_i)
+\end{displaymath}
+\end{enumerate}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Proposition]{probability of the complement}
+\vspace*{\stretch{1}}
+If $E^c$ denotes the complement of event $E$, then
+\begin{displaymath}
+P(E^c) = 1 - P(E)
+\end{displaymath}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Proposition]{probability of the union of two events}
+\vspace*{\stretch{1}}
+\begin{displaymath}
+P(A \cup B) = P(A) + P(B) - P(A B)
+\end{displaymath}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{conditional probability}
+\vspace*{\stretch{1}}
+If $P(F) > 0$, then
+\begin{displaymath}
+P(E\mid F) = \frac{P(EF)}{P(F)}
+\end{displaymath}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{the multiplication rule}
+\vspace*{\stretch{1}}
+\begin{displaymath}
+P(E_1 E_2 E_3 \ldots E_n) = 
+\end{displaymath}
+\begin{displaymath}
+P(E_1)P(E_2\mid E_1)P(E_3 \mid E_2 E_1)\ldots P(E_n\mid E_1 \ldots E_{n-1})
+\end{displaymath}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Bayes' formula}
+\vspace*{\stretch{1}}
+\begin{eqnarray*}
+P(E) &=& P(E F) + P(E F^c) \\
+     &=& P(E\mid F)P(F) + P(E\mid F^c)P(F^c) \\
+     &=& P(E\mid F)P(F) + P(E\mid F^c)[1-P(F)] \\
+\end{eqnarray*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{independent events}
+\vspace*{\stretch{1}}
+Two events $E$ and $F$ are said to be \textit{independent} iff
+\begin{displaymath}
+P(EF) = P(E)P(F)
+\end{displaymath}
+Otherwise they are said to be \textit{dependent}.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{probability mass function of
+a discrete random variable}
+\vspace*{\stretch{1}}
+For a discrete random variable $X$, we define the
+\textit{probability mass function} $p(a)$ of $X$ by
+\begin{displaymath}
+p(a) = P\lbrace X=a \rbrace
+\end{displaymath}
+Probability mass functions are often written as a table.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{cumulative distribution function $F$}
+\vspace*{\stretch{1}}
+The \textit{cumulative distribution function ($F$)} is defined to be
+\begin{displaymath}
+F(a) = \sum_{all \; x \leq a} p(x)
+\end{displaymath}
+The cumulative distribution function $F(a)$ denotes the probability
+that the random variable $X$ has a value less than or equal to $a$.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{properties of the cumulative 
+distribution function}
+\vspace*{\stretch{1}}
+The cumulative distribution function satisfies the following properties:
+\begin{enumerate}
+\item $F$ is a nondecreasing function
+\item $\lim_{a\to\infty} F(a) = 1$
+\item $\lim_{a\to-\infty} F(a) = 0$
+\end{enumerate}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{expected value \\(discrete case)}
+\vspace*{\stretch{1}}
+\begin{displaymath}
+E[X] = \sum_{x:p(x)>0} x p(x)
+\end{displaymath}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Proposition]{expected value of a function of $X$ \\ 
+(discrete case)}
+\vspace*{\stretch{1}}
+If $X$ is a discrete random variable that takes on the values denoted
+by $x_i$ $(i=1\ldots n)$ with respective probabilities $p(x_i)$, then for
+any real--valued function $f$
+\begin{displaymath}
+E[f(X)] = \sum_{i=1}^{n} f(x_i) p(x)
+\end{displaymath}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Corollary]{linearity of expectation}
+\vspace*{\stretch{1}}
+If $\alpha$ and $\beta$ are constants, then
+\begin{displaymath}
+E[\alpha X + \beta] = \alpha E[X] + \beta
+\end{displaymath}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition/Theorem]{variance}
+\vspace*{\stretch{1}}
+If $X$ is a random variable with mean $\mu$, then we define the
+\textit{variance} of $X$ to be
+\begin{eqnarray*}
+\var(X) &=& E[(X-\mu)^2] \\
+        &=& E[X^2] - (E[X])^2 \\
+        &=& E[X^2] - \mu^2
+\end{eqnarray*}
+The first line is the actual definition, but the second and third
+equations are often more useful and can be shown to be equivalent
+by some algebraic manipulation.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{probability mass function of a \\
+Bernoulli random variable}
+\vspace*{\stretch{1}}
+If an experiment can be classified as either success or failure, and if
+we denote success by $X=1$ and failure by $X=0$ then, $X$ is a
+\textit{Bernoulli random variable} with probability mass function:
+\medskip
+\begin{center}
+\begin{tabular}{ccccc}
+$p(0)$ & $=$ & $P\lbrace X=0\rbrace$ & $=$ & $1-p$ \\
+$p(1)$ & $=$ & $P\lbrace X=1\rbrace$ & $=$ & $p$ \\
+\end{tabular}
+\end{center}
+where $p$ is the probability of success and $0\leq p \leq 1$.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{probability mass function of a \\
+binomial random variable}
+\vspace*{\stretch{1}}
+Suppose $n$ independent Bernoulli trials are performed.  If the probability
+of success is $p$ and the probability of failure is $1-p$, then $X$ is said
+to be a \textit{binomial random variable} with parameters $(n,p)$.
+
+The probability mass function is given by:
+\begin{displaymath}
+p(i) = {n \choose i} p^i(1-p)^{n-i}
+\end{displaymath}
+where $i=0,1,\ldots ,n$
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{properties of binomial random variables}
+\vspace*{\stretch{1}}
+If $X$ is a binomial random variable with parameters $n$ and $p$, then
+\begin{eqnarray*}
+E[X] &=& np \\
+\var(X) &=& np(1-p) \\
+\end{eqnarray*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{probability mass function of a \\
+Poisson random variable}
+\vspace*{\stretch{1}}
+A random variable $X$ that takes on one of the values 0,1,$\ldots$, is
+said to be a \textit{Poisson random variable} with parameter $\lambda$
+if for some $\lambda > 0$
+\begin{displaymath}
+p(i) = P \lbrace X=i \rbrace  = \frac{\lambda^i}{i!}e^{-\lambda}
+\end{displaymath}
+where $i = 0,1,2,\ldots$
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{properties of Poisson random variables}
+\vspace*{\stretch{1}}
+If $X$ is a Poisson random variable with parameter $\lambda$, then
+\begin{eqnarray*}
+E[X] &=& \lambda \\
+\var(X) &=& \lambda \\
+\end{eqnarray*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{probability mass function of a \\
+geometric random variable}
+\vspace*{\stretch{1}}
+Suppose independent Bernoulli trials, are repeated until success
+occurs.  If we let $X$ equal the number of trials required to
+achieve success, then $X$ is a \textit{geometric random variable}
+with probability mass function:
+\begin{displaymath}
+p(n) = P \lbrace X = n \rbrace = (1-p)^{n-1}p
+\end{displaymath}
+where $n=1,2,\ldots$
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{properties of geometric random variables}
+\vspace*{\stretch{1}}
+If $X$ is a geometric random variable with parameter $p$, then
+\begin{eqnarray*}
+E[X] &=& \frac{1}{p} \\
+\var(X) &=& \frac{1-p}{p^2} \\
+\end{eqnarray*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{probability mass function of a \\
+negative binomial random variable}
+\vspace*{\stretch{1}}
+Suppose that independent Bernoulli trials (with probability of succes $p$)
+are performed until $r$ successes occur.
+If we let $X$ equal the number of trials required, then $X$ is a
+\textit{negative binomial random variable} with probability mass function:
+\begin{displaymath}
+p(n) = P \lbrace X = n \rbrace =
+{n-1 \choose r-1} p^r(1-p)^{n-r}
+\end{displaymath}
+where $n = r, r+1,\ldots$
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{properties of negative binomial random variables}
+\vspace*{\stretch{1}}
+If $X$ is a negative binomial random variable with parameters $(p,r)$, then
+\begin{eqnarray*}
+E[X] &=& \frac{r}{p} \\
+\var(X) &=& \frac{r(1-p)}{p^2} \\
+\end{eqnarray*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{probability density function of a
+continuous random variable}
+\vspace*{\stretch{1}}
+We define $X$ to be a \textit{continuous} random variable if there
+exists a function $f$, such that for any set $B$ of real numbers
+\begin{displaymath}
+P\lbrace X\in B\rbrace = \int_B f(x)dx
+\end{displaymath}
+The function $f$ is called the \textit{probability density function}
+of the random variable $X$.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{probability density function of a \\
+uniform random variable}
+\vspace*{\stretch{1}}
+If $X$ is a \textit{uniform} random variable on the interval $(\alpha,\beta)$,
+then its probability density function is given by
+\begin{displaymath}
+f(x) = \left\{
+\begin{array}{ll}
+\frac{1}{\beta - \alpha} & \textrm{if $\alpha < x < \beta$}\\
+0 & \textrm{otherwise}
+\end{array} \right.
+\end{displaymath}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{properties of uniform random variables}
+\vspace*{\stretch{1}}
+If $X$ is a uniform random variable with parameters $(\alpha,\beta)$, then
+\begin{eqnarray*}
+E[X] &=& \frac{\alpha + \beta}{2}\\
+\var(X) &=& \frac{(\beta - \alpha)^2}{12}
+\end{eqnarray*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\end{document}

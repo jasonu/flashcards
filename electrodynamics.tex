@@ -1,0 +1,160 @@
+% Electrodynamics Flashcards
+% copyright 2006 Jason Underdown
+
+\documentclass[avery5371,grid]{flashcards}
+
+\cardfrontstyle[\large\slshape]{headings}
+\cardbackstyle{empty}
+
+\usepackage{amsmath}
+
+\def\lim{\mathop{\rm lim}}
+\newcommand{\xhat}[0]{\mathbf{\hat x}}
+\newcommand{\yhat}[0]{\mathbf{\hat y}}
+\newcommand{\zhat}[0]{\mathbf{\hat z}}
+
+\begin{document}
+
+\cardfrontfoot{Electrodynamics}
+
+\begin{flashcard}[Copyright \& License]{Copyright \copyright \, 2007 Jason Underdown \\
+Some rights reserved.}
+\vspace*{\stretch{1}}
+These flashcards and the accompanying \LaTeX \, source code are licensed
+under a Creative Commons Attribution--NonCommercial--ShareAlike 2.5 License.  
+For more information, see creativecommons.org.  You can contact the author at:
+\begin{center}
+\begin{small}\tt jasonu [remove-this] at physics dot utah dot edu\end{small}
+\end{center}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{gradient}
+\vspace*{\stretch{1}}
+The gradient $\nabla T$ points in the direction of maximum increase of the 
+function $T$.
+
+\medskip
+\begin{displaymath}
+\nabla T \equiv \xhat \frac{\partial T}{\partial x} +
+\yhat \frac{\partial T}{\partial y} +
+\zhat \frac{\partial T}{\partial z}
+\end{displaymath}
+
+\medskip
+The magnitude $|\nabla T|$ is the slope along this direction.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{the vector operator $\nabla$}
+\vspace*{\stretch{1}}
+\begin{displaymath}
+\nabla \equiv \xhat \frac{\partial}{\partial x} +
+\yhat \frac{\partial}{\partial y} +
+\zhat \frac{\partial}{\partial z}
+\end{displaymath}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{divergence}
+\vspace*{\stretch{1}}
+\begin{eqnarray*}
+\nabla \cdot \mathbf v &=& (\xhat \frac{\partial}{\partial x} +
+\yhat \frac{\partial}{\partial y} +
+\zhat \frac{\partial}{\partial z}) \cdot
+(v_x \xhat + v_y \yhat + v_z \zhat)\\
+&=& \frac{\partial v_x}{\partial x} +
+\frac{\partial v_y}{\partial y} +
+\frac{\partial v_z}{\partial z}
+\end{eqnarray*}
+The \textit{divergence} is a measure of how much the vector function
+$\mathbf v$ spreads out from the point in question.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{curl}
+\vspace*{\stretch{1}}
+\begin{displaymath}
+\nabla \times \mathbf v  =
+\begin{vmatrix}
+\xhat & \yhat & \zhat\\
+\frac{\partial}{\partial x} &
+\frac{\partial}{\partial y} &
+\frac{\partial}{\partial z}\\
+v_x & v_y & v_z
+\end{vmatrix}
+\end{displaymath}
+The \textit{curl} is a measure of how much the vector field ``curls around''
+the point in question.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{5 species of second derivatives}
+\vspace*{\stretch{1}}
+\begin{small}
+By applying $\nabla$ twice we can construct five species of second derivatives.
+\begin{enumerate}
+\item divergence of a gradient $\nabla \cdot (\nabla T) = \nabla^2$ (Laplacian)
+\item curl of a gradient $\nabla \times (\nabla T) = 0$ (always)
+\item gradient of a divergence $\nabla(\nabla \cdot \mathbf v)$ (seldom occurs)
+\item divergence of a curl $\nabla \cdot (\nabla \times \mathbf v) = 0$ (always)
+\item curl of a curl $\nabla \times (\nabla \times \mathbf v) = 
+\nabla(\nabla \cdot \mathbf v) - \nabla^2 \mathbf v$
+\end{enumerate}
+\end{small}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{curl--less or irrotational fields}
+\vspace*{\stretch{1}}
+For a given vector field $\mathbf F$ the following statements are equivalent, i.e. each implies the others.
+\begin{enumerate}
+\item $\nabla \times \mathbf F = 0$ everywhere
+\item $\int_{\mathbf a}^{\mathbf b} \mathbf F \cdot d \mathbf l$ is path independent
+\item $\oint \mathbf F \cdot d \mathbf l = 0$ on any closed loop
+\item $\mathbf F = -\nabla V$ for some scalar potential $V$
+\end{enumerate}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{divergence--less or solenoidal fields}
+\vspace*{\stretch{1}}
+For a given vector field $\mathbf F$ the following statements are equivalent, i.e. each implies the others.
+\begin{enumerate}
+\item $\nabla \cdot \mathbf F = 0$ everywhere
+\item $\int \mathbf F \cdot d \mathbf a$ is independent of surface
+\item $\oint \mathbf F \cdot d \mathbf a = 0$ over any closed surface
+\item $\mathbf F = \nabla \times \mathbf A$ for some vector potential $\mathbf A$
+\end{enumerate}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{gradient theorem}
+\vspace*{\stretch{1}}
+\begin{displaymath}
+\int_{\mathbf{a}}^{\mathbf{b}} (\nabla f) \cdot d \mathbf{l} = 
+f(\mathbf{b}) - f(\mathbf{a})
+\end{displaymath}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Green's theorem}
+\vspace*{\stretch{1}}
+\begin{displaymath}
+\int (\nabla \cdot \mathbf{A}) dV = \oint \mathbf A \cdot d \mathbf a
+\end{displaymath}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Stokes' theorem}
+\vspace*{\stretch{1}}
+\begin{displaymath}
+\int (\nabla \times \mathbf A) \cdot d\mathbf a = \oint \mathbf A \cdot d \mathbf l
+\end{displaymath}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+
+
+
+\end{document} 

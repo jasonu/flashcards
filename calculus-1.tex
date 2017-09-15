@@ -1,0 +1,600 @@
+\documentclass[avery5371,grid]{flashcards}
+
+\cardfrontstyle[\large\slshape]{headings}
+\cardbackstyle{empty}
+\cardfrontfoot{Calculus I}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{datetime}
+
+\begin{document}
+
+\begin{flashcard}[Copyright \& License]{Copyright \copyright \, 2007 Jason Underdown \\
+Some rights reserved.}
+\vspace*{\stretch{1}}
+These flashcards and the accompanying \LaTeX \, source code are licensed
+under a Creative Commons Attribution--NonCommercial--ShareAlike 2.5 License.  
+For more information, see creativecommons.org.  You can contact the author at:
+\begin{center}
+\begin{small}\tt jasonu at physics utah edu\end{small}
+
+\medskip
+File last updated on \today, \\
+at \currenttime
+\end{center}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Formula]{quadratic formula}
+\vspace*{\stretch{1}}
+The solutions or roots of the quadratic equation \\
+$ax^2 + bx + c = 0$ are given by
+\begin{equation*}
+x = \dfrac{-b\pm \sqrt{b^2-4ac}}{2a}
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{absolute value}
+\vspace*{\stretch{1}}
+\begin{equation*}
+|x| = \left\{ \begin{array}{ll}
+x & \: x \geq 0 \\
+-x & \: x < 0
+\end{array} \right.
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{properties of absolute values}
+\vspace*{\stretch{1}}
+\begin{enumerate}
+\item $|ab| = |a||b|$
+\item $\left| \dfrac{a}{b} \right| = \dfrac{|a|}{|b|}$
+\item $|a+b| \leq |a| + |b|$
+\item $|a-b| \geq ||a| - |b||$
+\end{enumerate}
+
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+
+\begin{flashcard}[Definition]{equation of a line in various forms}
+\vspace*{\stretch{1}}
+\begin{tabular}{cc}
+Form & Equation\\ \hline
+\\
+point--slope &  $y - y_{1} = m(x - x_{1})$\\
+\\ 
+slope--intercept &  $y = mx + b$\\
+\\
+two point &  $y - y_{1} = \dfrac{y_{2} - y_{1}}{x_{2}- x_{1}}(x - x_{1})$\\ 
+\\
+standard &  $Ax + By + C = 0$\\ 
+\end{tabular} 
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{equation of a circle}
+\vspace*{\stretch{1}}
+The equation of a circle centered at $(h,k)$
+with radius $r$ is:
+\begin{equation*}
+(x-h)^{2} + (y-k)^{2} = r^{2}
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{$\sin, \cos, \tan$}
+\vspace*{\stretch{1}}
+\setlength{\unitlength}{0.5cm}
+\begin{picture}(6,3)
+\thicklines
+% draw 3-4-5 triangle
+\put(2,0){\line(1,0){4}}
+\put(6,0){\line(0,1){3}}
+\put(2,0){\line(4,3){4}}
+% draw box in lower right-hand corner
+\put(5.6,0){\line(0,1){0.4}}
+\put(6,0.4){\line(-1,0){0.4}}
+% label sides of triangle
+\put(6.2,1.3){opp}
+\put(3.7,-0.7){adj}
+\put(3.2,1.9){hyp}
+\put(2.8,.1){$\theta$}
+% explanatory text
+\put(9,3.5){$\sin \theta = \dfrac{\text{opp}}{\text{hyp}}$}
+\put(9,1.5){$\cos \theta = \dfrac{\text{adj}}{\text{hyp}}$}
+\put(9,-0.5){$\tan \theta = \dfrac{\text{opp}}{\text{adj}}$}
+\end{picture}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{$\sec, \csc, \tan, \cot$}
+\vspace*{\stretch{1}}
+\begin{center}
+\begin{tabular}{cc}
+$\sec \theta = \dfrac{1}{\cos \theta}$ &
+$\csc \theta = \dfrac{1}{\sin \theta}$\\
+ & \\
+ & \\
+$\tan \theta = \dfrac{\sin \theta}{\cos \theta}$ &
+$\cot \theta = \dfrac{\cos \theta}{\sin \theta}$\\
+\end{tabular} 
+\end{center}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{midpoint formula}
+\vspace*{\stretch{1}}
+If $P(x_{1}, y_{1})$ and $Q(x_{2}, y_{2})$ are two points, then 
+the midpoint of the line segment that joins these two points
+is given by:
+\begin{equation*}
+\left( \dfrac{x_{1}+x_{2}}{2}, \dfrac{y_{1}+y_{2}}{2}\right) 
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{function}
+\vspace*{\stretch{1}}
+A \textbf{function} is a mapping that associates with each object $x$ in one
+set, which we call the \textbf{domain}, a single value $f(x)$ from a second set
+which we call the \textbf{range}.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{even and odd functions}
+\vspace*{\stretch{1}}
+\begin{tabular}{ccc}
+\textbf{even} & $f(-x) = f(x) \quad \text{ for all } x$ & e.g. $x^{2}, \cos(x)$\\
+\\
+\textbf{odd} & $f(-x) =  -f(x) \quad \text{ for all } x$ & e.g. $x, \sin(x)$\\
+\end{tabular} 
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{limit}
+\vspace*{\stretch{1}}
+If a function $f(x)$ is defined on an open interval containing $c$, except
+possibly at $c$, then the \\
+\textbf{limit of $f(x)$ as $x$ approaches $c$ equals $L$} 
+is denoted
+\begin{equation*}
+\lim_{x\rightarrow c} f(x) = L
+\end{equation*}
+The above equality holds if and only if for any 
+$\varepsilon > 0$ there exists a $\delta > 0$ such that
+\begin{equation*}
+0<|x-c|<\delta \Rightarrow |f(x) - L|<\varepsilon
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{one--sided limit}
+\vspace*{\stretch{1}}
+\textbf{right--handed limit}
+\begin{equation*}
+\lim_{x\rightarrow c^{+}} f(x) = L
+\end{equation*}
+\begin{center}
+iff for any $\varepsilon>0$ there exists a $\delta$ such that\\
+\end{center}
+\begin{equation*}
+0<x-c<\delta \Rightarrow |f(x)-L|<\varepsilon\\
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{limit exists iff both the right--handed
+and left--handed limits exist and are equal}
+\vspace*{\stretch{1}}
+%\begin{equation*}
+\begin{equation*}
+\lim_{x\rightarrow c}f(x) = L \Leftrightarrow
+\lim_{x\rightarrow c^{+}} f(x) = \lim_{x\rightarrow c^{-}} f(x) = L
+\end{equation*}
+%\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{main limit theorem (part 1)}
+\vspace*{\stretch{1}}
+\begin{small}
+Let $k$ be a constant, and $f, g$ be
+functions that have limits at $c$.
+\begin{enumerate}
+\item $\lim_{x\rightarrow c}k = k$
+\item $\lim_{x\rightarrow c}x = c$
+\item $\lim_{x\rightarrow c}kf(x) = k\lim_{x\rightarrow c}f(x)$
+\item $\lim_{x\rightarrow c}[f(x)+g(x)] =
+\lim_{x\rightarrow c}f(x) + \lim_{x\rightarrow c}g(x)$
+\item $\lim_{x\rightarrow c}[f(x)-g(x)] =
+\lim_{x\rightarrow c}f(x) - \lim_{x\rightarrow c}g(x)$
+\item $\lim_{x\rightarrow c}[f(x)\cdot g(x)] =
+\lim_{x\rightarrow c}f(x) \cdot \lim_{x\rightarrow c}g(x)$
+\end{enumerate}
+\end{small}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{main limit theorem (part 2)}
+\vspace*{\stretch{1}}
+Let $f, g$ be functions that have limits at $c$, and let $n$
+be a positive integer.
+\begin{enumerate}
+\item[7.] $\lim_{x\rightarrow c}\dfrac{f(x)}{g(x)} =
+\dfrac{\lim_{x\rightarrow c}f(x)}{\lim_{x\rightarrow c}g(x)}$
+if $\lim_{x\rightarrow c}g(x) \neq 0$
+\item[8.] $\lim_{x\rightarrow c}[f(x)]^{n} =
+[\lim_{x\rightarrow c}f(x)]^{n}$
+\item[9.] $\lim_{x\rightarrow c} \root n\of{f(x)} =
+\root n\of{\lim_{x\rightarrow c}f(x)}$ provided that 
+$\lim_{x\rightarrow c}f(x) > 0 $ when $n$ is even.
+\end{enumerate}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{squeeze theorem}
+\vspace*{\stretch{1}}
+Suppose $f$, $g$ and $h$ are functions which satisfy
+the inequality $f(x) \leq g(x) \leq h(x)$ for all $x$
+near $c$, (except possibly at $c$).  Then
+\begin{equation*}
+\lim_{x \rightarrow c} f(x) = \lim_{x \rightarrow c} h(x) = L
+\Rightarrow \lim_{x \rightarrow c} g(x) = L
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{two special trigonometric limits}
+\vspace*{\stretch{1}}
+\begin{equation*}
+\lim_{x \rightarrow 0} \dfrac{\sin x}{x} = 1
+\end{equation*}
+\bigskip
+\begin{equation*}
+\lim_{x \rightarrow 0} \dfrac{1-\cos x}{x} = 0
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{point-wise continuity}
+\vspace*{\stretch{1}}
+Let $f$ be defined on an open interval containing $c$, then 
+we say that f is \textbf{point-wise continuous} at $c$ if 
+\begin{equation*}
+\lim_{x \rightarrow c} f(x) = f(c)
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{composition limit theorem}
+\vspace*{\stretch{1}}
+If $\lim_{x \rightarrow c} g(x) = L$ and $f$ is continuous at $L$, then
+\begin{equation*}
+\lim_{x \rightarrow c} f(g(x)) = f(\lim_{x \rightarrow c} g(x)) = f(L)
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{continuity on an interval}
+\vspace*{\stretch{1}}
+A function $f$ is said to be \textbf{continuous on an open inteval}
+iff $f$ is continuous at every point of the open interval.
+
+A function $f$ is said to be \textbf{continuous on a closed interval}
+$[a,b]$ iff
+\begin{enumerate}
+\item $f$ is continuous on $(a,b)$ and
+\item $\lim_{x \rightarrow a^{+}} f(x) = f(a)$ and
+\item $\lim_{x \rightarrow b^{-}} f(x) = f(b)$
+\end{enumerate}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{derivative}
+\vspace*{\stretch{1}}
+The \textbf{derivative} of a function $f$ is another function
+$f'$ (read ``f prime'') whose value at $x$ is
+\begin{equation*}
+f'(x) = \lim_{h \rightarrow 0} \dfrac{f(x+h) - f(x)}{h}
+\end{equation*}
+provided the limit exists and is not $\infty$ or $-\infty$.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{equivalent form for the derivative}
+\vspace*{\stretch{1}}
+\begin{equation*}
+f'(c) = \lim_{x \rightarrow c} \dfrac{f(x) - f(c)}{x - c}
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{differentiability and continuity}
+\vspace*{\stretch{1}}
+If the function $f$ is differentiable at $c$, then $f$ is continuous at $c$.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{constant and power rules}
+\vspace*{\stretch{1}}
+\begin{align*}
+f(x) &= k & f'(x) &=0 \\
+\\
+f(x) &= x & f'(x) &=1 \\
+\\
+f(x) &= x^{n} & f'(x) &=nx^{n-1} \\
+\end{align*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{differentiation rules}
+\vspace*{\stretch{1}}
+Let $f$ and $g$ be functions of $x$ and $k$ a constant.
+\begin{enumerate}
+\item \textbf{scalar product rule} $(kf)' = kf'$
+\item \textbf{sum rule} $(f+g)' = f' + g'$
+\item \textbf{difference rule} $(f-g)' = f' - g'$
+\item \textbf{product rule} $(fg)' = f'g + fg'$
+\item \textbf{quotient rule} $\left( \dfrac{f}{g} \right)' = \dfrac{f'g - g'f}{g^2}$
+\end{enumerate}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{derivatives of trig functions}
+\vspace*{\stretch{1}}
+\begin{align*}
+(\sin x)' & = \cos x \\
+(\cos x)' & = -\sin x \\
+(\tan x)' & = \sec^2 x \\
+(\cot x)' & = -\csc^2 x \\
+(\sec x)' & = \sec x \tan x \\
+(\csc x)' & = -\csc x \cot x \\
+\end{align*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{chain rule}
+\vspace*{\stretch{1}}
+Let $u=g(x)$ and $y=f(u)$.  If $g$ is differentiable at $x$, and 
+$f$ is differentiable at $u=g(x)$, then the composite function
+$(f\circ g)(x) = f(g(x))$ is differentiable at $x$ and
+\begin{equation*}
+(f\circ g)'(x) = f'(g(x)) g'(x)
+\end{equation*} 
+In Leibniz notation
+\begin{equation*}
+\dfrac{dy}{dx}=\dfrac{dy}{du} \dfrac{du}{dx}
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{generalized power rule}
+\vspace*{\stretch{1}}
+If $f$ is a differentiable function and $n$ is an integer, then
+the power of the function
+\begin{equation*}
+y = \left[ f(x) \right]^{n}
+\end{equation*}
+is differentiable and
+\begin{equation*}
+\dfrac{dy}{dx} = n\left[ f(x) \right]^{n-1}f'(x)
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{notation for higher-order derivatives}
+\vspace*{\stretch{1}}
+\begin{center}
+\begin{footnotesize}
+\begin{tabular}{ccccc}
+Derivative & $f'(x)$ & $y'$ & $D$ & Leibniz \\ \hline
+\\
+first &  $f'(x)$ & $y'$ & $D_{x}y$ &  $\frac{dy}{dx}$\\
+\\
+second &  $f''(x)$ & $y''$ & $D_{x}^{2}y$ &  $\frac{d^{2}\! y}{dx^{2}}$\\
+\\
+third &  $f'''(x)$ & $y'''$ & $D_{x}^{3}y$ &  $\frac{d^{3}\! y}{dx^{3}}$\\
+\\
+fourth &  $f^{(4)}(x)$ & $y^{(4)}$ & $D_{x}^{4}y$ &  $\frac{d^{4}\! y}{dx^{4}}$\\
+$\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ \\
+nth &  $f^{(n)}(x)$ & $y^{(n)}$ & $D_{x}^{n}y$ &  $\frac{d^{n}\! y}{dx^{n}}$\\
+\end{tabular}
+\end{footnotesize}
+\end{center}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{extreme value theorem}
+\vspace*{\stretch{1}}
+If the function $f$ is continuous on the closed interval $[a,b]$,
+then $f$ has a maximum value and a minimum value on the interval
+$[a,b]$.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{intermediate value theorem}
+\vspace*{\stretch{1}}
+If the function $f$ is continuous on the closed interval $[a,b]$
+and $v$ is any value between the minimum and maximum of $f$ on
+$[a,b]$, then $f$ takes on the value $v$.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{critical point\\stationary point\\singular point}
+\vspace*{\stretch{1}}
+If $f$ is a function defined on an open interval containing the point $c$,
+we call $c$ a \textbf{critical point} of $f$ iff either
+\begin{itemize}
+\item $f'(c) = 0$ or
+\item $f'(c)$ does not exist 
+\end{itemize}
+Furthermore when $f'(c)=0$ we call $c$ a \textbf{stationary point} of $f$,
+and when $f'(c)$ does not exist we call $c$ a \textbf{singular point}
+of $f$.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{increasing\\decreasing\\monotonic}
+\vspace*{\stretch{1}}
+A function $f$ defined on the interval $I$ is
+\begin{itemize}
+\item \textbf{increasing} on $I \Leftrightarrow$
+for every $x_{1},x_{2}\in I$\\
+$x_{1}<x_{2}\Rightarrow f(x_{1})<f(x_{2})$
+\item  \textbf{decreasing} on $I \Leftrightarrow$
+for every $x_{1},x_{2}\in I$\\
+$x_{1}<x_{2}\Rightarrow f(x_{1})>f(x_{2})$
+\end{itemize}
+The function $f$ is said to be \textbf{monotonic} on $I$ if $f$
+is either increasing or decreasing on $I$.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{monotonicity theorem}
+\vspace*{\stretch{1}}
+Suppose $f$ is differentiable on an open interval $I$, then
+\begin{itemize}
+\item $f'(x) > 0 \text{ for each } x \in I \Rightarrow f \text{ is increasing on } I$ 
+\item $f'(x) < 0 \text{ for each } x \in I \Rightarrow f \text{ is decreasing on } I$ 
+\end{itemize}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{concave up\\concave down}
+\vspace*{\stretch{1}}
+Suppose $f$ is differentiable on an open interval $I$, then
+if $f'$ is increasing on $I$ we say that $f$ is \textbf{concave up} on $I$.
+\\
+\\
+If $f'$ is decreasing on $I$ we say that $f$ is \textbf{concave down} on $I$. 
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{concavity theorem}
+\vspace*{\stretch{1}}
+Let $f$ be twice differentiable on the open interval $I$.
+\begin{itemize}
+\item $f''(x)>0 \text{ for each } x \in I \Rightarrow$\\
+$f \text{ is concave up on } I$ 
+\item $f''(x)<0 \text{ for each } x \in I \Rightarrow$\\
+$f \text{ is concave down on } I$ 
+\end{itemize}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{inflection point}
+\vspace*{\stretch{1}}
+Let $f$ be continuous at $c$, then the ordered pair $(c,f(c))$ is
+called an \textbf{inflection point} of $f$ if $f$ is concave up on
+one side of $c$ and concave down on the other side of $c$.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[definition]{local maximum\\local minimum\\local extremum}
+\vspace*{\stretch{1}}
+Let the function $f$ be defined on an interval $I$ containing $c$.  We say
+$f$ has a \textbf{local maximum} at $c$ iff there exists an
+interval $(a,b)$ containing $c$ such that $f(x) \leq f(c)$ for all $x \in (a,b)$.
+\\ \\
+We say $f$ has a \textbf{local minimum} at $c$ iff there exists an
+interval $(a,b)$ containing $c$ such that $f(x) \geq f(c)$ for all $x \in (a,b)$.
+\\ \\
+A \textbf{local extremum} is either a local maximum or a local
+minimum.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{first derivative test}
+\vspace*{\stretch{1}}
+Let $f$ be differentiable on an open interval $(a,b)$ that contains $c$.
+\begin{enumerate}
+\item $f'(x)>0 \;\forall x \in (a,c) \text{ and } f'(x)<0 \;\forall x \in (c,b)
+\Rightarrow f(c)$ is a \textbf{local maximum} of $f$.
+\item $f'(x)<0 \;\forall x \in (a,c) \text{ and } f'(x)>0 \;\forall x \in (c,b)
+\Rightarrow f(c)$ is a \textbf{local minimum} of $f$.
+\item If $f'(x)$ has the same sign on both sides of c, then $f(c)$ is \textbf{not} a
+\textbf{local extremum}.
+\end{enumerate}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{second derivative test}
+\vspace*{\stretch{1}}
+Let $f$ be twice differentiable on an open interval containing $c$,
+and suppose $f'(c)=0$.
+\begin{enumerate}
+\item If $f''(c)<0$, then $f$ has a \textbf{local maximum} at $c$.
+\item If $f''(c)>0$, then $f$ has a \textbf{local minimum} at $c$.
+\item If $f''(c)=0$, then the test fails.
+\end{enumerate}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{mean value theorem}
+\vspace*{\stretch{1}}
+If $f$ is continuous on a closed interval $[a,b]$ and differentiable
+on its interior $(a,b)$, then there is at least one point $c$ in
+$(a,b)$ such that
+\begin{equation*}
+\dfrac{f(b)-f(a)}{b-a}=f'(c)
+\end{equation*}
+or equivalently
+\begin{equation*}
+f(b)-f(a)=f'(c)(b-a)
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[]{}
+\vspace*{\stretch{1}}
+
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[]{}
+\vspace*{\stretch{1}}
+
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[]{}
+\vspace*{\stretch{1}}
+
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[]{}
+\vspace*{\stretch{1}}
+
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[]{}
+\vspace*{\stretch{1}}
+
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[]{}
+\vspace*{\stretch{1}}
+
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[]{}
+\vspace*{\stretch{1}}
+
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[]{}
+\vspace*{\stretch{1}}
+
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\end{document}

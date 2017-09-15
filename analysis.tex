@@ -1,0 +1,1615 @@
+\documentclass[avery5371,grid]{flashcards}
+
+\cardfrontstyle[\large\slshape]{headings}
+\cardbackstyle{empty}
+\cardfrontfoot{Real Analysis I}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+\usepackage{datetime}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\st}{\textrm{ such that }}
+
+\begin{document}
+
+\begin{flashcard}[Copyright \& License]{Copyright \copyright \,
+2007 Jason Underdown \\Some rights reserved.}
+\vspace*{\stretch{1}}
+These flashcards and the accompanying \LaTeX \, source code are licensed
+under a Creative Commons Attribution--NonCommercial--ShareAlike 3.0 License.
+For more information, see creativecommons.org.
+You can contact the author at:
+\begin{center}
+\begin{small}\tt jasonu at physics utah edu\end{small}
+
+\medskip
+File last updated on \today, \\
+at \currenttime
+\end{center}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+% Section 1 Logical Connectives
+
+\begin{flashcard}[Definition]{statement}
+\vspace*{\stretch{1}}
+A sentence that can unambiguously be classified as true or false.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{sentential connectives}
+\vspace*{\stretch{1}}
+\begin{center}
+not, and, or, if \ldots then, if and only if
+\end{center}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{negation}
+\vspace*{\stretch{1}}
+Let $p$ stand for a statement, then $\sim p$ (read \textit{not} $p$)
+represents the logical opposite or \textbf{negation} of $p$.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{conjunction}
+\vspace*{\stretch{1}}
+If $p$ and $q$ are statements, then the statement
+$p$ \textit{and} $q$ (called the \textbf{conjunction}
+of $p$ and $q$ and denoted $\mathbf{p \wedge q}$)
+is true only when both $p$ and $q$ are true, and false otherwise.
+\begin{equation*}
+\begin{array}{c|c|c}
+p & q & p \wedge q \\
+\hline
+T & T & T\\ 
+T & F & F\\ 
+F & T & F\\ 
+F & F & F\\
+\hline
+\end{array}
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{disjunction}
+\vspace*{\stretch{1}}
+If $p$ and $q$ are statements, then the statement $p$ \textit{or} $q$
+(called the \textbf{disjunction} of $p$ and $q$ and denoted
+$\mathbf{p \vee q}$) is true unless both $p$ and $q$ are false.
+\begin{equation*}
+\begin{array}{c|c|c}
+p & q & p \vee q \\
+\hline
+T & T & T\\ 
+T & F & T\\ 
+F & T & T\\ 
+F & F & F\\
+\hline
+\end{array}
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{implication or conditional}
+\vspace*{\stretch{1}}
+A statement of the form
+\begin{center}
+ \textit{if p then q}
+\end{center}
+is called an \textbf{implication} or \textbf{conditional}.
+\begin{equation*}
+\begin{array}{c|c|c}
+p & q & p \Rightarrow q \\
+\hline
+T & T & T\\ 
+T & F & F\\ 
+F & T & T\\ 
+F & F & T\\
+\hline
+\end{array}
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{antecedant \& consequent \\
+hypothesis \& conclusion}
+\vspace*{\stretch{1}}
+\begin{center}
+If $p$, then $q$.
+\end{center}
+In the above, the statement $p$ is called the \mbox{\textbf{antecedant}}
+or \mbox{\textbf{hypothesis}}, and the statement $q$ is called the
+\mbox{\textbf{consequent}} or \mbox{\textbf{conclusion}}.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{equivalence}
+\vspace*{\stretch{1}}
+A statement of the form ``$p$ if and only if $q$'' is the conjunction
+of two implications and is called an \textbf{equivalence}.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{negation of a conjunction}
+\vspace*{\stretch{1}}
+\begin{equation*}
+\sim (p \wedge q) \Leftrightarrow (\sim p) \vee (\sim q)
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{negation of a disjunction}
+\vspace*{\stretch{1}}
+\begin{equation*}
+\sim (p \vee q) \Leftrightarrow (\sim p) \wedge (\sim q)
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{negation of an implication}
+\vspace*{\stretch{1}}
+\begin{equation*}
+\sim (p \Rightarrow q) \Leftrightarrow p \wedge (\sim q)
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{tautology}
+\vspace*{\stretch{1}}
+A sentence whose truth table contains only T is called a \textbf{tautology}.
+The following sentences are examples of tautologies
+($c \equiv$ contradiction):
+\begin{eqnarray*}
+(p \Leftrightarrow q) & \Leftrightarrow &
+(p\Rightarrow q) \wedge (q\Rightarrow p)\\
+(p \Rightarrow q) & \Leftrightarrow &
+(\sim q \Rightarrow \sim p)\\
+(p \Rightarrow q) & \Leftrightarrow &
+\left[(p \wedge \sim q) \Rightarrow c \right]
+\end{eqnarray*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+% Section 2 Quantifiers
+
+\begin{flashcard}[Definition]{universal quantifier}
+\vspace*{\stretch{1}}
+\begin{equation*}
+\forall \; x, \ p(x)
+\end{equation*}
+In the above statement, the \textbf{universal quantifier} denoted by
+$\forall$ is read ``for all'', ``for each'', or ``for every''.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{existential quantifier}
+\vspace*{\stretch{1}}
+\begin{equation*}
+\exists \ x \ni p(x)
+\end{equation*}
+In the above statement, the \textbf{existential quantifier} denoted by
+$\exists$ is read ``there exists \ldots'', ``there is at least one
+\ldots''.  The symbol $\ni$ is just shorthand for ``such that''.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+% Section 3 Techniques of Proof I
+
+\begin{flashcard}[Definition]{contrapositive}
+\vspace*{\stretch{1}}
+The implication $p \Rightarrow q$ is logically equivalent with its
+\mbox{\textbf{contrapositive}}:
+\begin{equation*}
+\sim q \Rightarrow \sim p
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{converse}
+\vspace*{\stretch{1}}
+Given the implication $p \Rightarrow q$ then its
+\mbox{\textbf{converse}} is
+\begin{equation*}
+q \Rightarrow p
+\end{equation*}
+But they are \textit{not} logically equivalent.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{inverse}
+\vspace*{\stretch{1}}
+Given the implication $p \Rightarrow q$ then its
+\mbox{\textbf{inverse}} is
+\begin{equation*}
+\sim p \Rightarrow \sim q
+\end{equation*}
+An implication is \textit{not} logically equivalent to its inverse.
+The inverse is the contrapositive of the converse.
+
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{contradiction}
+\vspace*{\stretch{1}}
+A \textbf{contradiction} is a statement that is always false.
+Contradictions are symbolized by the letter $c$ or by two arrows
+pointing directly at each other.
+\begin{equation*}
+\Rightarrow \Leftarrow
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+% Section 4 Techniques of Proof II
+
+% Section 5 Basic Set Operations
+
+\begin{flashcard}[Definition]{subset}
+\vspace*{\stretch{1}}
+Let $A$ and $B$ be sets.  We say that $A$ is a \mbox{\textbf{subset}}
+of $B$ if every element of $A$ is an element of $B$.  In symbols, this
+is denoted
+\begin{equation*}
+A \subseteq B \textrm{ or } B \supseteq A
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{proper subset}
+\vspace*{\stretch{1}}
+Let $A$ and $B$ be sets. $A$ is a \mbox{\textbf{proper subset}} of $B$
+if $A$ is a subset of $B$ and there exists an element in $B$
+that is not in $A$.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{set equality}
+\vspace*{\stretch{1}}
+Let $A$ and $B$ be sets.  We say that $A$ is a \mbox{\textbf{equal}} to $B$
+if $A$ is a subset of $B$ and $B$ is a subset of $A$.
+\begin{equation*}
+A = B \Leftrightarrow A \subseteq B \textrm{ and } B \subseteq A
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{union, intersection, complement, disjoint}
+\vspace*{\stretch{1}}
+Let $A$ and $B$ be sets.
+\begin{eqnarray*}
+A \cup B &=& \{ x: x \in A \textrm{ or } x \in B \} \\
+A \cap B &=& \{ x: x \in A \textrm{ and } x \in B \} \\
+A \setminus B &=& \{ x: x \in A \textrm{ and } x \not \in B \}
+\end{eqnarray*}
+If $A \cap B = \varnothing$ then $A$ and $B$ are said to be
+\mbox{\textbf{disjoint}}.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{indexed family of sets}
+\vspace*{\stretch{1}}
+If for each element $j$ in a nomempty set $J$
+there corresponds a set $A_{j}$, then
+\begin{equation*}
+\mathscr{A} = \{ A_{j} : j \in J \}
+\end{equation*}
+is called an \textbf{indexed family of sets} with $J$ as the index set.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{pairwise disjoint}
+\vspace*{\stretch{1}}
+If $\mathscr{A}$ is a collection of sets, then $\mathscr{A}$ is called
+\mbox{\textbf{pairwise disjoint}} if 
+\begin{equation*}
+\forall \ A,B \in \mathscr{A}, \textrm{ where } A \neq B
+\textrm{ then } A \cap B  = \varnothing
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+% Section 6 Relations
+
+\begin{flashcard}[Definition]{ordered pair}
+\vspace*{\stretch{1}}
+The \mbox{\textbf{ordered pair}}  $(a,b)$ is the set whose members are
+$\{ a \}$ and $\{ a, b \}$.
+\begin{equation*}
+(a,b) = \{ \{a \} , \{ a,b \} \}
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{Cartesian product}
+\vspace*{\stretch{1}}
+If $A$ and $B$ are sets,then the \mbox{\textbf{Cartesian product}} or
+\mbox{\textbf{cross product}} of $A$ and $B$ is the set of all ordered
+pairs $(a,b)$ such that $a \in A$ and $b \in B$.
+\begin{equation*}
+A \times B = \{ (a,b) : a \in A \textrm{ and } b \in B \}
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{relation}
+\vspace*{\stretch{1}}
+Let $A$ and $B$ be sets.  A \mbox{\textbf{relaton}} between
+$A$ and $B$ is any subset \textsf{R} of $A \times B$.
+\begin{equation*}
+a \textsf{R} b \Leftrightarrow (a,b) \in \textsf{R}
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{equivalence relation}
+\vspace*{\stretch{1}}
+A relation \textsf{R} on a set $S$ is an \mbox{\textbf{equivalence relation}}
+if for all $x, y, z \in S$ it satisfies the following criteria:
+\begin{enumerate}
+\item $x \textsf{R} x$ reflexivity
+\item $x \textsf{R} y \Rightarrow y \textsf{R} x$ symmetry
+\item $x \textsf{R} y$ and $y \textsf{R} z \Rightarrow
+x \textsf{R} z$ transitivity
+\end{enumerate}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{equivalence class}
+\vspace*{\stretch{1}}
+The \textbf{equivalence class} of $x \in S$ with respect to an equivalence 
+relation \textsf{R} is the set
+\begin{equation*}
+E_{x} = \left\lbrace y \in S : y \textsf{R} x\right\rbrace 
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{partition}
+\vspace*{\stretch{1}}
+A \textbf{partition} of a set $S$ is a collection $\mathscr{P}$
+of nonempty subsets of $S$ such that
+\begin{enumerate}
+\item Each $x \in S$ belongs to some subset $A \in \mathscr{P}$.
+\item For all $A, B \in \mathscr{P}$, if $A \neq B$,
+then $A \cap B = \varnothing$
+\end{enumerate}
+A member of a set $\mathscr{P}$ is called a \textbf{piece} of the partition.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+% Section 7 Functions
+
+\begin{flashcard}[Definition]{function between $A$ and $B$}
+\vspace*{\stretch{1}}
+Let $A$ and $B$ be sets.  A \mbox{\textbf{function between $A$ and $B$}}
+is a nonempty relation $f \subseteq A \times B$ such that
+\begin{equation*}
+\left[ (a,b) \in f \textrm{ and } (a,b') \in f \right] \Longrightarrow b=b'
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{domain}
+\vspace*{\stretch{1}}
+Let $A$ and $B$ be sets, and let $f \subseteq A \times B$ be a function
+between $A$ and $B$.  The \textbf{domain} of $f$ is the set of all first
+elements of members of $f$.
+\begin{equation*}
+\textrm{dom } f = \{ a \in A : \exists \; b \in B \ni (a,b) \in f \}
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{range \& codomain}
+\vspace*{\stretch{1}}
+Let $A$ and $B$ be sets, and let $f \subseteq A \times B$ be a function
+between $A$ and $B$.  The \textbf{range} of $f$ is the set of all second
+elements of members of $f$.
+\begin{equation*}
+\textrm{rng } f = \{ b \in B : \exists \; a \in A \ni (a,b) \in f \}
+\end{equation*}
+The set $B$ is referred to as the \mbox{\textbf{codomain}} of $f$.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{surjective or onto}
+\vspace*{\stretch{1}}
+The function $f:A \rightarrow B$ is \textbf{surjective} or \textbf{onto}
+if $B = \textrm{rng } f$.  Equivalently,
+\begin{equation*}
+\forall \; b \in B, \quad \exists \; a \in A \ni b = f(a)
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{injective or 1--1}
+\vspace*{\stretch{1}}
+The function $f:A \rightarrow B$ is \textbf{injective} or \mbox{(1--1)}
+if:
+\begin{equation*}
+\forall \ a, a' \in A, \quad f(a) = f(a') \Longrightarrow a = a'
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{bijective}
+\vspace*{\stretch{1}}
+A function $f:A \rightarrow B$ is said to be \textbf{bijective}
+if $f$ is both surjective and injective.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{characteristic or indicator function}
+\vspace*{\stretch{1}}
+Let $A$ be a nonempty set and let $S \subseteq A$, then the
+\mbox{\textbf{characteristic function}} $\chi_{S} : A \rightarrow \{ 0,1 \}$
+is defined by
+\begin{equation*}
+\chi_{S}(a) = \left\{ \begin{array}{ll}
+  0 & a \notin S \\
+  1 & a \in S
+\end{array} \right.
+\end{equation*} 
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{image and pre-image}
+\vspace*{\stretch{1}}
+Suppose $f: A\rightarrow B$, and $C\subseteq A$, then the \textbf{image}
+of $C$ under $f$ is
+\begin{equation*}
+f(C)=\{ f(x): x\in C\}
+\end{equation*}
+
+\bigskip
+If $D\subseteq B$ then the \textbf{pre-image} of $D$ in $f$ is
+\begin{equation*}
+f^{-1}(D) = \{ x\in A : f(x) \in D\}
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{composition of functions}
+\vspace*{\stretch{1}}
+Suppose $f: A \rightarrow B$ and $g: B \rightarrow C$, then the
+\mbox{\textbf{composition}} of $g$ with $f$ denoted by
+$g\circ f: A \rightarrow C$ is given by
+\begin{equation*}
+(g\circ f)(x) = g(f(x))
+\end{equation*}
+In terms of ordered pairs this means
+\begin{equation*}
+g\circ f =
+\{(a,c) \in A \times C :
+\exists \ b \in B \ni (a,b) \in f \wedge (b,c) \in g \}
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{inverse function}
+\vspace*{\stretch{1}}
+Let $f: A\rightarrow B$ be bijective.  The
+\mbox{\textbf{inverse function}} of $f$ is the function $f^{-1}:B
+\rightarrow A$ given by
+\begin{equation*}
+f^{-1} = \{(y,x) \in B \times A : (x,y) \in f \}
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{identity function}
+\vspace*{\stretch{1}}
+A function that maps a set $A$ onto itself is called the
+\mbox{\textbf{identity function}} on $A$, and is denoted $i_{A}$.
+
+\medskip
+If $f: A \rightarrow B$ is a bijection, then
+\begin{eqnarray*}
+f^{-1} \circ f &=& i_{A} \\
+f \circ f^{-1} &=& i_{B}
+\end{eqnarray*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+% Section 8 Cardinality
+
+\begin{flashcard}[Definition]{equinumerous}
+\vspace*{\stretch{1}}
+Two sets $S$ and $T$ are \mbox{\textbf{equinumerous}}, denoted
+$S \sim T$, if there exists a bijection from $S$ onto $T$.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{finite \& infinite sets}
+\vspace*{\stretch{1}}
+A set $S$ is said to be \textbf{finite} if $S = \varnothing$ or if
+there exists an $n \in \N$ and a bijection
+\begin{equation*}
+f: \{1,2,\ldots,n\} \rightarrow S.
+\end{equation*}
+If a set is not finite, it is said to be \textbf{infinite}.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{cardinal number \& transfinite}
+\vspace*{\stretch{1}}
+Let $I_{n} = \{1,2,\ldots ,n \}$.  The \mbox{\textbf{cardinal number}}
+of $I_{n}$ is $n$.  Let $S$ be a set.  If $S \sim I_{n}$ then
+$S$ has $n$ elements.
+
+\bigskip
+The cardinal number of $\varnothing$ is defined to be $0$.
+
+\bigskip
+Finally, if a cardinal number is not finite, it is said to be
+\mbox{\textbf{transfinite}}.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{denumerable}
+\vspace*{\stretch{1}}
+A set $S$ is said to be \textbf{denumerable} if there exists a
+bijection
+\begin{equation*}
+f: \N \rightarrow S
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{countable \& uncountable}
+\vspace*{\stretch{1}}
+If a set is finite or denumerable, then it is \mbox{\textbf{countable}}.
+
+\bigskip
+If a set is not countable, then it is \mbox{\textbf{uncountable}}.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{power set}
+\vspace*{\stretch{1}}
+Given any set $S$, the \textbf{power set} of $S$ denoted by
+$\mathscr{P}(S)$ is the collection of all possible subsets of $S$.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{continuum hypothesis}
+\vspace*{\stretch{1}}
+Given that $|\N| = \aleph_{0}$ and $|\R| = c$, we know
+that $c > \aleph_{0}$, but is there any set with cardinality say $\lambda$
+such that $\aleph_{0} < \lambda < c \ $?
+
+\bigskip
+The conjecture that there is no such set was first made by Cantor and is
+known as the \mbox{\textbf{continuum hypothesis}}.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{algebraic \& transcendental}
+\vspace*{\stretch{1}}
+A real number is said to be \textbf{algebraic} if it is a root of a 
+polynomial with integer coefficients.
+
+\bigskip
+If a number is not algebraic, it is called \textbf{transcendental}.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+% Section 10 Natural Numbers and Induction
+
+\begin{flashcard}[Axiom]{well--ordering property of $\N$}
+\vspace*{\stretch{1}}
+If $S$ is a nonempty subset of $\N$, then there exists an element
+$m \in S$ such that $ \forall \ k \in S \ m \leq k$.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{basis for induction, induction step,
+induction hypothesis}
+\vspace*{\stretch{1}}
+In the \textit{Principle of Mathematical Induction}, part (1) which refers
+to $P(1)$ being true is known as the \mbox{\textbf{basis for induction}}.
+
+\bigskip
+Part (2) where one must show that $\forall \ k \in \N, P(k)
+\Rightarrow P(k+1)$ is known as the \mbox{\textbf{induction step}}.
+
+\bigskip
+Finally, the assumption in part (2) that $P(k)$ is true is known as the
+\mbox{\textbf{induction hypothesis}}.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{recursion relation or recurrence relation}
+\vspace*{\stretch{1}}
+A \textbf{recurrence relation} is an equation that defines a sequence
+recursively: each term of the sequence is defined as a function of the
+preceding terms.
+
+\medskip
+The Fibonacci numbers are defined using the linear recurrence relation:
+\begin{eqnarray*}
+F_n &=& F_{n-2} + F_{n-1}\\
+F_{1} &=& 1\\
+F_{2} &=& 1
+\end{eqnarray*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+% Section 11 Ordered Fields
+
+\begin{flashcard}[Axiom]{field axioms}
+\vspace*{\stretch{1}}
+\begin{small}
+\begin{center}
+\begin{tabular}{l}
+A1 Closure under addition \\
+A2 Addition is commutative \\ 
+A3 Addition is associative \\
+A4 Additive identity is $0$ \\ 
+A5 Unique additive inverse of $x$ is $-x$ \\
+M1 Closure under multiplication \\
+M2 Multiplication is commutative \\
+M3 Multiplication is associative \\
+M4 Multiplicative identity is $1$ \\
+M5 If $x \neq 0$, then the unique multiplicative inverse is $1/x$ \\
+DL $\forall \ x,y,z \in \R, x(y+z) = xy + xz$
+\end{tabular}
+\end{center}
+\end{small}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Axiom]{order axioms}
+\vspace*{\stretch{1}}
+\begin{enumerate}
+\item[O1] $\forall \ x,y \in \R$ exactly one of the relations \\
+$x=y, x<y, x>y$ holds. (trichotomy)
+\item[O2] $\forall \ x,y,z \in \R$, $x<y \textrm{ and } y<z 
+\Rightarrow x<z$. \\(transitivity)
+\item[O3] $\forall \ x,y,z \in \R$, $x<y \Rightarrow x+z<y+z$
+\item[O4] $\forall \ x,y,z \in \R$, $x<y \textrm{ and } z>0 
+\Rightarrow xz<yz$.
+\end{enumerate}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{absolute value}
+\vspace*{\stretch{1}}
+If $x \in \R$, then the \mbox{\textbf{absolute value}} of $x$,
+is denoted $|x|$ and defined to be
+\begin{equation*}
+|x| = \left\{ \begin{array}{rl}
+   x & x \geq 0 \\
+  -x & x < 0
+\end{array} \right.
+\end{equation*} 
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{triangle inequality}
+\vspace*{\stretch{1}}
+Let $x,y \in \R$ then
+\begin{equation*}
+|x+y| \leq |x| + |y|
+\end{equation*}
+alternatively,
+\begin{equation*}
+|a-b| \leq |a-c| + |c-b|
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{ordered field}
+\vspace*{\stretch{1}}
+If $S$ is a field and satisfies (O1--O4) of the order axioms,
+then $S$ is an \mbox{\textbf{ordered field}}.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+% Section 12 The Completeness Axiom
+
+\begin{flashcard}[Definition]{irrational number}
+\vspace*{\stretch{1}}
+Suppose $x \in \R$.  If $x \neq \frac{m}{n}$ for some $m,n \in 
+\Z$, then $x$ is \mbox{\textbf{irrational}}.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{upper \& lower bound}
+\vspace*{\stretch{1}}
+Let $S$ be a subset of $\R$.  If there exists an $m \in \R$ such that
+$m \geq s \quad \forall \ s \in S$, then $m$ is called an
+\mbox{\textbf{upper bound}} of $S$.
+
+\bigskip
+Similarly, if $m \leq s \quad \forall \ s \in S$, then $m$ is called a
+\mbox{\textbf{lower bound}} of $S$.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{bounded}
+\vspace*{\stretch{1}}
+A set $S$ is said to be \textbf{bounded} if it is bounded above
+and bounded below.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{maximum \& minimum}
+\vspace*{\stretch{1}}
+If $m$ is an upper bound of $S$ and also in $S$, then
+$m$ is called the \mbox{\textbf{maximum}} of $S$.
+
+\bigskip
+Similarly, if $m$ is a lower bound of $S$ and also in $S$, 
+then $m$ is called the \mbox{\textbf{minimum}} of $S$.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{supremum}
+\vspace*{\stretch{1}}
+Let $S$ be a nonempty subset of $\R$.  If $S$ is bounded above, then
+the \mbox{\textbf{least upper bound}} is called the
+\mbox{\textbf{supremum}}, and is denoted sup $S$.
+
+\medskip
+$m = \textrm{sup } S \Leftrightarrow$
+\begin{enumerate}
+ \item[(a)] $m \geq s, \ \forall \ s \in S$ and
+ \item[(b)] if $m'<m$, then $\exists \; s' \in S \ni s'>m'$
+\end{enumerate}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{infimum}
+\vspace*{\stretch{1}}
+Let $S$ be a nonempty subset of $\R$.  If $S$ is bounded below, then
+the \mbox{\textbf{greatest lower bound}} is called the
+\mbox{\textbf{infimum}}, and is denoted inf $S$.
+
+\medskip
+$m = \textrm{inf } S \Leftrightarrow$
+\begin{enumerate}
+ \item[(a)] $m \leq s, \ \forall \ s \in S$ and
+ \item[(b)] if $m'>m$, then $\exists \; s' \in S \ni s'<m'$
+\end{enumerate}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Axiom]{Completeness Axiom}
+\vspace*{\stretch{1}}
+Every nonempty subset $S$ of $\R$ that is bounded above has a 
+least upper bound.  That is, sup $S$ exists and is a real number.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{Archimedean ordered field}
+\vspace*{\stretch{1}}
+An ordered field $F$ has the \textbf{Archimedean property} 
+if 
+\begin{equation*}
+\forall \ x \in F \quad \exists \; n \in \N \ni x<n
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{dense}
+\vspace*{\stretch{1}}
+A set $S$ is \textbf{dense} in a set $T$ if
+\begin{equation*}
+\forall \; t_1, t_2 \in T \quad \exists \; s \in S \ni t_1<s<t_2
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{extended real numbers}
+\vspace*{\stretch{1}}
+For convenience, we extend the set of real numbers with two symbols
+$\infty$ and $-\infty$, that is $\R \cup \{ \infty , -\infty \}$. 
+
+\bigskip
+Then for example if a set $S$ is not bounded above, then we can write
+\begin{equation*}
+\textrm{sup } S = \infty
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+% Section 13 Topology of the Reals
+
+\begin{flashcard}[Definition]{neighborhood \& radius}
+\vspace*{\stretch{1}}
+Let $x \in \R$ and $\varepsilon > 0$, then a \mbox{\textbf{neighborhood}}
+of $x$ is
+\begin{equation*}
+N(x;\varepsilon) = \{ y \in \R : |y-x|<\varepsilon \}
+\end{equation*}
+The number $\varepsilon$ is referred to as the \mbox{\textbf{radius}}
+of $N(x;\varepsilon)$.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{deleted neighborhood}
+\vspace*{\stretch{1}}
+Let $x \in \R$ and $\varepsilon > 0$, then a
+\mbox{\textbf{deleted neighborhood}} of $x$ is
+\begin{equation*}
+N^{*}(x;\varepsilon) = \{ y \in \R : 0<|y-x|<\varepsilon \}
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{interior point}
+\vspace*{\stretch{1}}
+Let $S \subseteq \R$.  A point $x \in \R$ is an
+\mbox{\textbf{interior point}} of $S$ if there exists a neigborhood
+$N(x;\varepsilon)$ such that $N \subseteq S$.
+
+\bigskip
+The set of all interior points of $S$ is denoted int $S$.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{boundary point}
+\vspace*{\stretch{1}}
+A point $x \in \R$ is a \mbox{\textbf{boundary point}} of $S$ if
+\begin{equation*}
+\forall \ \varepsilon > 0, \quad N(x;\varepsilon) \cap S \neq \varnothing
+\textrm{ and } N(x;\varepsilon) \cap (\R \setminus S) \neq \varnothing
+\end{equation*}
+In other words, every neighborhood of a boundary point must intersect the
+set $S$ and the complement of $S$ in $\R$.
+
+\medskip
+The set of all boundary points of $S$ is denoted bd $S$.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{closed and open sets}
+\vspace*{\stretch{1}}
+Let $S \subseteq \R$.  If bd $S \subseteq S$, then $S$ is said to be
+\mbox{\textbf{closed}}.
+
+\bigskip
+If bd $S \subseteq \R \setminus S$, then $S$ is said to be
+\mbox{\textbf{open}}.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{accumulation point}
+\vspace*{\stretch{1}}
+Suppose $S \subseteq \R$, then a point $x \in \R$ is called an
+\mbox{\textbf{accumulation point}} of $S$ if
+\begin{equation*}
+\forall \ \varepsilon >0, \quad N^{*}(x;\varepsilon) \cap S \neq \varnothing
+\end{equation*}
+In other words, every deleted neighborhood of $x$ contains a point in $S$.
+
+\medskip
+The set of all accumulation points of $S$ is denoted $S'$.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{isolated point}
+\vspace*{\stretch{1}}
+Let $S \subseteq \R$.  If $x \in S$ and $x \not\in S'$,
+then $x$ is called an \mbox{\textbf{isolated point}} of $S$.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{closure of a set}
+\vspace*{\stretch{1}}
+Let $S \subseteq \R$.  The \mbox{\textbf{closure}} of $S$ is defined by
+\begin{equation*}
+\textrm{cl } S = S \cup S'
+\end{equation*}
+In other words, the closure of a set is the set itself unioned with its
+set of accumulation points.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+% Section 14 Compact Sets
+
+\begin{flashcard}[Definition]{open cover}
+\vspace*{\stretch{1}}
+An \mbox{\textbf{open cover}} of a set $S$ is a family or collection of sets
+whose union contains $S$.
+\begin{equation*}
+ S \subseteq \mathscr{F} = \{ F_{n} : n \in \N \}
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{subcover}
+\vspace*{\stretch{1}}
+Suppose $\mathscr{G} \subseteq \mathscr{F}$ are both families of indexed sets
+that cover a set $S$, then since $\mathscr{G}$ is a subset of $\mathscr{F}$
+it is called a \mbox{\textbf{subcover}} of $S$.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{compact set}
+\vspace*{\stretch{1}}
+A set $S$ is \mbox{\textbf{compact}} iff \emph{every} open cover
+of $S$ contains a finite subcover of $S$.
+
+\bigskip
+Note:  This is a difficult definition to use because to show that a
+set is compact you must show that \emph{every} open cover contains
+a finite subcover.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+% Section 16 Convergence
+
+\begin{flashcard}[Definition]{sequence}
+\vspace*{\stretch{1}}
+A \mbox{\textbf{sequence}} $s$ is a function whose domain is $\N$.
+However, instead of denoting the value of $s$ at $n$ by $s(n)$,
+we denote it $s_{n}$.  The ordered set of all values of $s$ is denoted
+$(s_{n})$. 
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{converge \& diverge}
+\vspace*{\stretch{1}}
+A sequence $(s_{n})$ is said to \mbox{\textbf{converge}} to $s \in \R$,
+denoted $(s_{n}) \rightarrow s$ if
+\begin{equation*}
+\forall \ \varepsilon > 0, \ \exists \ N \textrm{ such that } \forall \ 
+n \in \N,
+\end{equation*}
+\begin{equation*}
+n>N \Rightarrow |s_{n} - s| < \varepsilon
+\end{equation*}
+If a sequence does not converge, it is said to \mbox{\textbf{diverge}}.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{bounded sequence}
+\vspace*{\stretch{1}}
+A sequence is said to be \mbox{\textbf{bounded}} if its range
+\mbox{$\{ s_{n} : n \in \N \}$} is bounded.  Equivalently if,
+\begin{equation*}
+\exists \; M \geq 0 \textrm{ such that }
+\forall \; n \in \N, \  |s_{n}| \leq M
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+% Section 17 Limit Theorems
+
+\begin{flashcard}[Definition]{diverge to $+\infty$}
+\vspace*{\stretch{1}}
+A sequence $(s_{n})$ is said to diverge to $+\infty$ if
+\begin{equation*}
+\forall \; M \in \R, \ \exists \; N \textrm{ such that }
+\end{equation*}
+\begin{equation*}
+n > N \Rightarrow s_{n} > M
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{diverge to $-\infty$}
+\vspace*{\stretch{1}}
+A sequence $(s_{n})$ is said to diverge to $-\infty$ if
+\begin{equation*}
+\forall \; M \in \R, \ \exists \; N \textrm{ such that }
+\end{equation*}
+\begin{equation*}
+n > N \Rightarrow s_{n} < M
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{nondecreasing, nonincreasing \& monotone}
+\vspace*{\stretch{1}}
+A sequence $(s_{n})$ is \mbox{\textbf{nondecreasing}} if
+\begin{equation*}
+s_{n} \leq s_{n+1} \quad \forall n \in \N
+\end{equation*}
+A sequence $(s_{n})$ is \mbox{\textbf{nonincreasing}} if
+\begin{equation*}
+s_{n} \geq s_{n+1} \quad \forall n \in \N
+\end{equation*}
+A sequence is \mbox{\textbf{monotone}} if it is either nondecreasing
+or nonincreasing.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{increasing \& decreasing}
+\vspace*{\stretch{1}}
+A sequence $(s_{n})$ is \mbox{\textbf{increasing}} if
+\begin{equation*}
+s_{n} < s_{n+1} \quad \forall n \in \N
+\end{equation*}
+A sequence $(s_{n})$ is \mbox{\textbf{decreasing}} if
+\begin{equation*}
+s_{n} > s_{n+1} \quad \forall n \in \N
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{Cauchy sequence}
+\vspace*{\stretch{1}}
+A sequence $(s_{n})$ is said to be a \mbox{\textbf{Cauchy sequence}} if
+\begin{equation*}
+\forall \; \varepsilon > 0, \quad \exists \; N \st
+\end{equation*}
+\begin{equation*}
+m,n > N \; \Rightarrow |s_{n} - s_{m}| < \varepsilon
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+% Section 19 Subsequences
+
+\begin{flashcard}[Definition]{subsequence}
+\vspace*{\stretch{1}}
+If $(s_{n})$ is any sequence and $(n_{k})$ is any strictly increasing
+sequence, then the sequence $(s_{n_{k}})$ is called a
+\mbox{\textbf{subsequence}} of $(s_{n})$.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{subsequential limit}
+\vspace*{\stretch{1}}
+A \mbox{\textbf{subsequential limit}} of a sequence $(s_{n})$ is the
+limit of some subsequence of $(s_{n})$.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{lim sup \& lim inf}
+\vspace*{\stretch{1}}
+Suppose $S$ is the set of all subsequential limits of a sequence
+$(s_{n})$.  The \mbox{\textbf{lim sup $(s_{n})$}}, shorthand for the
+limit superior of $(s_{n})$ is defined to be
+\begin{equation*}
+\textrm{lim sup } (s_{n}) = \textrm{sup } S
+\end{equation*}
+The \mbox{\textbf{lim inf $(s_{n})$}}, shorthand for the
+limit inferior of $(s_{n})$ is defined to be
+\begin{equation*}
+\textrm{lim inf } (s_{n}) = \textrm{inf } S
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{oscillating sequence}
+\vspace*{\stretch{1}}
+If lim inf $(s_{n}) <$ lim sup $(s_{n})$, then we say that the sequence
+$(s_{n})$ \mbox{\textbf{oscillates}}.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+% Section 20 Limits of Functions
+
+\begin{flashcard}[Definition]{limit of a function}
+\vspace*{\stretch{1}}
+Suppose $f:D \rightarrow \R$ where $D \subseteq \R$, and suppose $c$ is 
+an accumulation point of $D$.  Then the
+\mbox{\textbf{limit of $f$ at $c$ is $L$}} is denoted by
+\[ \lim_{x \rightarrow c} f(x) = L \]
+and defined by
+\begin{equation*}
+\forall \; \varepsilon > 0, \quad \exists \; \delta > 0 \; \st
+\end{equation*}
+\begin{equation*}
+|x-c| < \delta \Rightarrow |f(x) - L| < \varepsilon
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{sum, product, multiple, \& quotient\\
+of functions}
+\vspace*{\stretch{1}}
+Let $f:D \rightarrow \R$ and $g:D \rightarrow \R$, then we define:
+\begin{enumerate}
+ \item \textbf{sum} $(f+g)(x) = f(x) + g(x)$
+ \item \textbf{product} $(fg)(x) = f(x)g(x)$
+ \item \textbf{multiple} $(kf)(x) = kf(x) \quad k \in \R$
+ \item \textbf{quotient} $\left( \dfrac{f}{g} \right) = \dfrac{f(x)}{g(x)}
+\textrm{ if } g(x) \neq 0 \quad \forall x \in D$
+\end{enumerate}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{right--hand limit}
+\vspace*{\stretch{1}}
+Let $f:(a,b) \rightarrow \R$, then the \mbox{\textbf{right--hand limit}}
+of $f$ at $a$ is denoted \[\lim_{x \rightarrow a^{+}} f(x) = L \]
+and defined by
+\begin{equation*}
+\forall \; \varepsilon > 0, \quad \exists \; \delta > 0 \st
+\end{equation*}
+\begin{equation*}
+a < x < a + \delta \Rightarrow |f(x) - L| < \varepsilon
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{left--hand limit}
+\vspace*{\stretch{1}}
+Let $f:(a,b) \rightarrow \R$, then the \mbox{\textbf{left--hand limit}}
+of $f$ at $b$ is denoted \[\lim_{x \rightarrow b^{-}} f(x) = L \]
+and defined by
+\begin{equation*}
+\forall \; \varepsilon > 0, \quad \exists \; \delta > 0 \st
+\end{equation*}
+\begin{equation*}
+b - \delta < x < b \Rightarrow |f(x) - L| < \varepsilon
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+% Section 21 Continuous Functions
+
+\begin{flashcard}[Definition]{continuous function at a point}
+\vspace*{\stretch{1}}
+Let $f:D \rightarrow \R$ where $D \subseteq \R$, and suppose $c \in D$,
+then $f$ is \mbox{\textbf{continuous}} at $c$ if
+\begin{equation*}
+\forall \; \varepsilon > 0, \quad \exists \; \delta > 0 \st
+\end{equation*}
+\begin{equation*}
+|x-c| < \delta \Rightarrow |f(x) - f(c)| < \varepsilon
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{continuous on $S$\\ continuous}
+\vspace*{\stretch{1}}
+Let $f:D \rightarrow \R$ where $D \subseteq \R$.  If $f$ is continuous
+at each point of a subset $S \subseteq D$, then $f$ is said to be
+\mbox{\textbf{continuous on $S$}}.
+
+\medskip
+If $f$ is continuous on its entire domain $D$, then $f$ is simply said
+to be \mbox{\textbf{continuous}}.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+% Section 22 Properties of Continuous Functions
+
+\begin{flashcard}[Definition]{bounded function}
+\vspace*{\stretch{1}}
+A function is said to be \mbox{\textbf{bounded}} if its range is
+bounded.  Equivalently, $f:D \rightarrow \R$ is bounded if
+\begin{equation*}
+\exists \; M \in \R \st \forall \; x \in D, \ |f(x)| \leq M
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+% Section 23 Uniform Continuity
+
+\begin{flashcard}[Definition]{uniform continuity}
+\vspace*{\stretch{1}}
+A function $f:D \rightarrow \R$ is \textbf{uniformly continuous on $D$} if
+\begin{equation*}
+\forall \; \varepsilon > 0, \quad \exists \; \delta > 0 \st
+\end{equation*}
+\begin{equation*}
+|x-y|<\delta \Rightarrow |f(x)-f(y)|< \varepsilon
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{extension of a function}
+\vspace*{\stretch{1}}
+Suppose $f:(a,b)\rightarrow \R$, then the \mbox{\textbf{extension of $f$}}
+is denoted $\tilde{f}:[a,b]\rightarrow \R$ and defined by
+\begin{equation*}
+\tilde{f}(x) = \left\{ \begin{array}{ll}
+  u & x=a \\
+  f(x) & a<x<b \\
+  v & x=b
+\end{array} \right.
+\end{equation*}
+\begin{equation*}
+\textrm{where } \lim_{x\rightarrow a} f(x)=u \textrm{ and }
+\lim_{x\rightarrow b} f(x)=v.
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+% Section 25 The Derivative
+
+\begin{flashcard}[Definition]{differentiable at a point}
+\vspace*{\stretch{1}}
+Suppose $f:I\rightarrow \R$ where $I$ is an interval containing the point
+$c$.  Then $f$ is \mbox{\textbf{differentiable at $c$}} if the limit
+\begin{equation*}
+\lim_{x\rightarrow c} \dfrac{f(x)-f(c)}{x-c}
+\end{equation*}
+exists and is finite.  Whenever this limit exists and is finite, we
+denote the \mbox{\textbf{derivative of $f$ at $c$}} by
+\begin{equation*}
+f'(c) = \lim_{x\rightarrow c} \dfrac{f(x)-f(c)}{x-c}
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+% Section 26 The Mean Value Theorem
+
+\begin{flashcard}[Definition]{strictly increasing function \\
+strictly decreasing function}
+\vspace*{\stretch{1}}
+A function $f:D\rightarrow \R$ is said to be
+\textbf{strictly increasing} if
+\begin{equation*}
+\forall \; x_1,x_2 \in D, \quad x_1 < x_2 \Rightarrow f(x_1) < f(x_2)
+\end{equation*}
+A function $f:D\rightarrow \R$ is said to be
+\textbf{strictly decreasing} if
+\begin{equation*}
+\forall \; x_1,x_2 \in D, \quad x_1 < x_2 \Rightarrow f(x_1) > f(x_2)
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+% Section 27 L'Hospital's Rule
+
+\begin{flashcard}[Definition]{limit at $\infty$}
+\vspace*{\stretch{1}}
+Suppose $f:(a,\infty)\rightarrow \R$, then the
+\mbox{\textbf{limit at infinity}} of $f$ denoted 
+\begin{equation*}
+\lim_{x\rightarrow \infty} f(x) = L
+\end{equation*}
+iff 
+\begin{equation*}
+\forall \; \varepsilon >0, \quad \exists \; N>a \st
+\end{equation*}
+\begin{equation*}
+x>N \Rightarrow |f(x) - L| < \varepsilon
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{tends to $\infty$}
+\vspace*{\stretch{1}}
+Suppose $f:(a,\infty)\rightarrow \R$, then we say
+\mbox{\textbf{$f$ tends to $\infty$}} as $x\rightarrow \infty$ and
+denote it by 
+\begin{equation*}
+\lim_{x\rightarrow \infty} f(x) = \infty
+\end{equation*}
+iff 
+\begin{equation*}
+\forall \; M \in \R , \quad \exists \; N>a \st
+\end{equation*}
+\begin{equation*}
+x>N \Rightarrow f(x) > M
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+% Section 28 Taylor's Theorem
+
+\begin{flashcard}[Definition]{Taylor polynomials for $f$ at $x_0$}
+\vspace*{\stretch{1}}
+\begin{small}
+\begin{align*}
+p_0(x) &=f(x_0) \\
+p_1(x) &=f(x_0) + f'(x_0)(x-x_0)\\
+p_2(x) &=f(x_0) + f'(x_0)(x-x_0) + \dfrac{f''(x_0)}{2!}(x-x_0)^2\\
+\vdots &\\
+p_n(x) &=f(x_0) + f'(x_0)(x-x_0) + \cdots +
+\dfrac{f^{(n)}(x_0)}{n!}(x-x_0)^n
+\end{align*}
+\end{small}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{Taylor series}
+\vspace*{\stretch{1}}
+If $f$ has derivatives of all orders in a neighborhood of $x_0$, then
+the limit of the Taylor polynomials is an infinite series called the
+\mbox{\textbf{Taylor series}} of $f$ at $x_0$.
+\begin{equation*}
+\begin{split}
+f(x) &= \sum_{n=0}^{\infty} \dfrac{f^{(n)}(x_0)}{n!} (x-x_0)^n \\
+     &= f(x_0) + f'(x_0)(x-x_0) + \dfrac{f''(x_0)}{2!}(x-x_0)^2 + \cdots
+\end{split}
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+% Section 29 The Riemann Integral
+
+\begin{flashcard}[Definition]{partition of an interval \\
+refinement of a partition}
+\vspace*{\stretch{1}}
+A \textbf{partition} of an interval $[a,b]$ is a finite set of points
+$P = \{x_0, x_1, x_2, \ldots , x_n \}$ such that
+\begin{equation*}
+a = x_0 < x_1 < \ldots < x_n = b
+\end{equation*}
+If $P$ and $P'$ are two partitions of $[a,b]$ where $P \subset P'$
+then $P'$ is called a \mbox{\textbf{refinement}} of $P$.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{upper sum}
+\vspace*{\stretch{1}}
+Suppose $f$ is a bounded function on $[a,b]$ and $P=\{x_0,\ldots,x_n\}$
+is a partition of $[a,b]$.  \\
+For each $i \in \{1,\ldots,n\}$ let
+\begin{equation*}
+M_i(f) = \sup \{f(x): x \in [x_{i-1}, x_{i}] \}.
+\end{equation*}
+We define the \mbox{\textbf{upper sum}} of $f$ with respect to $P$ to be
+\begin{equation*}
+U(f,P) = \sum_{i=1}^{n} M_i \Delta x_{i}
+\end{equation*}
+where $\Delta x_{i} = x_{i} - x_{i-1}$.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{lower sum}
+\vspace*{\stretch{1}}
+Suppose $f$ is a bounded function on $[a,b]$ and $P=\{x_0,\ldots,x_n\}$
+is a partition of $[a,b]$.  \\
+For each $i \in \{1,\ldots,n\}$ let
+\begin{equation*}
+m_i(f) = \inf \{f(x): x \in [x_{i-1}, x_{i}] \}.
+\end{equation*}
+We define the \mbox{\textbf{lower sum}} of $f$ with respect to $P$ to be
+\begin{equation*}
+L(f,P) = \sum_{i=1}^{n} m_i \Delta x_{i}
+\end{equation*}
+where $\Delta x_{i} = x_{i} - x_{i-1}$.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{upper integral\\ lower integral}
+\vspace*{\stretch{1}}
+Suppose $f$ is a bounded function on $[a,b]$.  We define the
+\mbox{\textbf{upper integral}} of $f$ on $[a,b]$ to be
+\begin{equation*}
+U(f) = \inf \{ U(f,P): P \textrm{ any partition of } [a,b] \}.
+\end{equation*}
+Similarly, we define the \mbox{\textbf{lower integral}} of $f$ on
+$[a,b]$ to be
+\begin{equation*}
+L(f) = \sup \{ L(f,P): P \textrm{ any partition of } [a,b] \}.
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{Riemann integrable}
+\vspace*{\stretch{1}}
+Let $f:[a,b] \rightarrow \R$ be a bounded function.  If $L(f)=U(f)$,
+then we say $f$ is \mbox{\textbf{Riemann integrable}} or just 
+\mbox{\textbf{integrable}}.  Furthermore,
+\begin{equation*}
+\int_a^b f = \int_a^b f(x) dx = L(f) = U(f)
+\end{equation*}
+is called the \mbox{\textbf{Riemann integral}} or just the
+\mbox{\textbf{integral}} of $f$ on $[a,b]$.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+% Section 30 Properties of the Riemann Integral
+
+\begin{flashcard}[Definition]{monotone function}
+\vspace*{\stretch{1}}
+A function is said to be \mbox{\textbf{monotone}} if it is either
+increasing or decreasing.
+
+\medskip
+A function is increasing if $x<y \Rightarrow f(x) \leq f(y)$. \\
+A function is decreasing if $x<y \Rightarrow f(x) \geq f(y)$.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{proper integral}
+\vspace*{\stretch{1}}
+When a function $f$ is bounded and the interval over which it is
+integrated is bounded, then if the integral exists it is called a
+\mbox{\textbf{proper integral}}.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{improper integral}
+\vspace*{\stretch{1}}
+An \mbox{\textbf{improper integral}} is the limit of a definite
+integral, as an endpoint of the interval of integration approaches
+either a specified real number or $\infty$ or $-\infty$ or, in some
+cases, as both endpoints approach limits.
+
+\medskip
+Let $f:(a,b] \rightarrow \R$ be integrable on
+$[c,b] \ \forall \; c \in (a,b]$.
+If $\lim_{c \rightarrow a^{+}} \int_c^b f$ exists then
+\begin{equation*}
+\int_a^b f = \lim_{c \rightarrow a^{+}} \int_c^b f
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{integral convergence \\
+integral divergence}
+\vspace*{\stretch{1}}
+Suppose $f:(a,b] \rightarrow \R$ is integrable on
+$[c,b] \ \forall \; c \in (a,b]$, futhermore let
+$L=\lim_{c \rightarrow a^{+}} \int_c^b f$.  If $L$ is finite, then
+the improper integral $\int_a^b f$ is said to \mbox{\textbf{converge}}
+to $L$.
+
+\medskip
+If $L=\infty$ or $L=-\infty$, then the improper integral is said to 
+\mbox{\textbf{diverge}}.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{infinite series\\ partial sum}
+\vspace*{\stretch{1}}
+Let $(a_k)$ be a sequence of real numbers, then we can create a new
+sequence of numbers $(s_n)$ where each $s_n$ in $(s_n)$ corresponds to
+the sum of the first $n$ terms of $(a_k)$.  This new sequence of sums is
+called an \mbox{\textbf{infinite series}} and is denoted by
+$\displaystyle \sum_{n=0}^{\infty} a_n$.
+
+\smallskip
+The $n$-th \mbox{\textbf{partial sum}} of the series, denoted by $s_n$
+is defined to be
+\begin{equation*}
+s_n = \sum_{k=0}^{n} a_k
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{convergent series\\ sum}
+\vspace*{\stretch{1}}
+If $(s_n)$ converges to a real number say $s$, then we say that the
+series $\displaystyle \sum_{n=0}^{\infty} a_n = s$ is
+\mbox{\textbf{convergent}}.
+
+\medskip
+Furthermore, we call $s$ the \mbox{\textbf{sum}} of the series.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{divergent series\\ diverge to $+\infty$}
+\vspace*{\stretch{1}}
+If a series does not converge then it is \mbox{\textbf{divergent}}.
+
+\medskip
+If the $\displaystyle \lim_{n\rightarrow \infty} s_n = +\infty$ then
+the series is said to \textbf{diverge to $+\infty$}.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{harmonic series}
+\vspace*{\stretch{1}}
+The \mbox{\textbf{harmonic series}} is given by
+\begin{equation*}
+\sum_{n=1}^{\infty} \dfrac{1}{n} =
+1 + \dfrac{1}{2} + \dfrac{1}{3} + \dfrac{1}{4} + \cdots
+\end{equation*}
+The harmonic series diverges to $+\infty$.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{geometric series}
+\vspace*{\stretch{1}}
+The \mbox{\textbf{geometric series}} is given by
+\begin{equation*}
+\sum_{n=0}^{\infty} x^{n} = 1 + x + x^2 + x^3 + \cdots
+\end{equation*}
+The geometric series converges to $\dfrac{1}{1-x}$ for $|x|<1$, and
+diverges otherwise.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{converge absolutely\\
+converge conditionally}
+\vspace*{\stretch{1}}
+If $\sum |a_n|$ converges then the series $\sum a_n$ is said to
+\mbox{\textbf{converge absolutely}}.
+
+\bigskip
+If $\sum a_n$ converges, but $\sum |a_n|$ diverges, then the series
+$\sum a_n$ is said to \mbox{\textbf{converge conditionally}}.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{power series}
+\vspace*{\stretch{1}}
+Given a sequence $(a_n)$ of real numbers, then the series
+\begin{equation*}
+\sum_{n=0}^{\infty} a_n x^n = a_0 + a_1x + a_2x^2 + a_3x^3 + \cdots
+\end{equation*}
+is called a \mbox{\textbf{power series}}.  The number $a_n$ is called
+the \mbox{\textbf{$n$th coefficient}} of the series.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{radius of convergence}
+\vspace*{\stretch{1}}
+The \mbox{\textbf{radius of convergence}} of a power series
+$\sum a_n x^n$ is an extended real number $R$ such that (for a power
+series centered at $x_0$)
+\begin{equation*}
+|x-x_0|<R \Rightarrow \sum a_n x^n \textrm{ converges.}
+\end{equation*}
+
+\medskip
+Note that $R$ may be $0$, $+\infty$ or any number between.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{interval of convergence}
+\vspace*{\stretch{1}}
+The \mbox{\textbf{interval of convergence}} of a power series is the set
+of all $x \in \R$ such that $\displaystyle \sum_{n=0}^{\infty} a_n x^n$
+converges.
+
+\medskip
+By theorem we see that (for a power series centered at 0) this set will 
+either be $\{0\}$, $\R$ or a bounded interval centered at 0.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{converges pointwise}
+\vspace*{\stretch{1}}
+Let $(f_n)$ be a sequence of functions defined on a subset $S$ of $\R$.
+Then $(f_n)$ \mbox{\textbf{converges pointwise}} on $S$ if for each
+$x \in S$ the sequence of numbers $(f_n(x))$ converges.  If $(f_n)$
+converges pointwise on $S$, then we define $f:S \rightarrow \R$ by
+\begin{equation*}
+f(x) = \lim_{n\rightarrow \infty} f_n(x)
+\end{equation*}
+for each $x \in S$, and we say that $(f_n)$ converges to $f$ pointwise
+on $S$.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{converges uniformly}
+\vspace*{\stretch{1}}
+Let $(f_n)$ be a sequence of functions defined on a subset $S$ of $\R$.
+ Then $(f_n)$ \mbox{\textbf{converges uniformly}} on $S$ to a function
+$f$ defined on $S$ if
+\begin{equation*}
+\forall \; \varepsilon > 0, \quad \exists \; N \st \forall \; x \in S
+\end{equation*}
+\begin{equation*}
+n > N \Rightarrow |f_n(x) - f(x)| < \varepsilon
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{}
+\vspace*{\stretch{1}}
+
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{}
+\vspace*{\stretch{1}}
+
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{}
+\vspace*{\stretch{1}}
+
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{}
+\vspace*{\stretch{1}}
+
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\end{document}

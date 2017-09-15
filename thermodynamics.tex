@@ -1,0 +1,142 @@
+\documentclass[avery5371,grid]{flashcards}
+
+\newcommand{\deriv}[2]{\frac{\mathrm{d}#1}{\mathrm{d}#2}}
+\newcommand{\pderiv}[2]{\frac{\partial#1}{\partial#2}}
+\newcommand{\dQ}[0]{d^{\prime}\!Q}
+\newcommand{\dW}[0]{d^{\prime}\!W}
+
+\cardfrontstyle[\large\slshape]{headings}
+\cardbackstyle{empty}
+
+\begin{document}
+\cardfrontfoot{Thermodynamics}
+
+\begin{flashcard}[Equation]{Ideal Gas Law}
+  \vspace*{\stretch{1}}
+  \begin{center}
+    \begin{displaymath}
+      Pv = nRT
+    \end{displaymath}
+  \end{center}
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Equation]{Van der Waals Equation}
+  \vspace*{\stretch{1}}
+  \begin{center}
+    \begin{displaymath}
+      \left(P+\frac{a}{v^2}\right)\left(v-b\right) = RT
+    \end{displaymath}
+  \end{center}
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{Coefficient of Volume Expansion\\$\beta$}
+  \vspace*{\stretch{1}}
+  \begin{center}
+    \begin{displaymath}
+      \beta = \frac{1}{V}{\left(\pderiv{V}{T}\right)}_P
+    \end{displaymath}
+  \end{center}
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{Isothermal Compressibility\\$\kappa$}
+  \vspace*{\stretch{1}}
+  \begin{center}
+    \begin{displaymath}
+      \kappa= -\frac{1}{V}\left(\pderiv{V}{P}\right)_T
+    \end{displaymath}
+  \end{center}
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Equation]{Volume Differential\\$dV$}
+  \vspace*{\stretch{1}}
+  \begin{center}
+    \begin{displaymath}
+      dV = {\left(\pderiv{V}{T}\right)}_P\!\!dT  + {\left(\pderiv{V}{P}\right)}_T\!\!dP
+    \end{displaymath}
+  \end{center}
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{Exact Differential}
+  \vspace*{\stretch{1}}
+  \begin{tiny}
+  The following two properties are equivalent ways of determining exactness:\\
+  1. Mixed second order partial derivatives are equal e.g.:
+  \begin{displaymath}
+    \frac{\partial^2 V}{\partial P \partial T} = 
+    \frac{\partial^2 V}{\partial T \partial P}
+  \end{displaymath}
+  2. Integral is independent of path
+  \begin{displaymath}
+    \int_{V_1}^{V_2} dV = V_1 - V_2 \qquad \oint dV = 0
+  \end{displaymath}
+  A quantity whose differential is \emph{not} exact is not a thermodynamic property.
+  \end{tiny}
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Law]{First Law of Thermodynamics}
+  \vspace*{\stretch{1}}
+  \begin{center}
+    \begin{displaymath}
+      \begin{array}{ll}
+	\Delta U = & Q - W\\
+	 & \\
+	dU = &\dQ - \dW
+      \end{array}
+    \end{displaymath}
+    \medskip
+    (Where the primes denote inexact differentials)
+  \end{center}
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{Enthalpy}
+  \vspace*{\stretch{1}}
+  \begin{center}
+    \begin{displaymath}
+      H = U + PV
+    \end{displaymath}
+  \end{center}
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{Heat Capacity}
+  \vspace*{\stretch{1}}
+  \begin{center}
+    \begin{displaymath}
+      C = \lim_{\Delta T\to0} \frac{Q}{\Delta T} = \frac{\dQ}{dT}
+    \end{displaymath}
+    \begin{displaymath}
+      Q = C(T_2 - T_1) = nc(T_2 - T_1)
+    \end{displaymath}
+  \end{center}
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Equation]{Thermodynamic Potentials}
+  \vspace*{\stretch{1}}
+  \begin{center}
+    \begin{tabular}{rc}
+       & \begin{math}-TS\end{math} \\
+       & \begin{math}\longrightarrow\end{math} \\
+      \begin{math}+PV \downarrow\end{math} &
+      {
+	\begin{tabular}{|c|c|}
+	  \hline
+	  U & F \\
+	  \hline
+	  H & G \\
+	  \hline
+	\end{tabular}
+      } \\
+    \end{tabular}
+  \end{center}
+  \vspace*{\stretch{1}}
+\end{flashcard}
+
+\end{document}

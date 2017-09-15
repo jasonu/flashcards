@@ -1,0 +1,635 @@
+\documentclass[avery5371,grid]{flashcards}
+
+\cardfrontstyle[\large\slshape]{headings}
+\cardbackstyle{empty}
+\cardfrontfoot{Abstract Algebra I}
+
+%\usepackage{amsfonts}
+\usepackage{amssymb,amsmath}
+
+\begin{document}
+
+\begin{flashcard}[Copyright \& License]{Copyright \copyright \, 2006 Jason Underdown \\
+Some rights reserved.}
+\vspace*{\stretch{1}}
+These flashcards and the accompanying \LaTeX \, source code are licensed
+under a Creative Commons Attribution--NonCommercial--ShareAlike 2.5 License.  
+For more information, see creativecommons.org.  You can contact the author at:
+\begin{center}
+\begin{small}\tt jasonu [remove-this] at physics dot utah dot edu\end{small}
+\end{center}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{set operations}
+\vspace*{\stretch{1}}
+\begin{eqnarray*}
+A \cup B &=& \lbrace x\mid x\in A \;\textrm{or}\; x\in B\rbrace \\
+A \cap B &=& \lbrace x\mid x\in A \;\textrm{and}\; x\in B\rbrace \\
+A - B &=& \lbrace x\mid x\in A \;\textrm{and}\; x\not\in B\rbrace \\
+A + B &=& (A-B) \cup (B-A)\\ 
+\end{eqnarray*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{De Morgan's rules}
+\vspace*{\stretch{1}}
+For $A$, $B \subseteq S$
+\begin{eqnarray*}
+(A\cap B)' &=& A' \cup B'\\
+(A\cup B)' &=& A' \cap B'
+\end{eqnarray*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{surjective or onto mapping}
+\vspace*{\stretch{1}}
+The mapping $f:S \mapsto T$ is \textit{onto} or \textit{surjective} if every 
+$t \in T$ is the image under $f$ of some $s \in S$; that is, iff, $\forall \; t \in T, \quad \exists \; s \in S$ such that $t = f(s)$.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{injective or one--to--one mapping}
+\vspace*{\stretch{1}}
+The mapping $f:S \mapsto T$ is \textit{injective} or \textit{one--to--one} 
+\mbox{(1-1)} if for $s_1 \neq s_2$ in $S$, $f(s_1) \neq f(s_2)$ in $T$.
+
+\medskip
+Equivalently:
+\begin{equation*}
+f\; \mathrm{ injective } \Longleftrightarrow f(s_1) = f(s_2) \Rightarrow s_1 = s_2
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{bijection}
+\vspace*{\stretch{1}}
+The mapping $f:S \mapsto T$ is said to be a \textit{bijection} if $f$ is both 
+\mbox{1-1} and onto.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{composition of functions}
+\vspace*{\stretch{1}}
+Suppose $g: S \mapsto T$ and $f: T \mapsto U$, then the \textit{composition}
+or \textit{product}, denoted by $f\circ g$ is the mapping $f\circ g: S \mapsto U$
+defined by:
+\begin{equation*}
+(f\circ g)(s) = f(g(s))
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+
+\begin{flashcard}[Lemma]{composition of functions is associative}
+\vspace*{\stretch{1}}
+If $h: S \mapsto T, g:T \mapsto U$, and $f: U \mapsto V$, then,
+\begin{equation*}
+f\circ(g\circ h) = (f\circ g)\circ h
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Lemma]{cancellation and composition}
+\vspace*{\stretch{1}}
+\begin{equation*}
+f \circ g = f \,\circ \stackrel{\sim}{g} \; \textrm{and} \; f\;\textrm{is 1--1}
+\Rightarrow g = \,\stackrel{\sim}{g}
+\end{equation*}
+\begin{equation*}
+f \circ g = \,\stackrel{\sim}{f} \circ\, g\; \textrm{and $g$ is onto} \;
+\Rightarrow f = \,\stackrel{\sim}{f}
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{image and inverse image of a function}
+\vspace*{\stretch{1}}
+Suppose $f: S\mapsto T$, and $U\subseteq S$, then the \textit{image}
+of $U$ under $f$ is
+\begin{equation*}
+f(U)=\lbrace f(u)\mid u\in U\rbrace
+\end{equation*}
+
+\bigskip
+If $V\subseteq T$ then the \textit{inverse image} of $V$ under $f$ is
+\begin{equation*}
+f^{-1}(V) = \lbrace s\in S \mid f(s) \in V\rbrace
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{inverse function}
+\vspace*{\stretch{1}}
+Suppose $f: S\mapsto T$.  An \textit{inverse} to $f$ is a function
+$f^{-1}:T\mapsto S$ such that
+\begin{eqnarray*}
+f\circ f^{-1} &=& i_T\\
+f^{-1}\circ f &=& i_S
+\end{eqnarray*}
+Where $i_T:T\mapsto T$ is defined by $i_T(t) = t$, and is called the
+\textit{identity function} on $T$.  And similarly for $S$. 
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{$A(S)$}
+\vspace*{\stretch{1}}
+If $S$ is a nonempty set, then $A(S)$ is the set of all 1--1 mappings of $S$
+onto itself.
+
+\medskip
+When $S$ has a finite number of elements, say $n$, then $A(S)$ is called the
+\textit{symmetric group of degree n} and is often denoted by $S_n$.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Lemma]{properties of $A(S)$}
+\vspace*{\stretch{1}}
+$A(S)$ satisfies the following:
+\begin{enumerate}
+\item $f,g \in A(S)\Rightarrow f\circ g \in A(S)$
+\item $f,g,h \in A(S)\Rightarrow (f\circ g)\circ h = f\circ (g\circ h)$
+\item There exists an $i$ such that $f\circ i = i\circ f = f$\
+$\forall f \in A(S)$
+\item Given $f \in A(S)$, there exists a $g \in A(S)$ such~that 
+$f\circ g = g\circ f = i$ 
+\end{enumerate}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{group}
+\vspace*{\stretch{1}}
+A nonempty set $G$ together with some operator $*$ is said to be a \textit{group} if:
+\begin{enumerate}
+\item If $a, b \in G$ then $a*b \in G$
+\item If $a, b, c \in G$ then $a*(b*c) = (a*b)*c$
+\item $G$ has an identity element $e$ such that 
+\mbox{$a*e=e*a=a \;\; \forall \> a \in G$}
+\item $\forall \> a \in G, \;\; \exists \> b \in G $ such that
+\mbox{$a*b=b*a=e$}
+\end{enumerate}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{order of a group}
+\vspace*{\stretch{1}}
+The number of elements in $G$ is called the \textit{order} of $G$ and 
+is denoted by $\vert G \vert$.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{abelian}
+\vspace*{\stretch{1}}
+A group $G$ is said to be \textit{abelian} if $\quad \forall \; a,b\in G$
+\begin{equation*}
+a*b=b*a
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Lemma]{properties of groups}
+\vspace*{\stretch{1}}
+If $G$ is a group then
+\begin{enumerate}
+\item Its identity element, $e$ is unique.
+\item Every $a \in G$ has a unique inverse $a^{-1} \in G$.
+\item If $a \in G$, then $(a^{-1})^{-1}=a$.
+\item For $a,b \in G$, \mbox{$(ab)^{-1} = b^{-1}a^{-1}$}, where
+$ab=a*b$.
+\end{enumerate}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{subgroup}
+\vspace*{\stretch{1}}
+A nonempty subset, $H$ of a group $G$ is called a \mbox{\textit{subgroup}}
+of $G$ if, relative to the operator in $G$, $H$ itself forms a group.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Lemma]{when is a subset a subgroup}
+\vspace*{\stretch{1}}
+A nonempty subset $A\subset G$ is a subgroup $\Leftrightarrow$ \
+$A$ is closed with respect to the operator of $G$ and given $a \in A$ then $a^{-1} \in A$.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{cyclic subgroup}
+\vspace*{\stretch{1}}
+A \textit{cyclic subgroup} of $G$ is generated by a single element $a \in G$ and is denoted by $(a)$.
+\begin{equation*}
+(a) = \left\lbrace a^i \mid i \; \textrm{any integer} \right\rbrace
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Lemma]{finite subsets and subgroups}
+\vspace*{\stretch{1}}
+Suppose that $G$ is a group and $H$ a nonempty \textit{finite} subset of $G$
+closed under the operation in $G$.  Then $H$ is a subgroup of $G$.
+
+\textbf{Corollary}  If $G$ is a \textit{finite} group and $H$ a nonempty subset of $G$
+closed under the operation of $G$, then $H$ is a subgroup of $G$.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Lemma]{subgroups under $\cap$ and $\cup$}
+\vspace*{\stretch{1}}
+Suppose $H$ and $H'$ are subgroups of $G$, then
+\begin{itemize}
+\item $H \cap H'$ is a subgroup of $G$
+\item $H \cup H'$ is \textbf{not} a subgroup of $G$, as long as neither
+$H$ nor $H'$ is contained in the other.
+\end{itemize}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{equivalence relation}
+\vspace*{\stretch{1}}
+A relation $\sim$ on elements of a set $S$ is an \textit{equivalence relation}
+if for all $a, b, c \in S$ it satisfies the following criteria:
+\begin{enumerate}
+\item $a \sim a$ reflexivity
+\item $a \sim b \Rightarrow b \sim a$ symmetry
+\item $a \sim b$ and $b \sim c \Rightarrow a \sim c$ transitivity
+\end{enumerate}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{equivalence class}
+\vspace*{\stretch{1}}
+If $\sim$ is an equivalence relation on a set $S$, then the
+\textit{equivalence class} of $a$ denoted $[a]$ is defined to be:
+\begin{equation*}
+[a] = \left\lbrace b \in S \mid b \sim a\right\rbrace 
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{equivalence relations partition sets}
+\vspace*{\stretch{1}}
+If $\sim$ is an equivalence relation on a set $S$, then $\sim$ partitions $S$
+into equivalence classes.  That is, for any $a, b \in S$ either:
+\begin{equation*}
+[a] = [b] \quad \textrm{or} \quad [a] \cap [b] = \oslash
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Lagrange's theorem}
+\vspace*{\stretch{1}}
+If $G$ is a finite group and $H$ is a subgroup of $G$, then the order of $H$ divides the order of $G$.  That is,
+\begin{equation*}
+\left| G \right| = k \left| H \right|
+\end{equation*}
+for some integer $k$.  The converse of Lagrange's theorem is not generally true.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{index of a subgroup}
+\vspace*{\stretch{1}}
+If $G$ is a finite group, and $H$ a subgroup of $G$, then the
+\textit{index} of $H$ in $G$ is the number of distinct right cosets
+of $H$ in $G$, and is denoted:
+\begin{equation*}
+[G : H] = \dfrac{|G|}{|H|} = i_{G}(H)
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{order of an element in a group}
+\vspace*{\stretch{1}}
+If $a$ is an element of $G$ then the \textit{order} of $a$ denoted by $o(a)$ is the least positive integer $m$ such that $a^m = e$.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{finite groups wrap around}
+\vspace*{\stretch{1}}
+If $G$ is a finite group of order $n$ then $a^n = e$ for all $a \in G$.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{homomorphism}
+\vspace*{\stretch{1}}
+If $G$ and $G'$ are two groups, then the mapping
+\begin{equation*}
+f: G\rightarrow G'
+\end{equation*}
+is a \textit{homomorphism} if 
+\begin{equation*}
+f(ab) = f(a)f(b) \qquad \forall \; a,b \in G
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{monomorphism, isomorphism, automorphism}
+\vspace*{\stretch{1}}
+\begin{small}
+Suppose the mapping $f: G\rightarrow G'$ is a homomorphism, then:
+\begin{itemize}
+\item If $f$ is 1--1 it is called a \textit{monomorphism}.
+\item If $f$ is 1--1 and onto, then it is called an \mbox{\textit{isomorphism}}.
+\item If $f$ is an isomorphism that maps $G$ onto itself then it is called
+an \textit{automorphism}.
+\item If an isomorphism exists between two groups then they are said to be
+\textit{isomorphic} and denoted $G\simeq G'$.
+\end{itemize}
+\end{small}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{composition of homomorphisms}
+\vspace*{\stretch{1}}
+Suppose $f : G \mapsto G'$ and $h : G' \mapsto G''$ are homomorphisms,
+then the composition of $h$ with $f$, $h\circ f$ is also a homomorphism.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{kernel}
+\vspace*{\stretch{1}}
+If $f$ is a homomorphism from $G$ to $G'$ then the \textit{kernel}
+of $f$ is denoted by $\textrm{Ker}f$ and defined to be
+\begin{equation*}
+\textrm{Ker}f = \lbrace a \in G \mid f(a)=e' \rbrace
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{kernel related subgroups}
+\vspace*{\stretch{1}}
+If $f$ is a homomorphism of $G$ into $G'$, then
+\begin{enumerate}
+\item $\textrm{Ker} f$ is a subgroup of $G$.
+\item If $a \in G$ then $a^{-1}(\textrm{Ker} f) a \subset \textrm{Ker} f$.
+\end{enumerate}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{normal subgroup}
+\vspace*{\stretch{1}}
+A subgroup $N$ of $G$ is said to be a \textit{normal subgroup}
+of $G$ if $a^{-1}Na \subset N$ for each $a \in G$.
+\medskip
+\\
+$N$ normal to $G$ is denoted $N \lhd G$.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{normal subgroups and their cosets}
+\vspace*{\stretch{1}}
+$N \lhd G$ iff every left coset of $N$ in $G$ is also a right
+coset of $N$ in $G$.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition/Theorem]{factor group}
+\vspace*{\stretch{1}}
+If $N \lhd G$, then we define the \textit{factor group}
+of $G$ by $N$ denoted $G/N$ to be:
+\begin{equation*}
+G/N = \lbrace Na \mid a \in G \rbrace = 
+\lbrace [a] \mid a \in G \rbrace
+\end{equation*}
+\medskip
+$G/N$ is a group relative to the operation
+\begin{equation*}
+(Na)(Nb) = Nab
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{normal subgroups are the kernel of a homomorphism}
+\vspace*{\stretch{1}}
+If $N \lhd G$, then there is a homomorphism $\psi : G \mapsto G/N$
+such that $\textrm{Ker} \psi = N$.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{order of a factor group}
+\vspace*{\stretch{1}}
+If $G$ is a finite group and $N \lhd G$, then
+\begin{equation*}
+\left| G/N \right| = \frac{\left| G \right|}{\left| N \right|}
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Cauchy's theorem}
+\vspace*{\stretch{1}}
+If $p$ is a prime that divides $\left| G \right|$,
+then $G$ has an element of order $p$.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{first homomorphism theorem}
+\vspace*{\stretch{1}}
+If $\varphi : G \mapsto G'$ is an onto homomorphism with kernel $K$ then,
+\begin{equation*}
+G/K \simeq G'
+\end{equation*}
+with isomorphism $\psi : G/K \mapsto G'$ defined by
+\begin{equation*}
+\psi (Ka) = \varphi(a)
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{correspondence theorem}
+\vspace*{\stretch{1}}
+Let $\varphi : G \mapsto G'$ be a homomorphism which maps $G$
+onto $G'$ with kernel $K$.  If $H'$ is a subgroup of $G'$, and if
+$H' = \lbrace a \in G \mid \varphi (a) \in H' \rbrace$ then
+\begin{itemize}
+\item $H$ is a subgroup of $G$
+\item $K \subset H$
+\item $H/K \simeq H'$
+\end{itemize}
+Also, if $H' \lhd G'$ then $H \lhd G$.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{second isomorphism theorem}
+\vspace*{\stretch{1}}
+Let $H$ be a subgroup of $G$ and $N \lhd G$, then
+\begin{enumerate}
+\item $HN = \lbrace hn \mid h\in H, n\in N \rbrace$ is a subgroup of $G$
+\item $H\cap N \lhd H$
+\item $H/(H\cap N) \simeq (HN)/N$
+\end{enumerate}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{third isomorphism theorem}
+\vspace*{\stretch{1}}
+If $\varphi : G \mapsto G'$ is an onto homomorphism with kernel $K$ and
+if $N' \lhd G'$ with 
+$N = \lbrace a \in G \mid \varphi (a) \in N' \rbrace$ then
+\begin{equation*}
+G/N \simeq G'/N'
+\end{equation*}
+\begin{center}
+or equivalently
+\end{center}
+\begin{equation*}
+G/N \simeq \frac{G/K}{N/K}
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{groups of order $pq$}
+\vspace*{\stretch{1}}
+If $G$ is a group of order $pq$ ($p$ and $q$ primes) where
+$p > q$ and $q \not{\mid} \; p-1$ then $G$ must be cyclic.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{external direct product}
+\vspace*{\stretch{1}}
+Suppose $G_{1},\ldots,G_{n}$ is a collection of groups.  The
+\textit{external direct product} of these $n$ groups is the set
+of all $n$--tuples for which the $i$th component is an element of
+$G_{i}$.
+\begin{equation*}
+G_{1}\times G_{2}\times \ldots\times G_{n} =
+\left\lbrace \left( g_{1},g_{2},\ldots,g_{n}\right)
+\mid g_{i} \in G_{i}\right\rbrace 
+\end{equation*}
+The product is defined component--wise.
+\begin{equation*}
+\left(a_{1},a_{2},\ldots,a_{n} \right)
+\left(b_{1},b_{2},\ldots,b_{n}  \right) =
+\left( a_{1}b_{1},a_{2}b_{2},\ldots,a_{n}b_{n} \right) 
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{internal direct product}
+\vspace*{\stretch{1}}
+A group $G$ is said to be the \textit{internal direct product}
+of its normal subgroups $N_{1},N_{2},\ldots,N_{n}$ if every element of
+$G$ has a unique representation, that is, if $a \in G$ then:
+\begin{equation*}
+a = a_{1},a_{2},\ldots,a_{n}  \text{ where each } a_{i} \in N_{i}
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Lemma]{intersection of normal subgroups when the group
+is an internal direct product}
+\vspace*{\stretch{1}}
+If $G$ is the internal direct product of its normal subgroups
+$N_{1},N_{2},\ldots,N_{n}$, then for $i \neq j, N_{i} \cap N_{j} = 
+\left\lbrace e \right\rbrace $.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{isomorphism between an external direct product
+and an internal direct product}
+\vspace*{\stretch{1}}
+Let $G$ be a group with normal subgroups $N_{1},N_{2},\ldots,N_{n}$, then the
+mapping:
+\begin{equation*}
+\psi : N_{1} \times N_{2} \times \cdots \times N_{n} \mapsto G
+\end{equation*}
+defined by
+\begin{equation*}
+\psi((a_{1},a_{2},\ldots,a_{n})) = a_{1}a_{2}\cdots a_{n}
+\end{equation*}
+is an isomorphism iff $G$ is the internal direct product of 
+$N_{1},N_{2},\ldots,N_{n}$.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{fundamental theorem on finite abelian groups}
+\vspace*{\stretch{1}}
+A finite abelian group is the direct product of cyclic groups. 
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{centralizer of an element}
+\vspace*{\stretch{1}}
+If $G$ is a group and $a \in G$, then the \textit{centralizer} of $a$ in $G$ is the
+set of all elements in $G$ that commute with $a$.
+\begin{equation*}
+C(a) = \left\lbrace g \in G \mid ga = ag \right\rbrace 
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Lemma]{the centralizer forms a subgroup}
+\vspace*{\stretch{1}}
+If $a \in G$, then $C(a)$ is a subgroup of $G$.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{number of distinct conjugates of an element}
+\vspace*{\stretch{1}}
+Let $G$ be a finite group and $a \in G$, then the number of distinct
+conjugates of $a$ in $G$ is $[G : C(a)]$ (the index of $C(a)$ in $G$).
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{the class equation}
+\vspace*{\stretch{1}}
+\begin{equation*}
+|G| = |Z(G)| + \sum_{a \not{\in} Z(G)}[G : C(a)]
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{groups of order $p^{n}$}
+\vspace*{\stretch{1}}
+If $G$ is a group of order $p^{n}$, ($p$ prime) then $Z(G)$ is
+non--trivial, i.e. there exists at least one element other than
+the identity that commutes with all other elements of $G$.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{groups of order $p^{2}$}
+\vspace*{\stretch{1}}
+If $G$ is a group of order $p^{2}$ ($p$ prime), then $G$ is abelian.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{groups of order $p^{n}$ contain a normal 
+subgroup}
+\vspace*{\stretch{1}}
+If $G$ is a group of order $p^{n}$ ($p$ prime), then $G$ contains
+a normal subgroup of order $p^{n-1}$.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{$p$--Sylow group}
+\vspace*{\stretch{1}}
+If $G$ is a group of order $p^{n}m$ where $p$ is prime and 
+$p \not{\mid} \: m$, then $G$ is a $p$--Sylow group.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Sylow's theorem (part 1)}
+\vspace*{\stretch{1}}
+If $G$ is a $p$--Sylow group ($|G| = p^{n}m$),
+then $G$ has a subgroup of order $p^{n}$.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Sylow's theorem (part 2)}
+\vspace*{\stretch{1}}
+If $G$ is a $p$--Sylow group ($|G| = p^{n}m$), then any 
+two subgroups of the same order are conjugate.  For example,
+if $P$ and $Q$ are subgroups of $G$ where $|P|=|Q|=p^{n}$ then
+\begin{equation*}
+P = x^{-1}Qx \quad \text{ for some } x \in G
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Sylow's theorem (part 3)}
+\vspace*{\stretch{1}}
+If $G$ is a $p$--Sylow group ($|G| = p^{n}m$),
+then the number of subgroups of order $p^{n}$ in $G$ is
+of the form $1 + kp$ and divides $|G|$.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\end{document}

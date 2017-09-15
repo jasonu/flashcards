@@ -1,0 +1,1789 @@
+\documentclass[avery5371,grid]{flashcards}
+
+\cardfrontstyle[\large\slshape]{headings}
+\cardbackstyle{empty}
+\cardfrontfoot{Real Analysis I}
+
+\usepackage{oldgerm}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage[all]{xy}
+\usepackage{datetime}
+
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+\newtheorem{theorem}{Theorem}
+\newtheorem{axiom}{Axiom}
+
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\lra}{\longrightarrow}
+\newcommand{\Lra}{\Longrightarrow}
+\newcommand{\ra}{\rightarrow}
+\newcommand{\surj}{\twoheadrightarrow}
+\newcommand{\Z}{\bb{Z}}
+\newcommand{\Q}{\bb{Q}}
+\newcommand{\R}{\bb{R}}
+\newcommand{\C}{\bb{C}}
+\newcommand{\N}{\bb{N}}
+\newcommand{\m}{\bb{m}}
+\newcommand{\cl}{\mbox{cl }}
+\newcommand{\interior}{\mbox{int }}
+
+\begin{document}
+
+\begin{flashcard}[Copyright \& License]{Copyright \copyright \,
+2007 Erin Chamberlain \\Some rights reserved.}
+\vspace*{\stretch{1}}
+These flashcards and the accompanying \LaTeX \, source code are licensed
+under a Creative Commons Attribution--NonCommercial--ShareAlike 3.0
+License.  For more information, see creativecommons.org.
+
+\medskip
+\begin{center}
+File last updated on \today, \\
+at \currenttime
+\end{center}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm01}}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm01}
+Let $f$ be a continuous function.  If $\int _0 ^1 f(x) \, dx \not= 0$,
+then there exists a point $x$ in the interval $[0,1]$ such that
+$f(x) \not= 0$.
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm02}}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm02}
+Let $x$ be a real number.  If $x > 0$, then $\frac 1x > 0$.
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm03}}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm03}
+Let $x$ be a real number.  If $x > 0$, then $\frac 1x > 0$.
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm04}}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm04}
+Let $A$ be a set.  Then $\emptyset \subseteq A$.
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm05}}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm05}
+Let $A$ and $B$ be subsets of a universal set $U$.  Then
+$A \cap (U \smallsetminus B) = A \smallsetminus B$.
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm06}}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm06}
+\begin{small}
+Let $A, B$, and $C$ be subsets of a universal set $U$.  Then the
+following statements are true.
+\begin{enumerate}
+\item  $A \cup (U \smallsetminus A) = U$.
+\item  $A \cap (U \smallsetminus A) = \emptyset $.
+\item  $U \smallsetminus (U \smallsetminus A) = A$.
+\item  $A \cup (B \cap C) = (A \cup B) \cap (A \cup C)$.
+\item  $A \cap (B \cup C) = (A \cap B) \cup (A \cap C)$.
+\item  $A \smallsetminus (B \cup C) = (A \smallsetminus B) \cap
+(A \smallsetminus C)$.
+\item  $A \smallsetminus (B \cap C) = (A \smallsetminus B) \cup
+(A \smallsetminus C)$.
+\end{enumerate}
+\end{small}
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm07}}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm07}
+If $A$ and $B$ are subsets of a set $U$ and $A^c$ and $B^c$ are their
+complements in $U$, then
+\begin{enumerate}
+\item $(A \cup B)^c = A^c \cap B^c$.
+\item $(A \cap B)^c = A^c \cup B^c$.
+\end{enumerate}
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm08}}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm08}
+$(a,b) = (c,d)$ iff $a=c$ and $b=d$.
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm09}}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm09}
+Let $R$ be an equivalence relation on a set $S$.  Then $\{ E_x : x \in S\}$ is a partition of $S$.  The relation ``belongs to the same piece as'' is the same as $R$.  Conversely, if $\cal{T}$ is a partition of $S$, let $R$ be defined by $xRy$ iff $x$ and $y$ are in the same piece of the partition.  Then $R$ is an equivalence relation and the corresponding partition into equivalence classes is the same as $\cal{T}$.
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm10} (part 1)}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm10}
+\begin{small}
+Suppose that $f: A \to B$.  Let $C, C_1$ and $C_2$ be subsets of $A$ and
+let $D, D_1$ and $D_2$ be subsets of $B$.  Then the following hold:
+\begin{enumerate}
+\item $C \subseteq f^{-1}[f(C)]$.
+\item $f[f^{-1}(D)] \subseteq D$.
+\item $f(C_1 \cap C_2 ) \subseteq f(C_1) \cap f(C_2)$.
+\item $f(C_1 \cup C_2) = f(C_1) \cup f(C_2)$.
+\item $f(C_1) \smallsetminus f(C_2) \subseteq f(C_1 \smallsetminus C_2)$
+if $C_2 \subseteq C_1$.
+\end{enumerate}
+\end{small}
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm10} (part 2)}
+\vspace*{\stretch{1}}
+\textbf{Theorem \ref{thm10}.}
+\begin{small}
+\textit{Suppose that $f: A \to B$.  Let $C, C_1$ and $C_2$ be subsets of $A$ and let $D, D_1$ and $D_2$ be subsets of $B$.  Then the following hold:
+\begin{enumerate}
+\item[6.] $f^{-1}(D_1 \cap D_2) = f^{-1}(D_1) \cap f^{-1}(D_2)$.
+\item[7.] $f^{-1}(D_1 \cup D_2) = f^{-1}(D_1) \cup f^{-1}(D_2)$.
+\item[8.] $f^{-1}(B \smallsetminus D) = A \smallsetminus f^{-1}(D)$.
+\item[9.] $f^{-1}(D_1 \smallsetminus D_2) = f^{-1}(D_1) \smallsetminus f^{-1}(D_2)$ if $D_2 \subseteq D_1$.
+\end{enumerate}}
+\end{small}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm11}}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm11}
+Suppose that $f: A \to B$.  Let $C, C_1$ and $C_2$ be subsets of $A$ and
+let $D$ be a subset of $B$.  Then the following hold:
+\begin{enumerate}
+\item If $f$ is injective, then $f^{-1}[f(C)]=C$.
+\item If $f$ is surjective, then $f[f^{-1}(D)]=D$.
+\item If $f$ is injective, then $f(C_1 \cap C_2) = f(C_1) \cap f(C_2)$.
+\end{enumerate}
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm12}}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm12}
+Let $f: A \to B$ and $g: B \to C$.  Then
+\begin{enumerate}
+\item If $f$ and $g$ are surjective, then $g \circ f$ is surjective.
+\item If $f$ and $g$ are injective, then $g \circ f$ is injective.
+\item If $f$ and $g$ are bijective, then $g \circ f$ is bijective.
+\end{enumerate}
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm13}}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm13}
+Let $f: A \to B$ be bijective.  Then
+\begin{enumerate}
+\item $f^{-1}: B \to A$ is bijective.
+\item $f^{-1} \circ f = i_A$ and $f \circ f^{-1} = i_B$.
+\end{enumerate}
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm14}}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm14}
+Let $f: A \to B$ and $g: B \to C$ be bijective.  The the composition
+$g \circ f : A \to C$ is bijective and
+$(g \circ f)^{-1} = f^{-1} \circ g^{-1}$.
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm15}}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm15}
+Let $S$ be a countable set and let $T \subseteq S$.  Then $T$ is countable.
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm16}}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm16}
+Let $S$ be a nonempty set.  The following three conditions are
+equivalent:
+\begin{enumerate}
+\item $S$ is countable.
+\item There exists an injection $f: S \to \N$.
+\item There exists a surjection $f: \N \to S$.
+\end{enumerate}
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm17}}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm17}
+The set $\R$ of real numbers is uncountable.
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm18}}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm18}
+Let $S, T$ and $U$ be sets.
+\begin{enumerate}
+\item If $S \subseteq T$, then $|S| \leq |T|$.
+\item $|S| \leq |S|$.
+\item If $|S|\leq |T|$ and $|T| \leq |U|$, then $|S| \leq |U|$.
+\item If $m, n \in \N$ and $m \leq n$, then $|\{ 1, 2, \ldots , m \} |
+\leq |\{ 1, 2, \ldots , n\} |$.
+\item If $S$ is finite, then $S < \aleph _0$. 
+\end{enumerate}
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm19}}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm19}
+For any set $S$, we have $|S| < |\cal{P}(S)|$.
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm20} \\ Principle of
+Mathematical Induction}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm20}
+(Principle of Mathematical Induction)  Let $P(n)$ be a statement that is
+either true or false for each $n \in \N$.  Then $P(n)$ is true for all
+$n \in \N$ provided that
+\begin{enumerate}
+\item $P(1)$ is true, and
+\item for each $k \in \N$, if $P(k)$ is true, then $P(k+1)$ is true.
+\end{enumerate}
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm21}}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm21}
+$1 + 2 + 3 + \cdots + n = \frac 12 n(n+1)$ for every natural number $n$.
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm22}}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm22}
+$7^n - 4^n$ is a multiple of 3 for all $n \in \N$.
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm23} \\ The Binomial Formula}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm23}
+(The Binomial Formula)  If $x$ and $y$ are real numbers and $n \in \N$,
+then $$(x+y)^n = \sum _{k=0}^n \binom{n}{k} x^{n-k}y^k.$$
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm24}}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm24}
+Let $m \in \N$ and let $P(n)$ be a statement that is either true or
+false for each $n \geq m$.  Then $P(n)$ is true for all $n \geq m$
+provided that
+\begin{enumerate}
+\item $P(m)$ is true, and
+\item for each $k \geq m$, if $P(k)$ is true, then $P(k+1)$ is true.
+\end{enumerate}
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm25}}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm25}
+Let $x,y,$ and $z$ be real numbers.
+\begin{enumerate}
+\item If $x+z = y + z$, then $x=y$.
+\item $x\cdot 0 = 0$.
+\item $(-1)\cdot x = -x$.
+\item $xy = 0$ iff $x=0$ or $y=0$.
+\item $x<y$ iff $-y < -x$.
+\item If $x<y$ and $z<0$, then $xz > yz$.
+\end{enumerate}
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm26}}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm26}
+Let $x,y \in \R$ such that $x \leq y+\epsilon$ for every $\epsilon > 0$.
+Then $x \leq y$.
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm27}}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm27}
+Let $x, y \in \R$ and let $a \geq 0$.  Then
+\begin{enumerate}
+\item $|x| \geq 0$.
+\item $|x| \leq a$ iff $-a \leq x \leq a$.
+\item $|xy| = |x|\cdot |y|$.
+\item $|x+y| \leq |x| + |y|$.  (The triangle inequality)
+\end{enumerate}
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm28}}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm28}
+Let $m,n,p \in \Z$.  If $p$ is a prime number and $p$ divides the
+product $mn$, then $p$ divides $m$ or $p$ divides $n$.
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm29}}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm29}
+Let $p$ be a prime number.  Then $\sqrt{p}$ is not a rational number.
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm30}}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm30}
+Every non-empty subset of $\R$ that is bounded below has a greatest
+lower bound.
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm31}}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm31}
+Let $A$ be a non-empty subset of $\R$ and $x$ an element of $\R$.  Then
+\begin{enumerate}
+\item $\sup A \leq x$ iff $a \leq x$ for every $a \in A$.
+\item $x<\sup A$ iff $x<a$ for some $a \in A$.
+\end{enumerate}
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm32}}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm32}
+Let $A$ and $B$ be non-empty subsets of $\R$.  Then
+\begin{enumerate}
+\item $\inf A \leq \sup A$.
+\item $\sup (-A) = - \inf A$ and $\inf (-A) = - \sup A$.
+\item $\sup (A + B) = \sup (A) + \sup (B)$ and $\inf (A+B) = \inf (A) + \inf (B)$.
+\item $\sup (A - B) = \sup (A) - \inf (B)$.
+\item If $A \subseteq B$, then $\sup A \leq \sup B$ and $\inf B \leq \inf A$.
+\end{enumerate}
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm33}}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm33}
+Suppose that $D$ is a nonempty set and that $f: D \to \R$ and $g : D \to \R$.  If for every $x,y \in D$, $f(x) \leq g(y)$, then $f(D)$ is bounded above and $g(D)$ is bounded below.  Furthermore, $\sup f(D) \leq \sup g(D)$.
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm34}}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm34}
+Let $f$ and $g$ be functions defined on a set containing $A$ as a subset,
+and let $c \in \R$ be a positive constant.  Then
+\begin{enumerate}
+\item $\sup _A cf = c \sup _A f$ and $\inf _A cf = c \inf _A f$.
+\item $\sup _A (-f) = - \inf _A f$.
+\item $\sup _A (f+g) \leq \sup _A f + \sup _A g$ and \\
+$\inf _A f + inf _A g \leq \inf _A (f+g)$.
+\item $\sup \{ f(x) - f(y) : x,y \in A \} \leq \sup _A f - \inf _A f$.
+\end{enumerate}
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm35}}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm35}
+The real number system $\R$ is a complete ordered field.
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm36}\\
+Archimedean Property of $\R$}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm36}
+(Archimedean Property of $\R$) The set $\N$ of natural numbers is
+unbounded above in $\R$.
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm37}}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm37}
+Each of the following is equivalent to the Archimedean property.
+\begin{enumerate}
+\item For each $z \in \R$, there exists $n\in \N$ such that $n>z$.
+\item For each $x>0$ and for each $y \in \R$, there exists $n \in \N$
+such that $nx > y$.
+\item For each $x > 0$, there exists $n \in \N$ such that
+$0 < \frac{1}{n} < x$.
+\end{enumerate}
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm38}}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm38}
+Let $p$ be a prime number.  Then there exists a positive real number $x$
+such that $x^2=p$.
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm39}}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm39}
+(Density of $\Q$ in $\R$)  If $x$ and $y$ are real numbers with $x<y$,
+then there exists a rational number $r$ such that $x<r<y$.
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm40}}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm40}
+If $x$ and $y$ are real numbers with $x<y$, then there exists an
+irrational number $w$ such that $x<w<y$.
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm41}}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm41} \quad \\
+\begin{enumerate}
+\item A set $S$ is open iff $S = \interior S$.  Equivalently, $S$ is
+open iff every point in $S$ is an interior point of $S$.
+\item A set $S$ is closed iff its complement $\R \smallsetminus S$ is
+open.
+\end{enumerate}
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm42}}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm42} \quad \\
+\begin{enumerate}
+\item The union of any collection of open sets is an open set.
+\item The intersection of any finite collection of open sets is an open
+set.
+\end{enumerate}
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Corollary]{Corollary \ref{cor01}}
+\vspace*{\stretch{1}}
+\begin{corollary}
+\label{cor01} \quad \\
+\begin{enumerate}
+\item The intersection of any collection of closed sets is closed.
+\item The union of any finite collection of closed sets is closed.
+\end{enumerate}
+\end{corollary}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm43}}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm43}
+Let $S$ be a subset of $\R$.  Then
+\begin{enumerate}
+\item $S$ is closed iff $S$ contains all of its accumulation points.
+\item $\cl S$ is a closed set.
+\item $S$ is closed iff $S = \cl S$.
+\end{enumerate}
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Lemma]{Lemma \ref{lem01}}
+\vspace*{\stretch{1}}
+\begin{lemma}
+\label{lem01}
+If $S$ is a nonempty closed bounded subset of $\R$, then $S$ has a
+maximum and a minimum.
+\end{lemma}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm44} \\ Heine--Borel Theorem}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm44}
+(Heine--Borel)  A subset $S$ of $\R$ is compact iff $S$ is closed and
+bounded.
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm45} \\ Bolzano--Weierstrass
+Theorem}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm45}
+(Bolzano--Weierstrass)  If a bounded subset $S$ of $\R$ contains
+infinitely many points, then there exists at least one point in $\R$
+that is an accumulation point of $S$.
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm46}}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm46}
+Let $\mathscr{F} = \{ K_{\alpha} : \alpha \in \mathscr{A} \}$ be a family
+of compact subsets of $\R$.  Suppose that the intersection of any finite
+subfamily of $\mathscr{F}$ is nonempty.  Then
+\mbox{$\bigcap \{ K_{\alpha} : \alpha \in \mathscr{A} \} \neq \varnothing$}.
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Corollary]{Corollary \ref{cor02}\\
+Nested Intervals Theorem}
+\vspace*{\stretch{1}}
+\begin{corollary}
+\label{cor02}
+(Nested Intervals Theorem)  Let $\mathscr{F} = \{ A_{n} : n \in \N \} $
+be a family of closed bounded intervals in $\R$ such that $A_{n+1}
+\subseteq A_n$ for all $n \in \N$.  Then $\bigcap _{n=1}^{\infty} A_n
+\neq \varnothing $.
+\end{corollary}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm47}}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm47}
+Let $(s_n)$ and $(a_n)$ be sequences of real numbers and let $s \in \R$.
+If for some $k > 0$ and some $m \in \N$, we have
+$$|s_n - s| \leq k|a_n|, \mbox{ for all } n > m,$$
+and if $\lim a_n = 0$, then it follows that $\lim s_n = s$.
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm48}}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm48}
+Every convergent sequence is bounded.
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm49}}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm49}
+If a sequence converges, its limit is unique.
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm50}}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm50}
+A sequence $(s_n)$ converges to $s$ iff for each $\epsilon > 0$, there
+are only finitely many $n$ for which $|s_n - s| \geq \epsilon$.
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm51}}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm51}
+Let $(s_n)$ be a sequence of real numbers such that $\lim s_n = 0$, and
+let $(t_n)$ be a bounded sequence.  Then $\lim s_nt_n = 0$.
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm52} \\ The Squeeze Principle}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm52}
+(The Squeeze Principle)  If $(a_n)$, $(b_n)$, and $(c_n)$ are sequences
+for which there is a number $K$ such that $b_n \leq a_n \leq c_n
+\mbox{ for all } n > K$, and if $b_n \to a$ and $c_n \to a$, then
+$a_n \to a$.
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm53}}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm53}
+Suppose that $(s_n)$ and $(t_n)$ are convergent sequences with
+$\lim s_n = s$ and $\lim t_n = t$.  Then
+\begin{enumerate}
+\item $\lim (s_n + t_n) = s+t$.
+\item $\lim (ks_n) = ks$ and $\lim (k+s_n) = k+s$ for any $k\in \R$.
+\item $\lim (s_nt_n) = st.$
+\item $\lim \left( \frac {s_n}{t_n} \right) = \frac st$, provided that
+$t_n \not= 0$ for all $n$ and $t\not= 0$.
+\end{enumerate}
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm54}}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm54}
+Suppose that $(s_n)$ and $(t_n)$ are convergent sequences with
+$\lim s_n = s$ and $\lim t_n = t$.  If $s_n \leq t_n$ for all $n \in
+\N$, then $s \leq t$.
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Corollary]{Corollary \ref{cor03}}
+\vspace*{\stretch{1}}
+\begin{corollary}
+\label{cor03}
+If $(t_n)$ converges to $t$ and $t_n \geq 0$ for all $n \in \N$, then
+$t \geq 0$.
+\end{corollary}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm55}\\
+Ratio Test}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm55}
+(Ratio Test)  Suppose that $(s_n)$ is a sequence of positive terms and
+that the limit $L = \lim \left( \frac{s_{n+1}}{s_n} \right)$ exists.
+If $L < 1$, then $\lim s_n = 0$.
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm56}}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm56}
+Suppose that $(s_n)$ and $(t_n)$ are sequences such that $s_n \leq t_n$
+for all $n \in \N$.  
+\begin{enumerate}
+\item If $\lim s_n = + \infty$, then $\lim t_n = + \infty$.
+\item If $\lim t_n = - \infty$, then $\lim s_n = - \infty$.
+\end{enumerate}
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm57}}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm57}
+Let $(s_n)$ be a sequence of positive numbers.  Then $\lim s_n = + \infty$
+iff $\lim \left( \frac{1}{s_n} \right) = 0$.
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm58} \\ Monotone Convergence
+Theorem}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm58}
+(Monotone Convergence Theorem)  A monotone sequence is convergent iff it
+is bounded.
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm59}}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm59} \quad \\
+\begin{enumerate}
+\item If $(s_n)$ is an unbounded increasing sequence, then $\lim s_n = + \infty$.
+\item If $(s_n)$ is an unbounded decreasing sequence, then $\lim s_n = - \infty$.
+\end{enumerate}
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Lemma]{Lemma \ref{lem02}}
+\vspace*{\stretch{1}}
+\begin{lemma}
+\label{lem02}
+Every convergent sequence is a Cauchy sequence.
+\end{lemma}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Lemma]{Lemma \ref{lem03}}
+\vspace*{\stretch{1}}
+\begin{lemma}
+\label{lem03}
+Every Cauchy sequence is bounded.
+\end{lemma}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm60} \\ Cauchy Convergence
+Criterion}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm60}
+(Cauchy Convergence Criterion)  A sequence of real numbers is convergent
+iff it is a Cauchy sequence.
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm61}}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm61}
+If a sequence $(s_n)$ converges to a real number $s$, then every
+subsequence of $(s_n)$ also converges to $s$.
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm62} \\ Bolzano--Weierstrass
+Theorem For Sequences}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm62}
+(Bolzano--Weierstrass Theorem For Sequences)  Every bounded sequence has
+a convergent subsequence.
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm63}}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm63}
+Every unbounded sequence contains a monotone subsequence that has either
+$+ \infty$ or $- \infty$ as a limit.
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm64}}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm64}
+Let $(s_n)$ be a sequence and suppose that $m = \lim s_n$ is a real
+number.  Then the following properties hold:
+\begin{enumerate}
+\item For every $\epsilon > 0$ there exists $N$ such that $n> N$ implies
+that $s_n < m+\epsilon$.
+\item For every $\epsilon >0$ and for every $i \in \N$, there exists an
+integer $k > i$ such that $s_k > m - \epsilon$.
+\end{enumerate}
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm65}}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm65}
+Let $f: D \to \R$ and let $c$ be an accumulation point of $D$.  Then
+$\lim _{x \to c} f(x) = L$ iff for each neighborhood $V$ of $L$ there
+exists a deleted neighborhood $U$ of $c$ such that $f(U \cap D)
+\subseteq V$.
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm66}}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm66}
+Let $f: D \to \R$ and let $c$ be an accumulation point of $D$.  Then
+$\lim _{x \to c} f(x) = L$ iff for every sequence $(s_n)$ in $D$ that
+converges to $c$ with $s_n \not= c$ for all $n$, the sequence $(f(s_n))$
+converges to $L$.
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Corollary]{Corollary \ref{cor04}}
+\vspace*{\stretch{1}}
+\begin{corollary}
+\label{cor04}
+If $f: D \to \R$ and if $c$ is an accumulation point of $D$, then $f$
+can have only one limit at $c$.
+\end{corollary}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm67}}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm67}
+Let $f: D \to \R$ and let $c$ be an accumulation point of $D$.  Then the
+following are equivalent:
+\begin{enumerate}
+\item[(a)]  $f$ does not have a limit at $c$.
+\item[(b)]  There exists a sequence $(s_n)$ in $D$ with each
+$s_n \not= c$ such that $(s_n)$ converges to $c$, but $(f(s_n))$ is not
+convergent in $\R$.
+\end{enumerate}
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm68}}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm68}
+Let $f: D \to \R$ and $g: D \to \R$, and let $c$ be an accumulation
+point of $D$.  If $\lim _{x \to c} f(x) = L$, $\lim _{x \to c} g(x) = M$,
+and $k \in \R$, then $\lim _{x \to c} (f+g)(x) = L + M, \lim _{x \to c}
+(fg)(x) = LM$, and $\lim _{x \to c} (kf)(x) = kL$.
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm69}}
+\vspace*{\stretch{1}}
+\begin{small}
+\begin{theorem}
+\label{thm69}
+Let $f : D \to \R$ and let $c \in D$.  Then the following three
+conditions are equivalent:
+\begin{enumerate}
+\item[(a)]  $f$ is continuous at $c$.
+\item[(b)]  If $(x_n)$ is any sequence in $D$ such that $(x_n)$
+converges to $c$, then $\lim f(x_n) = f(c)$.
+\item[(c)]  For every neighborhood $V$ of $f(c)$ there exists a
+neighborhood $U$ of $c$ such that $f(U \cap D) \subseteq V$.
+\end{enumerate}
+Furthermore, if $c$ is an accumulation point of $D$, then the above are
+all equivalent to
+\begin{enumerate}
+ \item[(d)]  $f$ has a limit at $c$ and $\lim _{x \to c} f(x) = f(c)$.
+\end{enumerate}
+\end{theorem}
+\end{small}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm70}}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm70}
+Let $f:D \to \R$ and let $c \in D$.  Then $f$ is discontinuous at $c$
+iff there exists a sequence $(x_n)$ in $D$ such that $(x_n)$ converges
+to $c$ but the sequence $(f(x_n))$ does not converge to $f(c)$.
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm71}}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm71}
+Let $f$ and $g$ be functions from $D$ to $\R$, and let $c \in D$.
+Suppose that $f$ and $g$ are continuous at $c$.  Then
+\begin{enumerate}
+\item[(a)]  $f+g$ and $fg$ are continuous at $c$,
+\item[(b)]  $f/g$ is continuous at $c$ if $g(c) \not= 0$.
+\end{enumerate}
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm72}}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm72}
+Let $f: D \to \R$ and $g: E \to \R$ be functions such that $f(D)
+\subseteq E$.  If $f$ is continuous at a point $c \in D$ and $g$ is
+continuous at $f(c)$, then the composition $g \circ f : D \to \R$ is
+continuous at $c$.
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm73}}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm73}
+Let $D$ be a compact subset of $\R$ and suppose that $f: D \to \R$ is
+continuous.  Then $f(D)$ is compact.
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Corollary]{Corollary \ref{cor05}}
+\vspace*{\stretch{1}}
+\begin{corollary}
+\label{cor05}
+Let $D$ be a compact subset of $\R$ and suppose that $f : D \to \R$ is
+continuous.  Then $f$ assumes minimum and maximum values on $D$.  That
+is, there exist points $x_1$ and $x_2$ in $D$ such that $f(x_1) \leq f(x)
+\leq f(x_2)$ for all $x \in D$.
+\end{corollary}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Lemma]{Lemma \ref{lem04}}
+\vspace*{\stretch{1}}
+\begin{lemma}
+\label{lem04}
+Let $f: [a,b] \to \R$ be continuous and suppose that $f(a) < 0 < f(b)$.
+Then there exists a point $c$ in $(a,b)$ such that $f(x) = 0$.
+\end{lemma}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm74} \\ Intermediate Value
+Theorem}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm74}
+(Intermediate Value Theorem)  Suppose that $f:[a,b] \to \R$ is
+continuous.  Then $f$ has the intermediate value property on $[a,b]$.
+That is, if $k$ is any value between $f(a)$ and $f(b)$
+[i.e. $f(a) < k < f(b)$ or $f(b) < k < f(a)$], then there exists
+$c \in [a,b]$ such that $f(c) = k$.
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm75}}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm75}
+Let $I$ be a compact interval and suppose that $f: I \to \R$ is a
+continuous function.  Then the set $f(I)$ is a compact interval.
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm76}}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm76}
+Suppose that $f: D \to \R$ is continuous on a compact set $D$.  Then
+$f$ is uniformly continuous on $D$.
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm77}}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm77}
+Let $f: D \to \R$ be uniformly continuous on $D$ and suppose that
+$(x_n)$ is a Cauchy sequence in $D$.  Then $(f(x_n))$ is a Cauchy
+sequence.
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm78}}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm78}
+A function $f: (a,b) \to \R$ is uniformly continuous on $(a,b)$ iff it
+can be extended to a function $\tilde{f}$ that is continuous on $[a,b]$.
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm79}}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm79}
+Let $I$ be an interval containing the point $c$ and suppose that $f: I \to \R$.  Then $f$ is differentiable at $c$ iff, for every sequence $(x_n)$ in $I \smallsetminus \{ c\}$ that converges to $c$, the sequence
+$$\displaystyle \left( \frac{f(x_n) - f(c)}{x_n-c} \right)$$
+converges.  Furthermore, if $f$ is differentiable at $c$, then the sequence of quotients above will converge to $f'(c)$.
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm80}}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm80}
+If $f: I \to \R$ is differentiable at a point $c \in I$, then $f$ is
+continuous at $c$.
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm81} (part 1)}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm81}
+Suppose that $f: I \to \R$ and $g: I \to \R$ are differentiable at $c \in I$.  Then
+\begin{enumerate} 
+\item[(a)]  If $k \in \R$, then the function $kf$ is differentiable at $c$ and $(kf)'(c) = k\cdot f'(c)$.
+\item[(b)]  The function $f+g$ is differentiable at $c$ and $(f+g)'(c) = f'(c) + g'(c)$.
+\end{enumerate}
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm81} (part 2)}
+\vspace*{\stretch{1}}
+\textbf{Theorem \ref{thm81}.}
+\textit{
+Suppose that $f: I \to \R$ and $g: I \to \R$ are differentiable at $c \in I$.  Then
+\begin{enumerate} 
+\item[(c)]  (Product Rule)  The function $fg$ is differentiable at $c$ and $(fg)'(c) = f(c)g'(c) + f'(c)g(c)$.
+\item[(d)]  (Quotient Rule)  If $g(c) \not=0$, then the function $f/g$ is differentiable at $c$ and 
+$$\displaystyle \left( \frac fg \right) '(c) = \frac{ g(c)f'(c) - f(c)g'(c)}{[g(c)]^2}.$$
+\end{enumerate}
+}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm82}\\ Chain Rule}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm82}
+(Chain Rule)  Let $I$ and $J$ be intervals in $\R$, let $f:I \to \R$ and
+$g: J \to \R$, where $f(I) \subseteq J$, and let $c \in I$.  If $f$ is
+differentiable at $c$ and $g$ is differentiable at $f(c)$, then the
+composite function $g \circ f$ is differentiable at $c$ and
+$(g\circ f)'(c) = g'(f(c))\cdot f'(c)$.
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm83}}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm83}
+If $f$ is differentiable on an open interval $(a,b)$ and if $f$ assumes
+its maximum or minimum at a point $c \in (a,b)$, then $f'(c) = 0$.
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm84}\\ Rolle's Theorem}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm84}
+(Rolle's Theorem)  Let $f$ be a continuous function on $[a,b]$ that is
+differentiable on $(a,b)$ and such that $f(a) = f(b) = 0$.  Then there
+exists at least one point $c \in (a,b)$ such that $f'(c) = 0$.
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm85}\\ Mean Value Theorem}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm85}
+(Mean Value Theorem)  Let $f$ be a continuous function on $[a,b]$ that
+is differentiable on $(a,b)$.  Then there exists at least one point $c
+\in (a,b)$ such that $f'(c) = \frac{f(b) - f(a)}{b-a}$.
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm86}}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm86}
+Let $f$ be continuous on $[a,b]$ and differentiable on $(a,b)$.  If
+$f'(x) = 0$ for all $x \in (a,b)$, then $f$ is constant on $[a,b]$.
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Corollary]{Corollary \ref{cor06}}
+\vspace*{\stretch{1}}
+\begin{corollary}
+\label{cor06}
+Let $f$ and $g$ be continuous on $[a,b]$ and differentiable on $(a,b)$.
+Suppose that $f'(x) = g'(x)$ for all $x \in (a,b)$.  Then there exists a
+constant $C$ such that $f=g+C$ on $[a,b]$.
+\end{corollary}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm87}}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm87}
+Let $f$ be differentiable on an interval $I$.  Then	
+\begin{enumerate}
+\item[(a)]  if $f'(x) > 0$ for all $x \in I$, then $f$ is
+strictly increasing on $i$, and 
+\item[(b)]  if $f'(x) < 0$ for all $x \in I$, then $f$ is
+strictly decreasing on $I$.
+\end{enumerate}
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm88}\\
+Intermediate Value Theorem for Derivatives}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm88}
+(Intermediate Value Theorem for Derivatives)  Let $f$ be differentiable
+on $[a,b]$ and suppose that $k$ is a number between $f'(a)$ and $f'(b)$.
+Then there exists a point $c \in (a,b)$ such that $f'(c) = k$.
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm89}\\ 
+Inverse Function Theorem}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm89}
+(Inverse Function Theorem)  Suppose that $f$ is differentiable on an
+interval $I$ and $f'(x) \not= 0$ for all $x \in I$.  Then $f$ is
+injective, $f^{-1}$ is differentiable on $f(I)$, and $(f^{-1})'(y) =
+\frac{1}{f'(x)}$, where $y = f(x)$.
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm90}\\
+Cauchy Mean Value Theorem}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm90}
+(Cauchy Mean Value Theorem)  Let $f$ and $g$ be functions that are
+continuous on $[a,b]$ and differentiable on $(a,b)$.  Then there exists
+at least one point $c \in (a,b)$ such that
+\begin{equation*}
+[f(b) - f(a)]g'(c) = [g(b) - g(a)]f'(c)
+\end{equation*}
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm91}\\ L'Hospital's Rule}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm91}
+(L'Hospital's Rule)  Let $f$ and $g$ be continuous on $[a,b]$ and
+differentiable on $(a,b)$.  Suppose that $c \in [a,b]$ and
+$f(c) = g(c)=0$.  Suppose also that $g'(x) \not= 0$ for $x \in U$, where
+$U$ is the intersection of $(a,b)$ and some deleted neighborhood of $c$.
+If $\displaystyle \lim _{x \to c} \frac{f'(x)}{g'(x)} = L$, with $L \in
+\R$, then $\displaystyle \lim _{x \to c} \frac{f(x)}{g(x)} = L$.
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm92}\\ L'Hospital's Rule}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm92}
+(L'Hospital's Rule)  Let $f$ and $g$ be differentiable on $(b, \infty)$.
+Suppose that $\lim _{ x \to \infty} f(x) = \lim _{x \to \infty} g(x) =
+\infty$, and that $g'(x) \not= 0$ for $x \in (b, \infty)$.  If
+$\displaystyle \lim _{x \to \infty} \frac{f'(x)}{g'(x)} = L$, where
+$L \in \R$, then $\displaystyle \lim _{x \to \infty} \frac{f(x)}{g(x)} = L$.
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm93}\\ Taylor's Theorem}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm93}
+(Taylor's Theorem)  Let $f$ and its first $n$ derivatives be continuous
+on $[a,b]$ and differentiable on $(a,b)$, and let $x_0 \in [a,b]$.  Then
+for each $x \in [a,b]$ with $x \not= x_0$ there exists a point $c$
+between $x$ and $x_0$ such that
+$$f(x) = f(x_0) + f'(x_0)(x-x_0) + \frac{f''(x_0)}{2!}(x-x_0)^2 + \cdots $$
+$$+ \frac{f^{(n)}(x_0)}{n!}(x-x_0)^n + \frac{f^{(n+1)}(c)}{(n+1)!}(x-x_0)^{n+1}.$$
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm94}}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm94}
+Let $f$ be a bounded function on $[a,b]$.  If $P$ and $Q$ are partitions
+of $[a,b]$ and $Q$ is a refinement of $P$, then $L(f,P) \leq L(f,Q) 
+\leq U(f,Q) \leq U(f,P)$.
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm95}}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm95}
+Let $f$ be a bounded function on $[a,b]$.  Then $L(f) \leq U(f)$.
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm96}}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm96}
+Let $f$ be a bounded function on $[a,b]$.  Then $f$ is integrable iff
+for each $\epsilon > 0$ there exists a partition $P$ of $[a,b]$
+such that $U(f,P) - L(f,P) < \epsilon$.
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm97}}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm97}
+Let $f$ be a monotonic function on $[a,b]$.  Then $f$ is integrable.
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm98}}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm98}
+Let $f$ be a continuous function on $[a,b]$.  Then $f$ is integrable
+on $[a,b]$.
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm99}}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm99}
+Let $f$ and $g$ be integrable functions on $[a,b]$ and let $k \in \R$. 
+ Then
+\begin{enumerate}
+\item[(a)]  $kf$ is integrable and $\int _a ^b {kf} = k\int{f}$, and 
+\item[(b)]  $f+g$ is integrable and $\int _a ^b {(f+g)} =
+\int _a ^b {f} + \int _a ^b {g}$.
+\end{enumerate}
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm100}}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm100}
+Suppose that $f$ is integrable on both $[a,c]$ and $[c,b]$.  Then $f$ is
+integrable on $[a,b]$.  Furthermore, $\int _a ^b {f} =
+\int _a ^c {f} + \int _c ^b {f}$.
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm101}}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm101}
+Suppose that $f$ is integrable on $[a,b]$ and $g$ is continuous on
+$[c,d]$, where $f([a,b]) \subseteq [c,d]$.  Then $g \circ f$ is
+integrable on $[a,b]$.
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Corollary]{Corollary \ref{cor07}}
+\vspace*{\stretch{1}}
+\begin{corollary}
+\label{cor07}
+Let $f$ be integrable on $[a,b]$.  The $|f|$ is integrable on $[a,b]$
+and $\displaystyle \Big| \int _a ^b {f} \Big| \leq \int _a ^b {|f|}.$
+\end{corollary}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm102}\\
+The Fundamental Theorem of Calculus I}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm102}
+(The Fundamental Theorem of Calculus I)  Let $f$ be integrable on
+$[a,b]$.  For each $x \in [a,b]$ let $\displaystyle F(x) =
+\int _a ^x {f(t)}\, dt.$  Then $F$ is uniformly continuous on $[a,b]$. 
+ Furthermore, if $f$ is continuous at $c \in [a,b]$, then $F$ is
+differentiable at $c$ and $F'(c) = f(c)$.
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm103}\\
+The Fundamental Theorem of Calculus II}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm103}
+(The Fundamental Theorem of Calculus II)  If $f$ is differentiable on
+$[a,b]$ and $f'$ is integrable on $[a,b]$, then
+$\displaystyle \int _a ^b {f'} = f(b) - f(a)$.
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm104}}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm104}
+Suppose that $\displaystyle \sum a_n = s$ and $\displaystyle
+\sum b_n = t$.  Then $\displaystyle \sum (a_n + b_n) = s + t$ and
+$\displaystyle \sum (ka_n) = ks$, for every $k \in \R$.
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm105}}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm105}
+If $\displaystyle \sum a_n$ is a convergent series, then $\lim
+a_n = 0$.
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm106}\\
+Cauchy Criterion for Series}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm106}
+(Cauchy Criterion for Series)  The infinite series
+$\displaystyle \sum a_n$ converges iff for each $\epsilon > 0$ there
+exists a number $N$ such that if $n \geq m > N$, then $|a_m + a_{m+1} +
+\cdots + a_n|< \epsilon$.
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm107}\\ Comparison Test}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm107}
+(Comparison Test)  Let $\displaystyle \sum a_n$ and
+$\displaystyle \sum b_n$ be infinite series of nonnegative terms.  That
+is, $a_n \geq 0$ and $b_n \geq 0$ for all $n$.  Then
+\begin{enumerate}
+\item If $\displaystyle \sum a_n$ converges and $0 \leq b_n \leq a_n$
+for all $n$, then $\displaystyle \sum b_n$ converges.
+\item  If $\displaystyle \sum a_n = + \infty$ and $0 \leq a_n \leq b_n$
+for all $n$, then $\displaystyle \sum b_n = + \infty$.
+\end{enumerate}
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm108}}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm108}
+If a series converges absolutely, then it converges.
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm109}\\ Ratio Test}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm109}
+\begin{small}
+(Ratio Test)  Let $\displaystyle \sum a_n$ be a series of
+nonzero terms.
+\begin{enumerate}
+\item  If $\displaystyle \limsup \Big| \frac{a_{n+1}}{a_n} \Big| < 1$,
+then the series converges absolutely.
+\item  If $\displaystyle \liminf \Big| \frac{a_{n+1}}{a_n} \Big| > 1$,
+the the series diverges.
+\item  Otherwise, $\displaystyle \liminf \Big| \frac{a_{n+1}}{a_n} \Big|
+\leq 1 \leq \limsup \Big| \frac{a_{n+1}}{a_n} \Big|$ and the test gives
+no information about convergence or divergence.
+\end{enumerate}
+\end{small}
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm110}\\ Root Test}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm110}
+(Root Test)  Given a series $\displaystyle \sum a_n$, let
+$\alpha = \limsup |a_n|^{\frac 1n}$.
+\begin{enumerate}
+\item  If $\alpha < 1$, then the series converges absolutely.
+\item  If $\alpha > 1$, then the series diverges.
+\item  Otherwise, $\alpha = 1$ and the test gives no information about
+convergence or divergence.
+\end{enumerate}
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm111}\\
+Integral Test}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm111}
+(Integral Test)  Let $f$ be a continuous function defined on
+$[0, \infty)$, and suppose that $f$ is positive and decreasing.  That is,
+if $x_1 < x_2$, then $f(x_1) \geq f(x_2) > 0$.  Then the series
+$\displaystyle \sum (f(n))$ converges iff $\displaystyle
+\lim _{n \to \infty} \left( \int _1 ^n f(x) \, dx \right)$ exists
+as a real number.
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm112}\\
+Alternating Series Test}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm112}
+(Alternating Series Test)  If $(a_n)$ is a decreasing sequence
+of positive numbers and $\lim a_n = 0$, then the series $\displaystyle
+\sum (-1)^{n+1} a_n$ converges.
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm113}}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm113}
+\begin{small}
+Let $\displaystyle \sum a_n x^n$ be a power series and let
+$\alpha = \limsup |a_n|^{\frac 1n}$.  Define $R$ by
+$$R = \left\{ \begin{array}{ll} \frac 1{\alpha} & \mbox{ if } 0 < \alpha < +
+\infty \\ + \infty & \mbox{ if } \alpha = 0 \\ 0 & \mbox{ if } \alpha = + \infty
+\end{array} \right. .$$
+Then the series converges absolutely whenever $|x| < R$ and diverges whenever
+$|x| > R$.  (When $R = + \infty$ we take this to mean that the series converges
+absolutely for all real $x$.  When $R=0$ then the series converges only at
+$x=0$.)
+\end{small}
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm114}\\
+Ratio Criterion}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm114}
+(Ratio Criterion)  The radius of convergence $R$ of a power
+series $\displaystyle \sum a_n x^n$ is equal to $\displaystyle \lim \left|
+\frac{a_n}{a_{n+1}} \right|$, provided that this limit exists.
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm115}}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm115}
+Let $(f_n)$ be a sequence of functiond defined on a subset $S$
+of $\R$.  There exists a function $f$ such that $(f_n)$ converges to $f$
+uniformly on $S$ iff the following condition (called the Cauchy criterion) is
+satisfied:
+
+For every $\epsilon > 0$ there exists a number $N$ such that $|f_n(x) - f_m(x)|
+< \epsilon$ for all $x \in S$ and all $m,n > N$.
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm116}\\ Weierstrass M-test}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm116}
+(Weierstrass M-test)  Suppose that $(f_n)$ is a sequence of
+functions defined on $S$ and $(M_n)$ is a sequence of nonnegative numbers such
+that $|f_n(x)| \leq M_n$ for all $x \in S$ and all $n \in \N$.  If
+$\displaystyle \sum M_n$ converges, then $\displaystyle \sum f_n$ converges
+uniformly on $S$.
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm117}}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm117}
+Let $(f_n)$ be a sequence of continuous functions defined on a
+set $S$ and suppose that $(f_n)$ converges uniformly on $S$ to a function $f: S
+\to \R$.  Then $f$ is continuous on $S$.
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Corollary]{Corollary \ref{cor8}}
+\vspace*{\stretch{1}}
+\begin{corollary}
+\label{cor8}
+Let $\displaystyle \sum _{n=0}^{\infty} f_n$ be a series of
+functions defined on a set $S$.  Suppose that each $f_n$ is continuous on $S$
+and that the series converges uniformly to a function $f$ on $S$.  Then
+$\displaystyle f = \sum _{n = 0} ^{\infty} f_n$ si continuous on $S$.
+\end{corollary}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm118}}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm118}
+Let $(f_n)$ be a sequence of continuous functions defined on an
+interval $[a,b]$ and suppose that $(f_n)$ converges uniformly on $[a,b]$ to a
+function $f$.  Then $\displaystyle \lim _{n \to \infty} \int _a ^b f_n(x) \, dx
+= \int _a ^b f(x) \, dx$.
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Corollary]{Corollary \ref{cor9}}
+\vspace*{\stretch{1}}
+\begin{corollary}
+\label{cor9}
+Let $\displaystyle \sum _{n=0} ^{\infty} f_n$ be a series of
+functions defined on an interval $[a,b]$.  Suppose that each $f_n$ is continuous
+on $[a,b]$ and that the series converges uniformly to a function $f$ on $[a,b]$.
+ Then $\displaystyle \int _a ^b f(x) \, dx = \sum _{n=0}^{\infty} \int _a ^b
+f_n(x) \, dx$.
+\end{corollary}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm119}}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm119}
+Suppose that $(f_n)$ converges to $f$ on an interval $[a,b]$. 
+Suppose also that each $f_n'$ exists and is continuous on $[a,b]$, and that the
+sequence $(f_n')$ converges uniformly on $[a,b]$.  Then $\displaystyle \lim _{n
+\to \infty} f_n'(x) = f'(x)$ for each $x \in [a,b]$.
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Corollary]{Corollary \ref{cor10}}
+\vspace*{\stretch{1}}
+\begin{corollary}
+\label{cor10}
+Let $\displaystyle \sum _{n = 0}^{\infty} f_n$ be a series of
+functions that converges to a function $f$ on an interval $[a,b]$.  Suppose that
+for each $n, f_n'$ exists and is continuous on $[a,b]$ and that the series of
+derivatives $\displaystyle \sum _{n=0}^{\infty} f_n'$ is uniformly convergent on
+$[a,b]$.  Then $\displaystyle f'(x) = \sum _{n=0}^{\infty} f_n'(x)$ for all $x
+\in [a,b]$.
+\end{corollary}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm120}}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm120}
+There exists a continuous function defined on $\R$ that is
+nowhere differentiable.
+\end{theorem} 
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm121}}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm121}
+Let $\displaystyle \sum a_n x^n$ be a power series with radius
+of convergence $R$, where $0< R \leq + \infty$.  If $0<K<R$, then teh power
+series converges uniformly on $[-K,K]$.
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm122}}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm122}
+Suppose that a pwer series converges to a function $f$ on
+$(-R,R)$, where $R>0$.  Then the series can be differentiated term by term, and
+the differentiated series converges on $(-R,R)$ to $f'$.  That is, if $f(x) =
+\displaystyle \sum _{n=0}^{\infty} a_nx^n$, then $f'(x) = \displaystyle \sum
+_{n=1}^{\infty} na_nx^{n-1}$, and both series have the same radius of
+convergence.
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Corollary]{Corollary \ref{cor11}}
+\vspace*{\stretch{1}}
+\begin{corollary}
+\label{cor11}
+\begin{small}
+Suppose that $f(x) = \displaystyle \sum _{n=0}^{\infty}
+a_nx^n$ for $x \in (-R,R)$, where $R>0$.  Then for each $k \in \N$, the $k$th
+derivative $f^{(k)}$ of $f$ exists on $(-R,R)$ and 
+\begin{eqnarray*}
+f^{(k)}(x) & = & \sum _{n=k}^{\infty} \frac{n!}{(n-k)!}a_nx^{n-k} \\
+ & = & k! a_k + (k+1)!a_{k+1} + \frac{(k+2)!}{2!}a_{k+2}x^2 + \cdots .
+\end{eqnarray*}
+Furthermore, $f^{(k)}(0) = k!a_k$.
+\end{small}
+\end{corollary}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Corollary]{Corollary \ref{cor12}}
+\vspace*{\stretch{1}}
+\begin{corollary}
+\label{cor12}
+If $\displaystyle \sum _{n =0} ^{\infty} a_nx^n = \sum_{n=0}^{\infty} b_nx^n$
+for all $x$ in some interval $(-R,R)$, where $R>0$, then
+$a_n = b_n$ for all $n \in \N \cup \{ 0 \}$.
+\end{corollary}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Theorem]{Theorem \ref{thm123}}
+\vspace*{\stretch{1}}
+\begin{theorem}
+\label{thm123}
+Let $\displaystyle \sum _{n=0}^{\infty} a_nx^n$ be a power
+series with a finite positive radius of convergence $R$.  If the series
+converges at $x=R$, then it converges uniformly on teh interval $[0,R]$. 
+Similarly, if the series converges at $x=-R$, then it converges uniformly on
+$[-R,0]$.
+\end{theorem}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Corollary]{Corollary \ref{cor13}}
+\vspace*{\stretch{1}}
+\begin{corollary}
+\label{cor13}
+Let $\displaystyle f(x) = \sum _{n=0}^{\infty} a_nx^n$ have a
+finite positive radius of convergence $R$.  If the series converges at $x=R$,
+then $f$ is continuous at $x=R$.  If the series converges at $x=-R$, then $f$ is
+continuous at $x=-R$.
+\end{corollary} 
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\end{document}

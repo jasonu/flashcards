@@ -1,0 +1,204 @@
+\documentclass[avery5371,grid]{flashcards}
+
+\cardfrontstyle[\large\slshape]{headings}
+\cardbackstyle{empty}
+\cardfrontfoot{Quantum Statistical Mechanics}
+
+%\usepackage{amsfonts}
+\usepackage{amssymb,amsmath}
+
+\begin{document}
+
+\begin{flashcard}[Copyright \& License]{Copyright \copyright \, 2007 Jason Underdown \\
+Some rights reserved.}
+\vspace*{\stretch{1}}
+These flashcards and the accompanying \LaTeX \, source code are licensed
+under a Creative Commons Attribution--NonCommercial--ShareAlike 2.5 License.  
+For more information, see creativecommons.org.  You can contact the author at:
+\begin{center}
+\begin{small}\tt jasonu [remove-this] at physics dot utah dot edu\end{small}
+\end{center}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{spin excess}
+\vspace*{\stretch{1}}
+Assuming $N$ is even, then we define the \textit{spin excess} by
+\begin{equation*}
+N_{\uparrow} - N_{\downarrow} = 2s
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Formula]{multiplicity function}
+\vspace*{\stretch{1}}
+\begin{equation*}
+g(N,s) = 
+\frac{N!}{\left(\frac{1}{2}N+s \right)! \left(\frac{1}{2}N-s \right)!} =
+\frac{N!}{N_{\uparrow}! \; N_{\downarrow}!}
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Formula]{Stirling's approximation}
+\vspace*{\stretch{1}}
+\begin{equation*}
+N! \approx (2\pi N)^{1/2} N^{N} \exp(-N +(1/12)N + \cdots)
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Formula]{approximate multiplicity function}
+\vspace*{\stretch{1}}
+\begin{equation*}
+G(N,s) \approx (2 / \pi N)^{1/2} 2^{N} \exp(-2s^2/N)
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Assumption]{fundamental assumption}
+\vspace*{\stretch{1}}
+The fundamental assumption of statistical mechanics is that in a closed system,
+each of its \textit{accessible} states is \textit{equally likely}.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{probability of states}
+\vspace*{\stretch{1}}
+If $s$ is a state of a system, then the probability of that
+state is given by:
+\begin{equation*}
+P(s) = \left\{ \begin{array}{cl}
+1/g & \text{if $s$ is an accessible state} \\
+0   & \text{otherwise}
+\end{array} \right.
+\end{equation*}
+The sum of the probabilities over all states is unity.
+\begin{equation*}
+\sum_{s} P(s) = 1
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{expectation\\average value}
+\vspace*{\stretch{1}}
+Suppose that a system has some physical property $X=X(s)$ when the
+system is in state $s$.  The \textit{expected} or \textit{average value} of $X$ is 
+defined by:
+\begin{equation*}
+\left\langle X \right\rangle = \sum_{s} X(s)P(s)
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{entropy}
+\vspace*{\stretch{1}}
+\begin{equation*}
+\sigma(N,U) \equiv \ln g(N,U)
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Equation]{condition for thermal equilibrium}
+\vspace*{\stretch{1}}
+If two systems are in thermal contact, the condition for them
+to be in \textit{thermal equilibrium} is the following:
+\begin{equation*}
+\left(
+\dfrac{\partial \sigma_{1}}{\partial U_{1}}
+\right)_{\!\!\! N_1} = \left(
+\dfrac{\partial \sigma_{2}}{\partial U_{1}}
+\right)_{\!\!\! N_2}
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{fundamental temperature\\Kelvin temperature\\Boltzmann constant}
+\vspace*{\stretch{1}}
+\begin{equation*}
+\dfrac{1}{\tau} \equiv
+\left( \dfrac{\partial \sigma}{\partial U} \right)_{\!\!\! N}
+\end{equation*}
+\bigskip
+\begin{equation*}
+\tau = k_B T
+\end{equation*}
+\medskip
+\begin{equation*}
+k_B = 1.381 \times 10^{-23} \text{ J/K}
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Definition]{relationship between entropy\\and classical thermodynamic entropy}
+\vspace*{\stretch{1}}
+\begin{equation*}
+\dfrac{1}{T} = \left( \dfrac{\partial S}{\partial U} \right)_{\!\!\! N}
+\end{equation*}
+\bigskip
+\begin{equation*}
+S = k_B \sigma
+\end{equation*}
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Equation]{multiplicity function for the Hydrogen atom}
+\vspace*{\stretch{1}}
+The multiplicity function for a Hydrogen atom with
+energy $E_n$, is given by
+\begin{equation*}
+g(n) = \sum_{l=0}^{n-1} (2l+1)  = n^2
+\end{equation*}
+where $n$ is the principal quantum number, and $l$ is the orbital quantum
+number.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[Equation]{multiplicity function for 3D harmonic oscillator}
+\vspace*{\stretch{1}}
+The multiplicity function for a simple harmonic oscillator with three
+degrees of freedom with energy $E_n$ is given by
+\begin{equation*}
+g(n) = \dfrac{1}{2}(n+1)(n+2)
+\end{equation*}
+where $n = n_x + n_y + n_z$.
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[]{}
+\vspace*{\stretch{1}}
+
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[]{}
+\vspace*{\stretch{1}}
+
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[]{}
+\vspace*{\stretch{1}}
+
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[]{}
+\vspace*{\stretch{1}}
+
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[]{}
+\vspace*{\stretch{1}}
+
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\begin{flashcard}[]{}
+\vspace*{\stretch{1}}
+
+\vspace*{\stretch{1}}
+\end{flashcard}
+
+\end{document}
