@@ -4,12 +4,18 @@
 \cardbackstyle{empty}
 
 \usepackage{amsfonts}
+\usepackage{amsmath}
 
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\Rn}{\mathbb{R}^{n}}
 \newcommand{\Rm}{\mathbb{R}^{m}}
 \newcommand{\nbyn}{n\!\times\!n}
 \newcommand{\nbym}{n\times m}
+\DeclareMathOperator{\rref}{rref}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\nullity}{nullity}
+\DeclareMathOperator{\tr}{tr}
 
 \begin{document}
 
@@ -31,7 +37,7 @@ leading 1 further to the left.
 
 \begin{flashcard}[Definition]{rank}
 \vspace*{\stretch{1}}
-The \textit{rank} of a matrix $A$, is the number of leading 1s in $rref(A)$.
+The \textit{rank} of a matrix $A$, is the number of leading 1s in $\rref(A)$.
 \vspace*{\stretch{1}}
 \end{flashcard}
 
@@ -82,8 +88,8 @@ are both in $W$, then so is $\vec{w}_1 + \vec{w}_2$).
 \vspace*{\stretch{1}}
 If $T(\vec{x}) = A\vec{x}$ is a linear transformation from $\Rm$ to $\Rn$, then
 \begin{itemize}
-\item $ker(T)= ker(A)$ is a subspace of $\Rm$
-\item $im(T) = im(A)$ is a subspace of $\Rn$
+\item $\ker(T)= \ker(A)$ is a subspace of $\Rm$
+\item $\im(T) = \im(A)$ is a subspace of $\Rn$
 \end{itemize}
 \vspace*{\stretch{1}}
 \end{flashcard}
@@ -122,7 +128,7 @@ vectors.  In other words, they all have the same dimension.
 \begin{flashcard}[Algorithm]{constructing a basis of the image}
 \vspace*{\stretch{1}}
 To construct a basis of the image of $A$, pick those column vectors of
-$A$ that correspond to the columns of $rref(A)$ that contain leading 1s.
+$A$ that correspond to the columns of $\rref(A)$ that contain leading 1s.
 \vspace*{\stretch{1}}
 \end{flashcard}
 
@@ -145,12 +151,12 @@ exist among the vectors.
 \vspace*{\stretch{1}}
 For any $\nbym$ matrix $A$ the following equation holds:
 \begin{displaymath}
-dim(im(A)) + dim(ker(A)) = m
+\dim(\im(A)) + \dim(\ker(A)) = m
 \end{displaymath}
-Alternatively, if we define the $dim(ker(A))$ to be the \textit{nullity}
+Alternatively, if we define the $\dim(\ker(A))$ to be the \textit{nullity}
 of $A$, then we can rewrite the above as:
 \begin{displaymath}
-rank(A) + nullity(A) = m
+\rank(A) + \nullity(A) = m
 \end{displaymath}
 Some mathemeticians refer to this as the fundamental theorem of linear algebra.
 \vspace*{\stretch{1}}
@@ -159,7 +165,7 @@ Some mathemeticians refer to this as the fundamental theorem of linear algebra.
 \begin{flashcard}[Definition]{dimension}
 \vspace*{\stretch{1}}
 For any subspace $V$ of $\Rn$, the number of vectors in a basis of $V$
-is called the \textit{dimension} of $V$ and is denoted by $dim(V)$.
+is called the \textit{dimension} of $V$ and is denoted by $\dim(V)$.
 \vspace*{\stretch{1}}
 \end{flashcard}
 
@@ -188,26 +194,26 @@ for all vectors $\vec{v}, \vec{w}$ and all scalars $k$
 \vspace*{\stretch{1}}
 \end{flashcard}
 
-\begin{flashcard}[Theorem]{$det(A^{T}) = $}
+\begin{flashcard}[Theorem]{$\det(A^{T}) = $}
 \vspace*{\stretch{1}}
 \begin{displaymath}
-det(A^{T}) = det(A)
+\det(A^{T}) = \det(A)
 \end{displaymath}
 \vspace*{\stretch{1}}
 \end{flashcard}
 
-\begin{flashcard}[Theorem]{$ker(A) = $}
+\begin{flashcard}[Theorem]{$\ker(A) = $}
 \vspace*{\stretch{1}}
 \begin{displaymath}
-ker(A) = ker(A^{T}A)
+\ker(A) = \ker(A^{T}A)
 \end{displaymath}
 \vspace*{\stretch{1}}
 \end{flashcard}
 
-\begin{flashcard}[Theorem]{$(imA)^{\bot} = $}
+\begin{flashcard}[Theorem]{$(\im A)^{\bot} = $}
 \vspace*{\stretch{1}}
 \begin{displaymath}
-(imA)^{\bot} = ker(A^{T})
+(\im A)^{\bot} = \ker(A^{T})
 \end{displaymath}
 \vspace*{\stretch{1}}
 \end{flashcard}
@@ -260,7 +266,7 @@ Consider an $n \times n$ matrix $A$.  The following statements are equivalent:
 \begin{flashcard}[Theorem]{determinants of similar matrices}
 \vspace*{\stretch{1}}
 \begin{displaymath}
-A \sim B \Rightarrow det(A) = det(B)
+A \sim B \Rightarrow \det(A) = \det(B)
 \end{displaymath}
 \vspace*{\stretch{1}}
 \end{flashcard}
@@ -268,7 +274,7 @@ A \sim B \Rightarrow det(A) = det(B)
 \begin{flashcard}[Theorem]{determinant of an inverse}
 \vspace*{\stretch{1}}
 \begin{displaymath}
-det(A^{-1}) = (det A)^{-1} = \frac{1}{det(A)}
+\det(A^{-1}) = (\det A)^{-1} = \frac{1}{\det(A)}
 \end{displaymath}
 \vspace*{\stretch{1}}
 \end{flashcard}
@@ -277,7 +283,7 @@ det(A^{-1}) = (det A)^{-1} = \frac{1}{det(A)}
 \vspace*{\stretch{1}}
 If A is an $n \times n$ matrix with columns, $\vec{v}_1, \ldots \vec{v}_n$, then,
 \begin{displaymath}
-\vert det(A) \vert =
+\vert \det(A) \vert =
 \Vert \vec{v}_1 \Vert
 \Vert {\vec{v}_2}^{\bot} \Vert
 \cdots
@@ -297,11 +303,11 @@ For any $n \times n$ matrix $A$, and any scalar $k$:
 \hline
 Elementary row op & Effect on determinant \\
 \hline
-scalar multiplication & $det(A) \rightarrow k \cdot det(A)$ \\
+scalar multiplication & $\det(A) \rightarrow k \cdot \det(A)$ \\
 \hline
-row swap & $det(A) \rightarrow -det(A)$ \\
+row swap & $\det(A) \rightarrow -\det(A)$ \\
 \hline
-multiple of one row added to another & $det(A) \rightarrow det(A)$ \\
+multiple of one row added to another & $\det(A) \rightarrow \det(A)$ \\
 \hline
 \end{tabular}
 \end{center}
@@ -332,7 +338,7 @@ The eigenvalues of an $\nbyn$ matrix $A$ correspond to the solutions of the \tex
 
 \begin{flashcard}[Definition]{trace}
 \vspace*{\stretch{1}}
-The sum of the diagonal entries of a square matrix $A$ is called the \textit{trace} of $A$, and is denoted by $tr(A)$.
+The sum of the diagonal entries of a square matrix $A$ is called the \textit{trace} of $A$, and is denoted by $\tr(A)$.
 \vspace*{\stretch{1}}
 \end{flashcard}
 
@@ -340,7 +346,7 @@ The sum of the diagonal entries of a square matrix $A$ is called the \textit{tra
 \vspace*{\stretch{1}}
 Given a $2\!\times\!2$ matrix $A$:
 \begin{displaymath}
-det(A - \lambda I) = \lambda^2 - tr(A)\lambda + det(A) = 0
+\det(A - \lambda I) = \lambda^2 - \tr(A)\lambda + \det(A) = 0
 \end{displaymath}
 \vspace*{\stretch{1}}
 \end{flashcard}
